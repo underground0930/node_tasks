@@ -1,0 +1,46 @@
+<%
+const pageid = 'top';
+const relativePath = '.';
+%>
+<%- include( relativePath + '/assets/include/_head', {pageid,relativePath}); -%>
+<%- include( relativePath + '/assets/include/_header', {pageid,relativePath}); -%>
+<div class="l-wrapper">
+<h1>
+  top
+</h1>
+<p>
+  My page
+</p>
+<div id="app"></div>
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<ul>
+  <li>
+    <a class="tw" href="#">tw</a>
+  </li>
+  <li>
+    <a class="fb" href="#">fb</a>
+  </li>
+  <li>
+    <a class="line" href="#">line</a>
+  </li>
+</ul>
+<%- include( relativePath + '/assets/include/_footer',{pageid,relativePath}); -%>

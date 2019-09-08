@@ -1,0 +1,13 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+// hover
+//////////////////////////////////////////
+
+$opacity: 0.6;
+@mixin hover {
+  transition: opacity 0.2s linear;
+  &:hover{
+    opacity: $opacity;
+  }
+}
+

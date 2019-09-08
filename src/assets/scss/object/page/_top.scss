@@ -1,0 +1,17 @@
+@charset "UTF-8";
+////////////////////////
+// TOP
+////////////////////////
+
+.test999{
+  a{
+    color:#121212;
+  }
+  display: grid;
+  display: flex;
+  transform: scale(1);
+}
+
+@include max-screen($breakpoint) {
+
+}

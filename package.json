@@ -1,0 +1,58 @@
+{
+  "name": "node_tasks",
+  "version": "1.0.0",
+  "description": "node.jsで実装環境を作る",
+  "main": "index.js",
+  "scripts": {
+    "build": "run-p webpack:prod tasks:prod",
+    "dev": "run-p webpack:dev tasks:dev",
+    "tasks:prod": "node ./tasks/index.js",
+    "tasks:dev": "cross-env NODE_ENV=\"dev\" node ./tasks/index.js",
+    "webpack:prod": "webpack",
+    "webpack:dev": "cross-env NODE_ENV=\"dev\" webpack",
+    "lint:ejs": "ejslint 'src/**/*.{ejs,html}'"
+  },
+  "browserslist": [
+    "last 2 version",
+    "IE 11"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@babel/runtime-corejs3": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "chokidar": "^3.0.2",
+    "cross-env": "^5.2.1",
+    "del": "^5.1.0",
+    "ejs": "^2.7.1",
+    "ejs-lint": "^0.3.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
+    "js-yaml": "^3.13.1",
+    "node-sass": "^4.12.0",
+    "node-sass-globbing": "0.0.23",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.17",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "core-js": "^3.1.4",
+    "swiper": "^4.5.0",
+    "vue": "^2.6.10"
+  }
+}

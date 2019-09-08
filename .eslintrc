@@ -1,0 +1,64 @@
+{
+    "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "window": true,
+    "global": true,
+    "$": true,
+    "Waypoint": true,
+    "TweenMax": true,
+    "TimelineMax": true,
+    "Power4": true,
+    "Back": true,
+    "commonModule": true,
+    "JSON_PATH": true
+  },
+  "plugins": [
+    "vue",
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ],
+  "rules": {
+    "no-console": [
+      1
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used"
+      }
+    ],
+    "strict": [
+      0,
+      "global"
+    ],
+    "indent": [
+      2,
+      2
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "no-multi-spaces": [
+      2
+    ],
+    "no-mixed-spaces-and-tabs": [
+      2
+    ],
+    "semi": "error",
+    "no-redeclare": [
+      0
+    ],
+  }
+}
