@@ -116,7 +116,7 @@ dele(dist, () => {
   imgTask()
   jsonTask()
 
-  if (paths.node_env === 'dev') {
+  if (isDev) {
     // 開発中ならwatchとサーバーも走らせる
     watchTasks()
     serverTask()
