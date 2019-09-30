@@ -1,3 +1,8 @@
+/////
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+/////
+
 import setSns from '../modules/setSns'
 import checkImgsLoad from '../modules/checkImgsLoad'
 import Vue from 'vue'
