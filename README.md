@@ -89,7 +89,8 @@ top:
 * 「mixin」は共通の処理を格納
 * 「plugin」はpluginに付属するcssを格納
 * 「variables」は変数を格納
-* 「object」は実際のページのcssを格納、主にこちらを編集する
+* 「page」はページ固有のstyleを記述
+* 「object」は、component, project, utilityの３レイヤーに別れる
 
 ### ●includeフォルダ内
 
