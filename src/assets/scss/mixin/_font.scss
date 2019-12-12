@@ -2,3 +2,15 @@
 //////////////////////////////////////////
 // font
 //////////////////////////////////////////
+
+@mixin noto1{
+  // bold
+  font-family: $commonFont;
+  font-weight: 700;
+}
+
+@mixin noto2{
+  // bold
+  font-family: $commonFont;
+  font-weight: 900;
+}

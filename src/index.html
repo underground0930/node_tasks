@@ -6,7 +6,14 @@ const relativePath = '.';
 <%- include( relativePath + '/assets/include/_header', {pageid,relativePath}); -%>
 <div class="l-wrapper">
   <h1>top</h1>
-  <p>My page</p>
+  <ul class="p-list">
+    <li>My liage</li>
+    <li>あいうえお</li>
+    <li>春夏秋冬</li>
+  </ul>
+  <div class="p-movie">
+    <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
+  </div>
   <div id="app"></div>
   <!-- Slider main container -->
   <div class="swiper-container">
@@ -28,16 +35,5 @@ const relativePath = '.';
       <!-- If we need scrollbar -->
       <div class="swiper-scrollbar"></div>
   </div>
-  <ul>
-    <li>
-      <a class="tw" href="#">tw</a>
-    </li>
-    <li>
-      <a class="fb" href="#">fb</a>
-    </li>
-    <li>
-      <a class="line" href="#">line</a>
-    </li>
-  </ul>
 </div>
 <%- include( relativePath + '/assets/include/_footer',{pageid,relativePath}); -%>

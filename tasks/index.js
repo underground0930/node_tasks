@@ -45,6 +45,14 @@ const jsDist = paths.dist.js
 const cssSrc = paths.src.css
 const cssDist = paths.dist.css
 
+// font path
+const fontSrc = paths.src.font
+const fontDist = paths.dist.font
+
+// movie path
+const movieSrc = paths.src.movie
+const movieDist = paths.dist.movie
+
 /************************************************
 data
 ************************************************/
@@ -69,6 +77,15 @@ const imgTask = () => {
 const jsonTask = () => {
   copy(jsonSrc, jsonDist, '/**/*.json')
 }
+const fontTask = () => {
+  copy(fontSrc, fontDist, '/**/*.{woff,woff2,ttf,svg,eot}')
+}
+const libTask = () => {
+  copy(jsSrc, jsDist, '/plugins/**/*.js')
+}
+const movieTask = () => {
+  copy(movieSrc, movieDist, '/**/*.mp4')
+}
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
@@ -83,6 +100,12 @@ const watchTasks = () => {
   })
   watch(jsonSrc + '/**/*.json', f => {
     jsonTask()
+  })
+  watch(fontSrc + '/**/*', f => {
+    fontTask()
+  })
+  watch(jsSrc + '/plugins/**/*.js', f => {
+    libTask()
   })
 }
 
@@ -115,7 +138,9 @@ dele(dist, () => {
   cssTask()
   imgTask()
   jsonTask()
-
+  fontTask()
+  libTask()
+  movieTask()
   if (isDev) {
     // 開発中ならwatchとサーバーも走らせる
     watchTasks()

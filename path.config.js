@@ -24,7 +24,9 @@ const paths = {
     js: pr(`${rootDir}/src/assets/js`),
     css: pr(`${rootDir}/src/assets/scss`),
     img: pr(`${rootDir}/src/assets/img`),
-    json: pr(`${rootDir}/src/assets/json`)
+    json: pr(`${rootDir}/src/assets/json`),
+    font: pr(`${rootDir}/src/assets/fonts`),
+    movie: pr(`${rootDir}/src/assets/movie`)
   },
   dist: {
     root: pr(`${rootDir}/htdocs/${buildRoot}`),
@@ -32,7 +34,9 @@ const paths = {
     js: pr(`${rootDir}/htdocs/${buildRoot}/assets/js`),
     css: pr(`${rootDir}/htdocs/${buildRoot}/assets/css`),
     img: pr(`${rootDir}/htdocs/${buildRoot}/assets/img`),
-    json: pr(`${rootDir}/htdocs/${buildRoot}/assets/json`)
+    json: pr(`${rootDir}/htdocs/${buildRoot}/assets/json`),
+    font: pr(`${rootDir}/htdocs/${buildRoot}/assets/fonts`),
+    movie: pr(`${rootDir}/htdocs/${buildRoot}/assets/movie`)
   },
   node_env: NODE_ENV
 }
