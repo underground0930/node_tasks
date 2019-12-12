@@ -72,7 +72,7 @@ const cssTask = () => {
   sass(cssSrc, cssDist, isDev)
 }
 const imgTask = () => {
-  copy(imgSrc, imgDist, '/**/*.{jpg,png,gif}')
+  copy(imgSrc, imgDist, '/**/*.{jpg,png,gif,svg}')
 }
 const jsonTask = () => {
   copy(jsonSrc, jsonDist, '/**/*.json')
@@ -95,7 +95,7 @@ const watchTasks = () => {
   watch(cssSrc + '/**/*.scss', f => {
     cssTask()
   })
-  watch(imgSrc + '/**/*.{jpg,png,gif}', f => {
+  watch(imgSrc + '/**/*.{jpg,png,gif,svg}', f => {
     imgTask()
   })
   watch(jsonSrc + '/**/*.json', f => {
