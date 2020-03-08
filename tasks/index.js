@@ -120,11 +120,11 @@ const serverTask = () => {
     https: false // or true
   })
 
-  bs.watch(`${dist}/**/*.html`).on('change', bs.reload)
-  bs.watch(`${jsDist}/**/*.js`).on('change', bs.reload)
-  bs.watch(`${imgDist}/**/*.{png,jpg,gif}`).on('change', bs.reload)
-  bs.watch(`${jsonDist}/**/*.json`).on('change', bs.reload)
-  bs.watch(`${cssDist}/**/*.css`, (e, f) => {
+  bs.watch(`htdocs/**/*.html`).on('change', bs.reload)
+  bs.watch(`htdocs/**/*.js`).on('change', bs.reload)
+  bs.watch(`htdocs/**/*.{png,jpg,gif}`).on('change', bs.reload)
+  bs.watch(`htdocs/**/*.json`).on('change', bs.reload)
+  bs.watch(`htdocs/**/*.css`, (e, f) => {
     if (e === 'change') {
       bs.reload('*.css')
     }
