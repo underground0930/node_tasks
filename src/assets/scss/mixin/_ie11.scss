@@ -4,8 +4,8 @@
 //////////////////////////////////////////
 
 // for IE11 hack
-@mixin ie11() {
-  @media all and (-ms-high-contrast:none){
-      @content;
+@mixin ie11 (){
+  @at-root _:-ms-lang(x)::-ms-backdrop, &{
+    @content;
   }
 }
