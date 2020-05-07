@@ -3,13 +3,12 @@
 // TOP
 ////////////////////////
 .pg-top{
-  
+
 }
 .pg-top-section{
-
-  display: grid;
-  display: flex;
-  transform: scale(1);
+  @include ie11{
+    color:#f00;
+  }
 }
 
 @include max-screen($breakpoint) {
