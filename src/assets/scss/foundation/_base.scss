@@ -9,8 +9,7 @@
   font-style: normal;
   font-weight: 100;
   src: url('../fonts/notoSansJp/NotoSansJP-Thin.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Thin.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Thin.woff') format('woff');
 }
 @font-face {
   // light
@@ -18,8 +17,7 @@
   font-style: normal;
   font-weight: 300;
   src: url('../fonts/notoSansJp/NotoSansJP-Light.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Light.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Light.woff') format('woff');
 }
 @font-face {
   // regular
@@ -27,8 +25,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/notoSansJp/NotoSansJP-Regular.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Regular.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Regular.woff') format('woff');
 }
 @font-face {
   // medium
@@ -36,8 +33,7 @@
   font-style: normal;
   font-weight: 500;
   src: url('../fonts/notoSansJp/NotoSansJP-Medium.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Medium.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Medium.woff') format('woff');
 }
 @font-face {
   // bold
@@ -45,8 +41,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/notoSansJp/NotoSansJP-Bold.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Bold.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Bold.woff') format('woff');
 }
 @font-face {
   // black
@@ -54,8 +49,7 @@
   font-style: normal;
   font-weight: 900;
   src: url('../fonts/notoSansJp/NotoSansJP-Black.woff2') format('woff2'),
-        url('../fonts/notoSansJp/NotoSansJP-Black.woff') format('woff'),
-        url('../fonts/notoSansJp/NotoSansJP-Normal.otf') format('opentype');
+        url('../fonts/notoSansJp/NotoSansJP-Black.woff') format('woff');
 }
 
 html {
@@ -72,4 +66,7 @@ body {
   color: #000;
   line-height: 1.7;
   font-size:1.4rem;
+  @include max-screen($bp1){
+    background: pink;
+  }
 }
