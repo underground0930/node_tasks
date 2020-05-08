@@ -5,9 +5,8 @@
 
 .p-list{
   color:#000;
-  @include noto2;
 }
 
-@include max-screen($breakpoint) {
+@include max-screen($bp1) {
 
 }

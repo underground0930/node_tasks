@@ -70,9 +70,9 @@ webpackConfig = Object.assign(webpackConfig, {
           chunks: 'initial',
           enforce: true
         },
-        modules: {
-          test: path.resolve(paths.src.js + '/modules/'),
-          name: 'modules',
+        utils: {
+          test: path.resolve(paths.src.js + '/utils/'),
+          name: 'utils',
           chunks: 'initial',
           enforce: true
         }

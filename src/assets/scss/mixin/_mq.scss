@@ -3,67 +3,51 @@
 // mq
 //////////////////////////////////////////
 
-// @mixin min-screen
-// @description min-width -
-// @param $min-width {Number} 数値
-
+// more X width
 @mixin min-screen($min-width) {
-	@media screen and ( min-width: $min-width ) {
+	@media screen and ( min-width: $min-width + 'px' ) {
 		@content;
 	}
 }
 
-// @mixin max-screen
-// @description - max-width
-// @param $max-width {Number} 数値
-
+// less X width
 @mixin max-screen($max-width) {
-	@media screen and ( max-width: $max-width ) {
+	@media screen and ( max-width: $max-width + 'px' ) {
 		@content;
 	}
 }
 
-// @mixin screen
-// @description $min-width - $max-width
-// @param $min-width {Number} 数値
-// @param $max-width {Number} 数値
-
+// between X width and Y width
 @mixin screen($min-width, $max-width) {
-	@media screen and ( min-width: $min-width ) and ( max-width: $max-width ) {
+	@media screen and ( min-width: $min-width + 'px' ) and ( max-width: $max-width + 'px' ) {
 		@content;
 	}
 }
 
-// @mixin min-screen-h
-// @description min-height -
-// @param $min-height {Number} 数値
-
+// more X height
 @mixin min-sreen-h($min-height) {
-	@media screen and ( min-height: $min-height ) {
+	@media screen and ( min-height: $min-height + 'px' ) {
 		@content;
 	}
 }
 
-// @mixin max-screen-h
-// @description - max-height
-// @param $max-height {Number} 数値
-
+// less X height
 @mixin max-screen-h($max-height) {
-	@media screen and ( max-height: $max-height ) {
+	@media screen and ( max-height: $max-height + 'px' ) {
 		@content;
 	}
 }
 
-// @mixin screen-h
-// @description $min-height - $max-height
-// @param $min-height {Number} 数値
-// @param $max-height {Number} 数値
-
+// between X height and Y height
 @mixin screen-h($min-height, $max-height) {
-	@media screen and ( min-height: $min-height ) and ( max-height: $max-height ) {
+	@media screen and ( min-height: $min-height + 'px' ) and ( max-height: $max-height + 'px' ) {
 		@content;
 	}
 }
 
-
-
+// more X width and more Y height
+@mixin min-sreen-wh($min-width, $min-height) {
+	@media screen and (min-width: $min-width + 'px') and ( min-height: $min-height + 'px' ) {
+		@content;
+	}
+}
