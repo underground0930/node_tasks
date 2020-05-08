@@ -2,5 +2,4 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 /////
-
-console.log('detail')
+import global from '@/utils/global'
