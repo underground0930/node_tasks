@@ -1,0 +1,12 @@
+@charset "UTF-8";
+////////////////////////
+// wrapper
+////////////////////////
+
+.l-wrapper{
+  flex-grow: 1;
+}
+
+@include max-screen($bp1) {
+
+}
