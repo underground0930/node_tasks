@@ -2,7 +2,7 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 /////
-import global from '@/utils/global'
+
 import Vue from 'vue'
 import Swiper from 'swiper'
 
@@ -21,4 +21,4 @@ new Vue({
   render: h => h(App)
 })
 
-console.log(global)
+console.log(window)
