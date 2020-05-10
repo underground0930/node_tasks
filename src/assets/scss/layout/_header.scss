@@ -4,7 +4,15 @@
 ////////////////////////
 
 .l-header{
-
+  height: 50px;
+  background: #f00;
+  text-align: center;
+  p{
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+  }
 }
 
 @include max-screen($bp1) {
