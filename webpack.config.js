@@ -2,6 +2,8 @@ const path = require('path')
 const paths = require('./path.config')
 const { VueLoaderPlugin } = require('vue-loader')
 const webpack = require('webpack')
+const yaml = require('js-yaml') // yamlをjsに変換
+const fs = require('fs') // ファイルシステム
 
 let webpackConfig = {
   // prodの設定
@@ -82,7 +84,9 @@ webpackConfig = Object.assign(webpackConfig, {
   plugins: [
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
-      JSON_PATH: JSON.stringify('abc')
+      data: JSON.stringify(
+        yaml.safeLoad(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8'))
+      )
     })
   ],
   resolve: {

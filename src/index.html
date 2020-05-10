@@ -5,6 +5,9 @@ const relativePath = '.';
 <%- include( relativePath + '/assets/include/_head', {pageid,relativePath}); -%>
 <%- include( relativePath + '/assets/include/_header', {pageid,relativePath}); -%>
 <div class="l-wrapper">
+  <div class="p-kv">
+    <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
+  </div>
   <h1>top</h1>
   <div class="pg-top-section">
     文字
@@ -14,8 +17,10 @@ const relativePath = '.';
     <li>あいうえお</li>
     <li>春夏秋冬</li>
   </ul>
-  <div class="p-movie">
-    <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
+  <div>
+    <img class="img" src='https://placehold.jp/150x150.png' alt=''>
+    <img class="img" src='https://placehold.jp/150x150.png' alt=''>
+    <img class="img" src='https://placehold.jp/150x150.png' alt=''>
   </div>
   <div id="app"></div>
   <!-- Slider main container -->
