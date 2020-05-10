@@ -3,11 +3,11 @@ const path = require('path')
 const NODE_ENV = process.env.NODE_ENV
 
 // プロダクションビルドのディレクトリ
-let buildRoot = 'prod'
+let buildRoot = 'htdocs'
 
 // 開発中の場合はビルドされるディレクトリが変更される
 if (NODE_ENV === 'dev') {
-  buildRoot = 'dev'
+  buildRoot = 'htdocs_dev'
 }
 // ルートからのディレクトリを取得
 const rootDir = process.cwd()
@@ -29,14 +29,14 @@ const paths = {
     movie: pr(`${rootDir}/src/assets/movie`)
   },
   dist: {
-    root: pr(`${rootDir}/htdocs/${buildRoot}`),
-    assets: pr(`${rootDir}/htdocs/${buildRoot}/assets`),
-    js: pr(`${rootDir}/htdocs/${buildRoot}/assets/js`),
-    css: pr(`${rootDir}/htdocs/${buildRoot}/assets/css`),
-    img: pr(`${rootDir}/htdocs/${buildRoot}/assets/img`),
-    json: pr(`${rootDir}/htdocs/${buildRoot}/assets/json`),
-    font: pr(`${rootDir}/htdocs/${buildRoot}/assets/fonts`),
-    movie: pr(`${rootDir}/htdocs/${buildRoot}/assets/movie`)
+    root: pr(`${rootDir}/${buildRoot}`),
+    assets: pr(`${rootDir}/${buildRoot}/assets`),
+    js: pr(`${rootDir}/${buildRoot}/assets/js`),
+    css: pr(`${rootDir}/${buildRoot}/assets/css`),
+    img: pr(`${rootDir}/${buildRoot}/assets/img`),
+    json: pr(`${rootDir}/${buildRoot}/assets/json`),
+    font: pr(`${rootDir}/${buildRoot}/assets/fonts`),
+    movie: pr(`${rootDir}/${buildRoot}/assets/movie`)
   },
   node_env: NODE_ENV
 }
