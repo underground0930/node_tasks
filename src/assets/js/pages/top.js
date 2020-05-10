@@ -7,6 +7,7 @@ import Vue from 'vue'
 import Swiper from 'swiper'
 
 import checkImgsLoad from '@/utils/checkImgsLoad'
+import debounce from '@/utils/debounce'
 import App from '@/components/pages/top/App'
 
 const mySwiper = new Swiper('.swiper-container', {})
@@ -21,4 +22,8 @@ new Vue({
   render: h => h(App)
 })
 
-console.log(window)
+const d = debounce(() => {
+  console.log('resize!')
+})
+
+window.addEventListener('resize', d)
