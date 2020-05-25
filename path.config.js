@@ -1,14 +1,9 @@
 const path = require('path')
+const NODE_ENV = process.env.NODE_ENV // 環境変数を取得
 
-const NODE_ENV = process.env.NODE_ENV
+// 開発中と納品用でビルドディレクトリを変更する
+const buildRoot = NODE_ENV === 'dev' ? 'htdocs_dev' : 'htdocs'
 
-// プロダクションビルドのディレクトリ
-let buildRoot = 'htdocs'
-
-// 開発中の場合はビルドされるディレクトリが変更される
-if (NODE_ENV === 'dev') {
-  buildRoot = 'htdocs_dev'
-}
 // ルートからのディレクトリを取得
 const rootDir = process.cwd()
 
