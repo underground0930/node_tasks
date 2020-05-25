@@ -16,7 +16,7 @@ const copy = (rootSrcDir, rootDistDir, src) => {
       return
     }
     const resultArr = []
-    const length = files.length
+    const { length } = files
     let count = 0
     files.forEach(file => {
       const f = file.split(rootSrcDir)

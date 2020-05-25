@@ -20,7 +20,7 @@ const css = (src, dist, isDev) => {
       return
     }
     const resultArr = []
-    const length = files.length
+    const { length } = files
     let count = 0
     files.forEach(file => {
       sass.render(

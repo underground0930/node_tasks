@@ -6,12 +6,13 @@
 
 const del = require('del') // データの削除
 
-const dele = async (src, cb) => {
-  const deletedPaths = await del([src], {
-    force: true
-  })
+const dele = async src => {
+  console.log('■■■■■ delete task start ■■■■■')
+  const deletedPaths = await del([src], { force: true })
+
   console.log('Deleted files and directories:\n', deletedPaths.join('\n'))
-  cb() //削除が終わった時のコールバック
+  console.log('■■■■■ delete task end ■■■■■')
+  return
 }
 
 module.exports = dele

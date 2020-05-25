@@ -15,50 +15,14 @@ const html = require('./html') // 自作のhtmlタスク
 paths
 ************************************************/
 
-// 使いやすいようにそれぞれのパスを変数に入れ直す
-const paths = require('../path.config')
-
-// isDev
-const isDev = paths.node_env === 'dev' ? true : false
-
-// root path
-const src = paths.src.root
-const dist = paths.dist.root
-
-// assets path
-const assetsSrc = paths.src.assets
-const assetsDist = paths.dist.assets
-
-// img path
-const imgSrc = paths.src.img
-const imgDist = paths.dist.img
-
-// json path
-const jsonSrc = paths.src.json
-const jsonDist = paths.dist.json
-
-// js path
-const jsSrc = paths.src.js
-const jsDist = paths.dist.js
-
-// css path
-const cssSrc = paths.src.css
-const cssDist = paths.dist.css
-
-// font path
-const fontSrc = paths.src.font
-const fontDist = paths.dist.font
-
-// movie path
-const movieSrc = paths.src.movie
-const movieDist = paths.dist.movie
+const paths = require('../path.config') // 使いやすいようにそれぞれのパスを変数に入れ直す
+const isDev = paths.node_env === 'dev' ? true : false // isDev
 
 /************************************************
 data
 ************************************************/
-// ejsで使用するデータ
-let data = {}
-data = yaml.safeLoad(fs.readFileSync(assetsSrc + '/data/data.yaml', 'utf8'))
+
+const data = yaml.safeLoad(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8')) // ejsで使用するデータ
 
 /************************************************
 tasks
@@ -66,45 +30,45 @@ tasks
 
 // 各タスク を関数化
 const htmlTask = () => {
-  html(src, dist, data)
+  html(paths.src.root, paths.dist.root, data)
 }
 const cssTask = () => {
-  sass(cssSrc, cssDist, isDev)
+  sass(paths.src.css, paths.dist.css, isDev)
 }
 const imgTask = () => {
-  copy(imgSrc, imgDist, '/**/*.{jpg,png,gif,svg}')
+  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg}')
 }
 const jsonTask = () => {
-  copy(jsonSrc, jsonDist, '/**/*.json')
+  copy(paths.src.json, paths.dist.json, '/**/*.json')
 }
 const fontTask = () => {
-  copy(fontSrc, fontDist, '/**/*.{woff,woff2,ttf,svg,eot}')
+  copy(paths.src.font, paths.dist.font, '/**/*.{woff,woff2,ttf,svg,eot}')
 }
 const libTask = () => {
-  copy(jsSrc, jsDist, '/plugins/**/*.js')
+  copy(paths.src.js, paths.dist.js, '/plugins/**/*.js')
 }
 const movieTask = () => {
-  copy(movieSrc, movieDist, '/**/*.mp4')
+  copy(paths.src.movie, paths.dist.movie, '/**/*.mp4')
 }
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch(src + '/**/*.{html,ejs}', f => {
+  watch(paths.src.root + '/**/*.{html,ejs}', f => {
     htmlTask()
   })
-  watch(cssSrc + '/**/*.scss', f => {
+  watch(paths.src.css + '/**/*.scss', f => {
     cssTask()
   })
-  watch(imgSrc + '/**/*.{jpg,png,gif,svg}', f => {
+  watch(paths.src.img + '/**/*.{jpg,png,gif,svg}', f => {
     imgTask()
   })
-  watch(jsonSrc + '/**/*.json', f => {
+  watch(paths.src.json + '/**/*.json', f => {
     jsonTask()
   })
-  watch(fontSrc + '/**/*', f => {
+  watch(paths.src.font + '/**/*', f => {
     fontTask()
   })
-  watch(jsSrc + '/plugins/**/*.js', f => {
+  watch(paths.src.js + '/plugins/**/*.js', f => {
     libTask()
   })
 }
@@ -116,7 +80,7 @@ const serverTask = () => {
     notify: false,
     host: 'localhost',
     ghostMode: false,
-    server: [dist],
+    server: [paths.dist.root],
     https: false // or true
   })
 
@@ -132,8 +96,9 @@ const serverTask = () => {
 }
 
 // 古いデータを削除後に各タスクを走らせる
-dele(dist, () => {
+dele(paths.dist.root).then(() => {
   // 各タスク
+  console.log('■■■■■ build task start ■■■■■')
   htmlTask()
   cssTask()
   imgTask()

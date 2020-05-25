@@ -18,7 +18,7 @@ const html = (src, dist, data) => {
       return
     }
     const resultArr = []
-    const length = files.length
+    const { length } = files
     let count = 0
     files.forEach(file => {
       ejs.renderFile(file, { data }, { outputFunctionName: 'echo' }, (err, str) => {
