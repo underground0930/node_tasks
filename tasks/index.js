@@ -84,11 +84,11 @@ const serverTask = () => {
     https: false // or true
   })
 
-  bs.watch(`htdocs/**/*.html`).on('change', bs.reload)
-  bs.watch(`htdocs/**/*.js`).on('change', bs.reload)
-  bs.watch(`htdocs/**/*.{png,jpg,gif}`).on('change', bs.reload)
-  bs.watch(`htdocs/**/*.json`).on('change', bs.reload)
-  bs.watch(`htdocs/**/*.css`, (e, f) => {
+  bs.watch(paths.dist.root + `/**/*.html`).on('change', bs.reload)
+  bs.watch(paths.dist.assets + `/**/*.js`).on('change', bs.reload)
+  bs.watch(paths.dist.assets + `/**/*.{png,jpg,gif}`).on('change', bs.reload)
+  bs.watch(paths.dist.assets + `/**/*.json`).on('change', bs.reload)
+  bs.watch(paths.dist.assets + `/**/*.css`, (e, f) => {
     if (e === 'change') {
       bs.reload('*.css')
     }
@@ -96,7 +96,7 @@ const serverTask = () => {
 }
 
 // 古いデータを削除後に各タスクを走らせる
-dele(paths.dist.root).then(() => {
+dele([paths.dist.root + '/**', '!' + paths.dist.root]).then(() => {
   // 各タスク
   console.log('■■■■■ build task start ■■■■■')
   htmlTask()
