@@ -1,6 +1,6 @@
 /**
  * NodeListの判定
- * @param {NodeList, array} val - 判定する要素
+ * @param {NodeList, Array} val - 判定する要素
  * @return {Boolean}
  */
 
