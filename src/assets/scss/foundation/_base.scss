@@ -154,7 +154,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  @include max-screen($bp1){
-    background: pink;
+  @include ie11{
+    display: block;
   }
 }

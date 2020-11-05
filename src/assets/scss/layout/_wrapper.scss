@@ -5,6 +5,9 @@
 
 .l-wrapper{
   flex-grow: 1;
+  @include ie11{
+    flex-grow: initial;
+  }
 }
 
 @include max-screen($bp1) {

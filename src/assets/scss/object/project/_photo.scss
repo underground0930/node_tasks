@@ -1,0 +1,16 @@
+@charset "UTF-8";
+////////////////////////
+// photo
+////////////////////////
+
+.p-photos{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #ddd;
+  margin-bottom: 100px;
+}
+.p-photo{
+  width: 33.332%;
+  height: 150px;
+}

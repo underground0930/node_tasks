@@ -1,7 +1,7 @@
 /**
  *  DOM要素の判定
  * @param {Object} obj - 判定する要素
- * @param {Boolean};
+ * @param {Boolean} - dom要素か否か
  */
 
 const isNodeQ = obj => {

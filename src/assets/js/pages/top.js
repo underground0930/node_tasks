@@ -52,7 +52,6 @@ window.addEventListener('load', () => {
   const check = navChange()
   scrollCheck({
     targets: '.p-box',
-    once: false,
     options: {},
     callback: (entry, observer) => {
       const {
@@ -67,7 +66,6 @@ window.addEventListener('load', () => {
       if (entry.isIntersecting) {
         target.classList.add('is-show')
         check(entry.target)
-        console.log(intersectionRect)
         // observer.unobserve(entry.target)
         return
       }
