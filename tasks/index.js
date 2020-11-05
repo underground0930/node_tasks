@@ -59,7 +59,7 @@ const watchTasks = () => {
   watch(paths.src.css + '/**/*.scss', f => {
     cssTask()
   })
-  watch(paths.src.img + '/**/*.{jpg,png,gif,svg}', f => {
+  watch(paths.src.img + '/**/*.{jpg,png,gif,svg,ico}', f => {
     imgTask()
   })
   watch(paths.src.json + '/**/*.json', f => {
@@ -86,7 +86,7 @@ const serverTask = () => {
 
   bs.watch(paths.dist.root + `/**/*.html`).on('change', bs.reload)
   bs.watch(paths.dist.assets + `/**/*.js`).on('change', bs.reload)
-  bs.watch(paths.dist.assets + `/**/*.{png,jpg,gif}`).on('change', bs.reload)
+  bs.watch(paths.dist.assets + `/**/*.{png,jpg,gif,svg,ico}`).on('change', bs.reload)
   bs.watch(paths.dist.assets + `/**/*.json`).on('change', bs.reload)
   bs.watch(paths.dist.assets + `/**/*.css`, (e, f) => {
     if (e === 'change') {
