@@ -6,7 +6,7 @@
 
 const qsa = elm => {
   const $elm = document.querySelectorAll(elm)
-  return $elm ? Array.prototype.slice.call($elm, 0) : []
+  return Array.prototype.slice.call($elm, 0)
 }
 
 export default qsa

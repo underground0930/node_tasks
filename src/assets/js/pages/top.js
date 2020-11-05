@@ -8,6 +8,8 @@ import Swiper from 'swiper'
 
 import checkImgsLoad from '@/utils/checkImgsLoad'
 import debounce from '@/utils/debounce'
+import scrollCheck from '@/utils/scrollCheck'
+
 import App from '@/components/pages/top/App'
 
 const mySwiper = new Swiper('.swiper-container', {})
@@ -37,3 +39,39 @@ const d = debounce(() => {
 })
 
 window.addEventListener('resize', d)
+
+const navChange = () => {
+  const nav = document.querySelector('.p-boxNav')
+  return elm => {
+    const index = elm.dataset.id
+    nav.innerHTML = index
+  }
+}
+
+window.addEventListener('load', () => {
+  const check = navChange()
+  scrollCheck({
+    targets: '.p-box',
+    once: false,
+    options: {},
+    callback: (entry, observer) => {
+      const {
+        boundingClientRect,
+        intersectionRatio,
+        intersectionRect,
+        isIntersecting,
+        rootBounds,
+        target,
+        time
+      } = entry
+      if (entry.isIntersecting) {
+        target.classList.add('is-show')
+        check(entry.target)
+        console.log(intersectionRect)
+        // observer.unobserve(entry.target)
+        return
+      }
+      target.classList.remove('is-show')
+    }
+  })
+})

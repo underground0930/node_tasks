@@ -1,0 +1,39 @@
+@charset "UTF-8";
+////////////////////////
+// box
+////////////////////////
+
+.p-boxWrep{
+  display: flex;
+}
+
+.p-boxMain{
+  width:70%;
+}
+
+.p-boxSub{
+  position: relative;
+  flex:1;
+}
+
+.p-boxNav{
+  width:100px;
+  height: 100px;
+  background: #000;
+  position: sticky;
+  top:20px;
+  margin: 0 auto;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-box{
+  height: 800px;
+  border-top: 1px solid #f00;
+  transition: all 0.3s;
+  &.is-show{
+    background: pink;
+  }
+}
