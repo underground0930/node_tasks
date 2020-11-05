@@ -16,6 +16,16 @@ checkImgsLoad('.img', () => {
   console.log('img load complete!!!!!!!!!!!!')
 })
 
+checkImgsLoad({
+  selector: '.img',
+  callback: () => {
+    console.log('callback')
+  },
+  callbackFinish: () => {
+    console.log('callback Finish')
+  }
+})
+
 new Vue({
   el: '#app',
   components: { App },

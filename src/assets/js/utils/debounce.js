@@ -1,8 +1,8 @@
 /**
  * 処理を間引く
- * @param {function} callback - 呼びたい処理
- * @param {number} duration - 間引く間隔
- * @return {function} closer
+ * @param {Function} callback - 呼びたい処理
+ * @param {Number} duration - 間引く間隔
+ * @return {Function} - closer
  *
  */
 

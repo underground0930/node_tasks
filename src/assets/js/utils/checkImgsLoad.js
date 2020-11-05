@@ -1,15 +1,19 @@
 /**
  * 画像の読み込み判定
- * @param {string} selecor -
- * @param {function} callback - 画像読み込み後に呼び出す関数
+ * @param {String} selecor - ロード判定をしたい画像のセレクタ
+ * @param {Function} callback - 画像読み込み毎に呼び出す関数
+ * @param {Function} callbackFinish - 全ての画像を読み込み後に呼び出す関数
  */
 
 import qsa from './qsa'
 
-const checkImgsLoad = (selecor, callback) => {
-  let $elms = qsa(selecor)
-  $elms = Array.prototype.slice.call($elms)
+const checkImgsLoad = args => {
+  const { selector, callback, callbackFinish } = args
+  const $elms = qsa(selector)
   const len = $elms.length
+  const isCallbackFunc = typeof callback === 'function'
+  const isCallbackFinishFunc = typeof callbackFinish === 'function'
+
   let count = 0
 
   $elms.forEach(elm => {
@@ -25,11 +29,18 @@ const checkImgsLoad = (selecor, callback) => {
 
     $img.addEventListener('load', () => {
       count++
-      if (len === count) {
-        console.log('img load end')
+
+      if (isCallbackFunc) {
         callback()
       }
+
+      if (!isCallbackFinishFunc) return
+
+      if (len === count) {
+        callbackFinish()
+      }
     })
+
     $img.src = src
   })
 }
