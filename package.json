@@ -10,6 +10,9 @@
     "tasks:dev": "cross-env NODE_ENV=\"dev\" node ./tasks/index.js",
     "webpack:prod": "webpack",
     "webpack:dev": "cross-env NODE_ENV=\"dev\" webpack",
+    "optim": "npm run optim:png && npm run optim:jpg",
+    "optim:png": "find . -name '*.png' | xargs pngquant --ext .png --force -v",
+    "optim:jpg": "find . -name '*.jpg' | xargs jpegoptim --strip-all --max=90",
     "lint:ejs": "ejslint 'src/**/*.{ejs,html}'"
   },
   "browserslist": [
