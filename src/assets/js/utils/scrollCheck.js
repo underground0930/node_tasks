@@ -8,13 +8,28 @@ import loadScript from '@/utils/loadScript'
 
 /**
 // usage
-scrollCheck({
-  root: null,
-  rootMargin: "0px 0px",
-  threshold: [0.25]
-}, '.box', function (e) {
-  e.classList.add('is-show')
-});
+  scrollCheck({
+    targets: '.p-box',
+    options: {},
+    callback: (entry, observer) => {
+      const {
+        boundingClientRect,
+        intersectionRatio,
+        intersectionRect,
+        isIntersecting,
+        rootBounds,
+        target,
+        time
+      } = entry
+      if (entry.isIntersecting) {
+        target.classList.add('is-show')
+        check(entry.target)
+        // observer.unobserve(entry.target)
+        return
+      }
+      target.classList.remove('is-show')
+    }
+  })
  */
 
 const scrollCheck = args => {
