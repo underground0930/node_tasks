@@ -36,7 +36,7 @@ const cssTask = () => {
   sass(paths.src.css, paths.dist.css, isDev)
 }
 const imgTask = () => {
-  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg}')
+  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg,ico}')
 }
 const jsonTask = () => {
   copy(paths.src.json, paths.dist.json, '/**/*.json')
