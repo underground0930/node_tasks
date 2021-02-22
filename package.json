@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "node.js実装環境",
   "main": "index.js",
   "scripts": {

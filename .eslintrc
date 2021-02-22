@@ -1,5 +1,5 @@
 {
-    "parserOptions": {
+  "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2017
   },
@@ -21,7 +21,7 @@
     "JSON_PATH": true
   },
   "plugins": [
-    "vue",
+    "vue"
   ],
   "extends": [
     "eslint:recommended",
@@ -59,6 +59,6 @@
     "semi": "error",
     "no-redeclare": [
       0
-    ],
+    ]
   }
 }
