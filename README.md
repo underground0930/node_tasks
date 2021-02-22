@@ -60,7 +60,8 @@ $ npm run build
 
 ### ●data フォルダ内
 
-- data.yaml は、サイト全体で使用するデータと、各ページの meta 情報を記述します。
+- data.yaml は、サイト全体で使用するデータを記述します。
+- プロジェクトディレクトリがサブディレクトリの場合は、(http://example.co.jp/hoge/) 「root」を使用してください。
 
 ```bash
 #CONFIG
@@ -68,18 +69,6 @@ sitename: "example site"
 host: "http://example.co.jp"
 root: ""
 ogp: "/assets/img/ogp.png"
-time: 1
-
-#TOP
-top:
-  url: "/"
-  title: "top title"
-  keywords: "keywords top"
-  description: "description top"
-  ogType: "website"
-  ogp: "/assets/img/top/ogp.png"
-  bodyClass: "top"
-  script: "top"
 
 ```
 
@@ -121,13 +110,25 @@ top:
 ## ■html について
 
 - ejs を使用しています。共通部分などをパーツ化することが目的です。
-- 「pageid」はサイト固有の値をそれぞれ入れてください。
+- 「id」はページ固有の値です。bodyのid属性に使用します。ページごとにユニークにしてください。
+- 「class」はページ固有の値です。bodyのclass属性に使用します。第一階層ごとに分けてください。読み込むjsのパスにも使用します。
+- 「title」ページタイトルに使用します。
+- 「description」ページdescriptionに使用します。
+- 「url」og:urlに使用します。相対パスで記述してください。
 - 「relativePath」は相対パス対応の値です。ディレクトリごとに変更してください。
+- 「ogp」は相対パス対応の値です。ページで独自のog:imageを使用したい時に指定してください。空だと、共通のogpが読み込まれます。
 
 ```bash
 <%
-const pageid = 'top';
-const relativePath = '..';
+  const page = {
+    id: 'about-index',
+    class: 'about',
+    title: 'top title',
+    description: 'top description',
+    url: '/',
+    ogp: '',
+    relativePath: '.',
+  }
 %>
 
 ```
