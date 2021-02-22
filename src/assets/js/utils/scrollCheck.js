@@ -58,8 +58,6 @@ const scrollCheck = args => {
 
   if (window.IntersectionObserver) {
     setObserver()
-  } else {
-    loadScript('https://polyfill.io/v3/polyfill.js?features=IntersectionObserver', setObserver)
   }
 }
 
