@@ -1,9 +1,16 @@
 <%
-const pageid = 'top';
-const relativePath = '.';
+  const page = {
+    id: 'top',
+    title: 'top title',
+    description: 'top description',
+    class: 'top',
+    url: '/',
+    relativePath: '.',
+    ogp: ''
+  }
 %>
-<%- include( relativePath + '/assets/include/_head', {pageid,relativePath}); -%>
-<%- include( relativePath + '/assets/include/_header', {pageid,relativePath}); -%>
+<%- include( page.relativePath + '/assets/include/_head', {page}); -%>
+<%- include( page.relativePath + '/assets/include/_header', {page}); -%>
 <div class="l-wrapper">
   <div class="p-kv">
     <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
@@ -77,4 +84,4 @@ const relativePath = '.';
   </div>
 
 </div>
-<%- include( relativePath + '/assets/include/_footer',{pageid,relativePath}); -%>
+<%- include( page.relativePath + '/assets/include/_footer',{page}); -%>

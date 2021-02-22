@@ -3,26 +3,3 @@ sitename: "example site"
 host: "http://example.co.jp"
 root: ""
 ogp: "/assets/img/ogp.png"
-time: 1
-
-#TOP
-top:
-  url: "/"
-  title: "top title"
-  keywords: "keywords top"
-  description: "description top"
-  ogType: "website"
-  ogp: "/assets/img/top/ogp.png"
-  bodyClass: "top"
-  script: "top"
-
-#DETAIL
-detail:
-  url: "/detail/"
-  title: "detail title"
-  keywords: "keywords detail"
-  description: "description detail"
-  ogType: "article"
-  ogp: "/assets/img/detail1/ogp.png"
-  bodyClass: "detail"
-  script: "detail"
