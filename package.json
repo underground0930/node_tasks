@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "description": "node.js実装環境",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "@babel/runtime-corejs3": "^7.12.5",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "chokidar": "^3.4.3",
     "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
@@ -57,6 +57,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "intersection-observer": "^0.11.0",
+    "objectFitPolyfill": "^2.3.5",
     "swiper": "^5.4.5",
     "vue": "^2.6.12"
   }
