@@ -9,25 +9,28 @@
 
 import qsa from './qsa';
 
-const setSns = (props) => {
-  let description = document.querySelector('meta[name="description"]')
-  if(description === null) return;
+const setSns = (props: {
+  tw: string, fb: string, line: string
+}) => {
+  const {tw,fb,line} = props;
+  let description = document.querySelector('meta[name="description"]')?.getAttribute('descrition')
+  if(!description) return;
   const detail = encodeURIComponent(description);
-  let { tw, fb, line } = props;
-  const url = encodeURIComponent(document.URL);
-  tw = qsa(tw);
-  fb = qsa(fb);
-  line = qsa(line);
 
-  tw.forEach((e: any) => {
+  const url = encodeURIComponent(document.URL);
+  const twElms = qsa(tw);
+  const fbElms = qsa(fb);
+  const lineElms = qsa(line);
+
+  twElms.forEach((e: HTMLElement) => {
     e.setAttribute('href', 'https://twitter.com/share?url=' + url + '&text=' + detail);
   });
 
-  fb.forEach((e) => {
+  fbElms.forEach((e: HTMLElement) => {
     e.setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + url);
   });
 
-  line.forEach((e) => {
+  lineElms.forEach((e: HTMLElement) => {
     e.setAttribute('href', 'http://line.me/R/msg/text/?' + detail + '%20' + url);
   });
 };

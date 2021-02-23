@@ -27,7 +27,7 @@ window.addEventListener('resize', d);
 const navChange = () => {
   const nav = document.querySelector('.p-boxNav');
   if(nav === null) return false;
-  return (elm) => {
+  return (elm:any) => {
     const index = elm.dataset.id;
     nav.innerHTML = index;
   };
@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
   scrollCheck({
     targets: '.p-box',
     options: {},
-    callback: (entry, observer) => {
+    callback: (entry:any, observer:any) => {
       const {
         boundingClientRect,
         intersectionRatio,
@@ -59,3 +59,4 @@ window.addEventListener('load', () => {
     },
   });
 });
+

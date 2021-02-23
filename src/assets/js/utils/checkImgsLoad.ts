@@ -15,7 +15,7 @@ type props = {
 import qsa from './qsa';
 
 const checkImgsLoad = ({selector,callback,callbackFinish}:props) => {
-  const $elms = qsa(selector);
+  const $elms = qsa(selector) as HTMLImageElement[];
   const len = $elms.length;
   const isCallbackFunc = typeof callback === 'function';
   const isCallbackFinishFunc = typeof callbackFinish === 'function';

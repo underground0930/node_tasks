@@ -4,7 +4,7 @@
  * @returns {Array} - nodeListを配列に直したもの
  */
 
-const qsa = (elm:string) => {
+const qsa = (elm:string):HTMLElement[] => {
   const $elm = document.querySelectorAll(elm);
   return Array.prototype.slice.call($elm, 0);
 };
