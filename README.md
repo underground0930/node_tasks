@@ -41,8 +41,8 @@ $ npm run build
 
 ## ■ ディレクトリ構成
 
-<b>src ディレクトリ以下を編集してください。</b>
-<b>htdocs ディレクトリ以下をデータが生成されます。</b>
+**src ディレクトリ以下を編集してください。**
+**htdocs ディレクトリ以下をデータが生成されます。**
 
 ### ●js フォルダ内
 
@@ -61,7 +61,7 @@ $ npm run build
 ### ●data フォルダ内
 
 - data.yaml は、サイト全体で使用するデータを記述します。
-- プロジェクトディレクトリがサブディレクトリの場合は、(http://example.co.jp/hoge/) 「root」を使用してください。
+- プロジェクトディレクトリがサブディレクトリの場合は、(`http://example.co.jp/hoge/`) 「root」を使用してください。
 
 ```bash
 #CONFIG
@@ -97,13 +97,13 @@ ogp: "/assets/img/ogp.png"
 
 ## ■css について
 
-- <b>scss</b>を使用します。
-- <b>node-sass-globbing</b>を使用しているので、scss ファイル内で glob が使用できます。
-- <b>autoprefixer</b>を使用しています。
+- **scss**を使用します。
+- **node-sass-globbing**を使用しているので、scss ファイル内で glob が使用できます。
+- **autoprefixer**を使用しています。
 - /src/assets/scss 内にのみ css を記述してください。
 - vue コンポーネント内での css の記述はしません.(css ファイルを１つにまとめるため)
-- <b>scoped</b>オプションは使用しません。css 編集のたびに html も変更されるためです。
-- 記法は<b>bem</b>, <b>flocss</b>を使用します。
+- **scoped**オプションは使用しません。css 編集のたびに html も変更されるためです。
+- 記法は**bem**, **flocss**を使用します。
 - flocss の project に当たる部分を、page にしています。各ページごとに style を分けてください。
 - ページをまたいで使用されるコンポーネントのスタイルについては component ディレクトリ内に scss ファイルを作成してください。
 
@@ -128,7 +128,7 @@ ogp: "/assets/img/ogp.png"
     url: '/',
     ogp: '',
     relativePath: '.',
-  }
+  };
 %>
 
 ```
