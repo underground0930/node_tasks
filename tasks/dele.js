@@ -6,7 +6,7 @@
 
 const del = require('del'); // データの削除
 
-const dele = async src => {
+const dele = async (src) => {
   console.log('■■■■■ delete task start ■■■■■');
   const deletedPaths = await del(src, { force: false });
 

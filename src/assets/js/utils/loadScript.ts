@@ -4,7 +4,7 @@
  * @param {Function} callback - 読み込み後に実行する関数
  */
 
-const loadScript = (src, callback) => {
+const loadScript = (src:string, callback:()=> void) => {
   const head = document.head;
   const script = document.createElement('script');
   script.src = src;

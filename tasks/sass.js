@@ -22,12 +22,12 @@ const css = (src, dist, isDev) => {
     const resultArr = [];
     const { length } = files;
     let count = 0;
-    files.forEach(file => {
+    files.forEach((file) => {
       sass.render(
         {
           importer: [],
           file,
-          outputStyle: isDev ? 'expanded' : 'compressed'
+          outputStyle: isDev ? 'expanded' : 'compressed',
         },
         (error, resultSass) => {
           if (error) {
@@ -44,8 +44,8 @@ const css = (src, dist, isDev) => {
           }
           postcss([autoprefixer]) // postcssのプラグインのautoprefixerを設定
             .process(resultSass.css, { from: undefined })
-            .then(resultPost => {
-              fs.writeFile(filename, resultPost.css, err => {
+            .then((resultPost) => {
+              fs.writeFile(filename, resultPost.css, (err) => {
                 // ファイルに書き込む処理
                 if (err) throw err;
                 resultArr.push(f[1]);

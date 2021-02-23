@@ -47,6 +47,7 @@ const scrollCheck = args => {
   };
   const setObserver = () => {
     let sections = document.querySelectorAll(targets);
+    if(!sections) return;
     sections = Array.prototype.slice.call(sections, 0);
     const observer = new IntersectionObserver(setCallback, margeOptions);
     sections.forEach(section => {

@@ -1,22 +1,11 @@
-/////
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-/////
 
-import Vue from 'vue';
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
 
-import checkImgsLoad from '@/utils/checkImgsLoad';
-import debounce from '@/utils/debounce';
-import scrollCheck from '@/utils/scrollCheck';
+import checkImgsLoad from '../utils/checkImgsLoad';
+import debounce from '../utils/debounce';
+import scrollCheck from '../utils/scrollCheck';
 
-import App from '@/components/pages/top/App';
-
-const mySwiper = new Swiper('.swiper-container', {});
-
-checkImgsLoad('.img', () => {
-  console.log('img load complete!!!!!!!!!!!!');
-});
+// const mySwiper = new Swiper('.swiper-container', {});
 
 checkImgsLoad({
   selector: '.img',
@@ -25,14 +14,9 @@ checkImgsLoad({
   },
   callbackFinish: () => {
     console.log('callback Finish');
-  }
+  },
 });
 
-new Vue({
-  el: '#app',
-  components: { App },
-  render: h => h(App)
-});
 
 const d = debounce(() => {
   console.log('resize!');
@@ -42,7 +26,8 @@ window.addEventListener('resize', d);
 
 const navChange = () => {
   const nav = document.querySelector('.p-boxNav');
-  return elm => {
+  if(nav === null) return false;
+  return (elm) => {
     const index = elm.dataset.id;
     nav.innerHTML = index;
   };
@@ -50,6 +35,7 @@ const navChange = () => {
 
 window.addEventListener('load', () => {
   const check = navChange();
+  if(!check) return;
   scrollCheck({
     targets: '.p-box',
     options: {},
@@ -61,7 +47,7 @@ window.addEventListener('load', () => {
         isIntersecting,
         rootBounds,
         target,
-        time
+        time,
       } = entry;
       if (entry.isIntersecting) {
         target.classList.add('is-show');
@@ -70,6 +56,6 @@ window.addEventListener('load', () => {
         return;
       }
       target.classList.remove('is-show');
-    }
+    },
   });
 });

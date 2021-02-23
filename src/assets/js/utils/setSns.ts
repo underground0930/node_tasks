@@ -9,25 +9,25 @@
 
 import qsa from './qsa';
 
-const setSns = props => {
-  const detail = encodeURIComponent(
-    document.querySelector('meta[name="description"]').getAttribute('content')
-  );
+const setSns = (props) => {
+  let description = document.querySelector('meta[name="description"]')
+  if(description === null) return;
+  const detail = encodeURIComponent(description);
   let { tw, fb, line } = props;
   const url = encodeURIComponent(document.URL);
   tw = qsa(tw);
   fb = qsa(fb);
   line = qsa(line);
 
-  tw.forEach(e => {
+  tw.forEach((e: any) => {
     e.setAttribute('href', 'https://twitter.com/share?url=' + url + '&text=' + detail);
   });
 
-  fb.forEach(e => {
+  fb.forEach((e) => {
     e.setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + url);
   });
 
-  line.forEach(e => {
+  line.forEach((e) => {
     e.setAttribute('href', 'http://line.me/R/msg/text/?' + detail + '%20' + url);
   });
 };

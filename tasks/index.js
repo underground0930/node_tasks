@@ -22,7 +22,7 @@ const isDev = paths.node_env === 'dev' ? true : false; // isDev
 data
 ************************************************/
 
-const data = yaml.safeLoad(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8')); // ejsで使用するデータ
+const data = yaml.load(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8')); // ejsで使用するデータ
 
 /************************************************
 tasks
@@ -53,22 +53,22 @@ const movieTask = () => {
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch(paths.src.root + '/**/*.{html,ejs}', f => {
+  watch(paths.src.root + '/**/*.{html,ejs}', () => {
     htmlTask();
   });
-  watch(paths.src.css + '/**/*.scss', f => {
+  watch(paths.src.css + '/**/*.scss', () => {
     cssTask();
   });
-  watch(paths.src.img + '/**/*.{jpg,png,gif,svg,ico}', f => {
+  watch(paths.src.img + '/**/*.{jpg,png,gif,svg,ico}', () => {
     imgTask();
   });
-  watch(paths.src.json + '/**/*.json', f => {
+  watch(paths.src.json + '/**/*.json', () => {
     jsonTask();
   });
-  watch(paths.src.font + '/**/*', f => {
+  watch(paths.src.font + '/**/*', () => {
     fontTask();
   });
-  watch(paths.src.js + '/plugins/**/*.js', f => {
+  watch(paths.src.js + '/plugins/**/*.js', () => {
     libTask();
   });
 };
@@ -81,14 +81,14 @@ const serverTask = () => {
     host: 'localhost',
     ghostMode: false,
     server: [paths.dist.root],
-    https: false // or true
+    https: false, // or true
   });
 
-  bs.watch(paths.dist.root + `/**/*.html`).on('change', bs.reload);
-  bs.watch(paths.dist.assets + `/**/*.js`).on('change', bs.reload);
-  bs.watch(paths.dist.assets + `/**/*.{png,jpg,gif,svg,ico}`).on('change', bs.reload);
-  bs.watch(paths.dist.assets + `/**/*.json`).on('change', bs.reload);
-  bs.watch(paths.dist.assets + `/**/*.css`, (e, f) => {
+  bs.watch(paths.dist.root + '/**/*.html').on('change', bs.reload);
+  bs.watch(paths.dist.assets + '/**/*.js').on('change', bs.reload);
+  bs.watch(paths.dist.assets + '/**/*.{png,jpg,gif,svg,ico}').on('change', bs.reload);
+  bs.watch(paths.dist.assets + '/**/*.json').on('change', bs.reload);
+  bs.watch(paths.dist.assets + '/**/*.css', (e, f) => {
     if (e === 'change') {
       bs.reload('*.css');
     }

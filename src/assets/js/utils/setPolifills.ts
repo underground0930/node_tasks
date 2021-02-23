@@ -2,7 +2,7 @@
  * レガシーブラウザ用のポリフィル
  */
 
-import loadScript from '@/utils/loadScript';
+import loadScript from '../utils/loadScript';
 
 const setPolifills = () => {
   const array = [
@@ -12,7 +12,7 @@ const setPolifills = () => {
       callback: () => {
         var someImages = document.querySelectorAll('.is-objectFit-cover');
         window.objectFitImages(someImages);
-      }
+      },
     },
     {
       name: 'stickyfill',
@@ -20,25 +20,25 @@ const setPolifills = () => {
       callback: () => {
         const elements = document.querySelectorAll('.is-sticky');
         window.Stickyfill.add(elements);
-      }
+      },
     },
-    {
-      name: 'css-vars-ponyfill',
-      url:
-        'https://cdnjs.cloudflare.com/ajax/libs/css-vars-ponyfill/2.3.2/css-vars-ponyfill.min.js', // css-variables
-      callback: () => {
-        window.cssVars({
-          rootElement: document
-        });
-      }
-    },
+    // {
+    //   name: 'css-vars-ponyfill',
+    //   url:
+    //     'https://cdnjs.cloudflare.com/ajax/libs/css-vars-ponyfill/2.3.2/css-vars-ponyfill.min.js', // css-variables
+    //   callback: () => {
+    //     window.cssVars({
+    //       rootElement: document,
+    //     });
+    //   },
+    // },
     {
       name: 'Picturefill',
-      url: 'https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.js' // picture
-    }
+      url: 'https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.js', // picture
+    },
   ];
   window.addEventListener('DOMContentLoaded', () => {
-    array.forEach(item => {
+    array.forEach((item) => {
       loadScript(item.url, () => {
         console.log(item.name + ' is load');
         if (item.callback) {

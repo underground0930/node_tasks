@@ -1,8 +1,9 @@
 {
   "name": "node_tasks",
-  "version": "1.7.1",
+  "version": "2.0.0",
   "description": "node.js実装環境",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "run-p webpack:prod tasks:prod",
     "dev": "run-p webpack:dev tasks:dev",
@@ -22,16 +23,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/plugin-transform-object-assign": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/register": "^7.12.1",
-    "@babel/runtime-corejs3": "^7.12.5",
+    "@types/autoprefixer": "^10.2.0",
+    "@types/browser-sync": "^2.26.1",
+    "@types/fs-extra": "^9.0.7",
+    "@types/js-yaml": "^4.0.0",
+    "@types/sass": "^1.16.0",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.14",
     "chokidar": "^3.4.3",
     "cross-env": "^7.0.3",
@@ -44,12 +41,11 @@
     "eslint-plugin-prettier": "^3.1.4",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
-    "js-yaml": "^3.14.0",
+    "js-yaml": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.35",
     "sass": "^1.32.8",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12",
+    "typescript": "^4.1.5",
     "webpack": "^5.24.0",
     "webpack-cli": "^4.5.0"
   },
@@ -57,7 +53,8 @@
     "core-js": "^3.6.5",
     "intersection-observer": "^0.11.0",
     "objectFitPolyfill": "^2.3.5",
+    "source-map-loader": "^2.0.1",
     "swiper": "^5.4.5",
-    "vue": "^2.6.12"
+    "ts-loader": "^8.0.17"
   }
 }
