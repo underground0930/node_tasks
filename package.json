@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "node.js実装環境",
   "main": "index.js",
   "scripts": {
@@ -45,10 +45,10 @@
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
     "js-yaml": "^3.14.0",
-    "node-sass": "^5.0.0",
     "node-sass-globbing": "0.0.23",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.35",
+    "sass": "^1.32.8",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.24.0",

@@ -5,11 +5,12 @@
  * @param {boolean} isDev - 開発フラグの有無
  */
 
-const sass = require('node-sass'); // node用 sass
+const sass = require('sass'); // node用 sass
 const nodeSassGlobbing = require('node-sass-globbing'); // sassファイル内でglobを使用する
 const postcss = require('postcss'); // autoprefixerに必要
 const autoprefixer = require('autoprefixer'); // cssにプレフィックスをつける
 const fs = require('fs-extra'); // ディレクトリを再帰的に作成
+const path = require('path');
 const glob = require('glob'); // ファイル名のパターンマッチング
 
 const css = (src, dist, isDev) => {
