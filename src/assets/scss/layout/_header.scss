@@ -3,6 +3,8 @@
 // header
 ////////////////////////
 
+@use '../global' as g;
+
 .l-header{
   height: 50px;
   background: #f00;
@@ -15,7 +17,7 @@
   }
 }
 
-@include max-screen($bp1) {
+@include g.max-screen(g.$bp1) {
 
 }
 

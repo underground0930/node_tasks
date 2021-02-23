@@ -3,6 +3,8 @@
 // box
 ////////////////////////
 
+@use '../../global' as g;
+
 .p-boxWrep{
   display: flex;
 }

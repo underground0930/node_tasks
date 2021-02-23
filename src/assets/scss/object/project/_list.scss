@@ -3,10 +3,12 @@
 // list
 ////////////////////////
 
+@use '../../global' as g;
+
 .p-list{
   color:#000;
 }
 
-@include max-screen($bp1) {
+@include g.max-screen(g.$bp1) {
 
 }

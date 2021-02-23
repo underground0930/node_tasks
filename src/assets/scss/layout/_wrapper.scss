@@ -3,13 +3,15 @@
 // wrapper
 ////////////////////////
 
+@use '../global' as g;
+
 .l-wrapper{
   flex-grow: 1;
-  @include IE{
+  @include g.IE{
     flex-grow: initial;
   }
 }
 
-@include max-screen($bp1) {
+@include g.max-screen(g.$bp1) {
 
 }

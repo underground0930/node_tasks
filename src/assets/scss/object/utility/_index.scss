@@ -3,6 +3,8 @@
 // utility
 ////////////////////////
 
+@use '../../global' as g;
+
 .mb0{
   margin-bottom: 0px;
 }
@@ -21,3 +23,4 @@
 	object-fit: contain;
 	font-family: 'object-fit: contain;';
 }
+

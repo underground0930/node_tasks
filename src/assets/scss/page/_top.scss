@@ -2,15 +2,18 @@
 ////////////////////////
 // TOP
 ////////////////////////
+
+@use '../global' as g;
+
 .pg-top{
 
 }
 .pg-top-section{
-  @include IE{
+  @include g.IE{
     color:#f00;
   }
 }
 
-@include max-screen($bp1) {
+@include g.max-screen(g.$bp1) {
 
 }

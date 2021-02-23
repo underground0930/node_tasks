@@ -3,6 +3,8 @@
 // photo
 ////////////////////////
 
+@use '../../global' as g;
+
 .p-photos{
   display: flex;
   flex-wrap: wrap;
