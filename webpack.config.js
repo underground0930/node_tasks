@@ -1,21 +1,21 @@
-const path = require('path')
-const paths = require('./path.config')
-const { VueLoaderPlugin } = require('vue-loader')
-const webpack = require('webpack')
-const yaml = require('js-yaml') // yamlをjsに変換
-const fs = require('fs') // ファイルシステム
+const path = require('path');
+const paths = require('./path.config');
+const { VueLoaderPlugin } = require('vue-loader');
+const webpack = require('webpack');
+const yaml = require('js-yaml'); // yamlをjsに変換
+const fs = require('fs'); // ファイルシステム
 
 let webpackConfig = {
   // prodの設定
   mode: 'production'
-}
+};
 if (paths.node_env === 'dev') {
   // devの設定
   webpackConfig = {
     devtool: 'inline-source-map',
     watch: true,
     mode: 'development'
-  }
+  };
 }
 
 webpackConfig = Object.assign(webpackConfig, {
@@ -26,8 +26,7 @@ webpackConfig = Object.assign(webpackConfig, {
   },
   output: {
     filename: '[name].bundle.js',
-    path: paths.dist.js,
-    jsonpFunction: 'webpackJsonpData'
+    path: paths.dist.js
   },
   module: {
     // Loaderの設定
@@ -99,6 +98,6 @@ webpackConfig = Object.assign(webpackConfig, {
     maxAssetSize: 9000000,
     maxEntrypointSize: 9000000
   }
-})
+});
 
-module.exports = webpackConfig
+module.exports = webpackConfig;
