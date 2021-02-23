@@ -6,7 +6,7 @@
 
 }
 .pg-top-section{
-  @include ie11{
+  @include IE{
     color:#f00;
   }
 }

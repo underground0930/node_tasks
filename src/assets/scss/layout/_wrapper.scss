@@ -5,7 +5,7 @@
 
 .l-wrapper{
   flex-grow: 1;
-  @include ie11{
+  @include IE{
     flex-grow: initial;
   }
 }

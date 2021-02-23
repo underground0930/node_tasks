@@ -1,11 +1,11 @@
 @charset "UTF-8";
 //////////////////////////////////////////
-// ie11
+// IE
 //////////////////////////////////////////
 
-// for IE11 hack
-@mixin ie11 (){
-  @at-root _:-ms-lang(x)::-ms-backdrop, &{
+// for IE
+@mixin IE (){
+  @at-root html.is-IE &{
     @content;
   }
 }
