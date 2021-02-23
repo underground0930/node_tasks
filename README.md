@@ -76,11 +76,9 @@ ogp: "/assets/img/ogp.png"
 
 - 「foundation」はサイト全体の reset や base となる css を格納
 - 「layout」は header,footer,wrapper などの css を格納
-- 「mixin」は共通の処理を格納
-- 「plugin」は plugin に付属する css を格納
-- 「variables」は変数を格納
-- 「page」はページ固有の style を記述
+- 「global」に全体で使用する変数やmixinを格納
 - 「object」は、component, project, utility の３レイヤーに別れる
+- 「page」はページ固有の style を記述
 
 ### ●include フォルダ内
 
@@ -98,13 +96,10 @@ ogp: "/assets/img/ogp.png"
 ## ■css について
 
 - **scss**を使用します。
-- **node-sass-globbing**を使用しているので、scss ファイル内で glob が使用できます。
 - **autoprefixer**を使用しています。
 - /src/assets/scss 内にのみ css を記述してください。
 - vue コンポーネント内での css の記述はしません.(css ファイルを１つにまとめるため)
-- **scoped**オプションは使用しません。css 編集のたびに html も変更されるためです。
 - 記法は**bem**, **flocss**を使用します。
-- flocss の project に当たる部分を、page にしています。各ページごとに style を分けてください。
 - ページをまたいで使用されるコンポーネントのスタイルについては component ディレクトリ内に scss ファイルを作成してください。
 
 ## ■html について

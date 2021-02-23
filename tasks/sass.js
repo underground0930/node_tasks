@@ -6,7 +6,6 @@
  */
 
 const sass = require('sass'); // node用 sass
-const nodeSassGlobbing = require('node-sass-globbing'); // sassファイル内でglobを使用する
 const postcss = require('postcss'); // autoprefixerに必要
 const autoprefixer = require('autoprefixer'); // cssにプレフィックスをつける
 const fs = require('fs-extra'); // ディレクトリを再帰的に作成
@@ -26,7 +25,7 @@ const css = (src, dist, isDev) => {
     files.forEach(file => {
       sass.render(
         {
-          importer: nodeSassGlobbing,
+          importer: [],
           file,
           outputStyle: isDev ? 'expanded' : 'compressed'
         },
