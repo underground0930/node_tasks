@@ -5,44 +5,44 @@
  * @param {Function} callbackFinish - 全ての画像を読み込み後に呼び出す関数
  */
 
-import qsa from './qsa'
+import qsa from './qsa';
 
 const checkImgsLoad = args => {
-  const { selector, callback, callbackFinish } = args
-  const $elms = qsa(selector)
-  const len = $elms.length
-  const isCallbackFunc = typeof callback === 'function'
-  const isCallbackFinishFunc = typeof callbackFinish === 'function'
+  const { selector, callback, callbackFinish } = args;
+  const $elms = qsa(selector);
+  const len = $elms.length;
+  const isCallbackFunc = typeof callback === 'function';
+  const isCallbackFinishFunc = typeof callbackFinish === 'function';
 
-  let count = 0
+  let count = 0;
 
   $elms.forEach(elm => {
-    let src
-    const $img = document.createElement('img')
+    let src;
+    const $img = document.createElement('img');
 
     if (elm.tagName === 'IMG') {
-      src = elm.src
+      src = elm.src;
     } else {
-      src = getComputedStyle(elm, '').backgroundImage
-      src = src.replace(/url\(|\)|"|'/g, '')
+      src = getComputedStyle(elm, '').backgroundImage;
+      src = src.replace(/url\(|\)|"|'/g, '');
     }
 
     $img.addEventListener('load', () => {
-      count++
+      count++;
 
       if (isCallbackFunc) {
-        callback()
+        callback();
       }
 
-      if (!isCallbackFinishFunc) return
+      if (!isCallbackFinishFunc) return;
 
       if (len === count) {
-        callbackFinish()
+        callbackFinish();
       }
-    })
+    });
 
-    $img.src = src
-  })
-}
+    $img.src = src;
+  });
+};
 
-export default checkImgsLoad
+export default checkImgsLoad;

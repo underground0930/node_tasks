@@ -5,10 +5,10 @@
  */
 
 const checkIE = () => {
-  const ua = window.navigator.userAgent.toLowerCase()
-  const isIE = ua.indexOf('msie') >= 0 || ua.indexOf('trident') >= 0
+  const ua = window.navigator.userAgent.toLowerCase();
+  const isIE = ua.indexOf('msie') >= 0 || ua.indexOf('trident') >= 0;
 
-  return isIE
-}
+  return isIE;
+};
 
-export default checkIE
+export default checkIE;

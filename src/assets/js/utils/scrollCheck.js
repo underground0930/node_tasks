@@ -4,8 +4,6 @@
  * @param {Function} callback - 発火したときに呼びたい関数
  */
 
-import loadScript from '@/utils/loadScript'
-
 /**
 // usage
   scrollCheck({
@@ -33,7 +31,7 @@ import loadScript from '@/utils/loadScript'
  */
 
 const scrollCheck = args => {
-  const { targets, options, callback } = args
+  const { targets, options, callback } = args;
   const margeOptions = Object.assign(
     {
       root: null,
@@ -41,24 +39,24 @@ const scrollCheck = args => {
       threshold: [0]
     },
     options
-  )
+  );
   const setCallback = (entries, observer) => {
     entries.forEach(entry => {
-      callback(entry, observer)
-    })
-  }
+      callback(entry, observer);
+    });
+  };
   const setObserver = () => {
-    let sections = document.querySelectorAll(targets)
-    sections = Array.prototype.slice.call(sections, 0)
-    const observer = new IntersectionObserver(setCallback, margeOptions)
+    let sections = document.querySelectorAll(targets);
+    sections = Array.prototype.slice.call(sections, 0);
+    const observer = new IntersectionObserver(setCallback, margeOptions);
     sections.forEach(section => {
-      observer.observe(section)
-    })
-  }
+      observer.observe(section);
+    });
+  };
 
   if (window.IntersectionObserver) {
-    setObserver()
+    setObserver();
   }
-}
+};
 
-export default scrollCheck
+export default scrollCheck;

@@ -5,11 +5,11 @@
  */
 
 const loadScript = (src, callback) => {
-  const head = document.head
-  const script = document.createElement('script')
-  script.src = src
-  script.addEventListener('load', callback)
-  head.appendChild(script)
-}
+  const head = document.head;
+  const script = document.createElement('script');
+  script.src = src;
+  script.addEventListener('load', callback);
+  head.appendChild(script);
+};
 
-export default loadScript
+export default loadScript;

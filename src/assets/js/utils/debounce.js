@@ -7,11 +7,11 @@
  */
 
 const debounce = (callback, duration = 400) => {
-  let timer
+  let timer;
   return () => {
-    clearTimeout(timer)
-    timer = setTimeout(callback, duration)
-  }
-}
+    clearTimeout(timer);
+    timer = setTimeout(callback, duration);
+  };
+};
 
-export default debounce
+export default debounce;

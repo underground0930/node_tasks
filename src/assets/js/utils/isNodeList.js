@@ -6,9 +6,9 @@
 
 const isNodeList = val => {
   if (val instanceof Array || (val.item !== void 0 && val.length !== void 0)) {
-    return true
+    return true;
   }
-  return false
-}
+  return false;
+};
 
-export default isNodeList
+export default isNodeList;

@@ -1,55 +1,55 @@
 /////
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 /////
 
-import Vue from 'vue'
-import Swiper from 'swiper'
+import Vue from 'vue';
+import Swiper from 'swiper';
 
-import checkImgsLoad from '@/utils/checkImgsLoad'
-import debounce from '@/utils/debounce'
-import scrollCheck from '@/utils/scrollCheck'
+import checkImgsLoad from '@/utils/checkImgsLoad';
+import debounce from '@/utils/debounce';
+import scrollCheck from '@/utils/scrollCheck';
 
-import App from '@/components/pages/top/App'
+import App from '@/components/pages/top/App';
 
-const mySwiper = new Swiper('.swiper-container', {})
+const mySwiper = new Swiper('.swiper-container', {});
 
 checkImgsLoad('.img', () => {
-  console.log('img load complete!!!!!!!!!!!!')
-})
+  console.log('img load complete!!!!!!!!!!!!');
+});
 
 checkImgsLoad({
   selector: '.img',
   callback: () => {
-    console.log('callback')
+    console.log('callback');
   },
   callbackFinish: () => {
-    console.log('callback Finish')
+    console.log('callback Finish');
   }
-})
+});
 
 new Vue({
   el: '#app',
   components: { App },
   render: h => h(App)
-})
+});
 
 const d = debounce(() => {
-  console.log('resize!')
-})
+  console.log('resize!');
+});
 
-window.addEventListener('resize', d)
+window.addEventListener('resize', d);
 
 const navChange = () => {
-  const nav = document.querySelector('.p-boxNav')
+  const nav = document.querySelector('.p-boxNav');
   return elm => {
-    const index = elm.dataset.id
-    nav.innerHTML = index
-  }
-}
+    const index = elm.dataset.id;
+    nav.innerHTML = index;
+  };
+};
 
 window.addEventListener('load', () => {
-  const check = navChange()
+  const check = navChange();
   scrollCheck({
     targets: '.p-box',
     options: {},
@@ -62,14 +62,14 @@ window.addEventListener('load', () => {
         rootBounds,
         target,
         time
-      } = entry
+      } = entry;
       if (entry.isIntersecting) {
-        target.classList.add('is-show')
-        check(entry.target)
+        target.classList.add('is-show');
+        check(entry.target);
         // observer.unobserve(entry.target)
-        return
+        return;
       }
-      target.classList.remove('is-show')
+      target.classList.remove('is-show');
     }
-  })
-})
+  });
+});

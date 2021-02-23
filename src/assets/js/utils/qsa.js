@@ -5,8 +5,8 @@
  */
 
 const qsa = elm => {
-  const $elm = document.querySelectorAll(elm)
-  return Array.prototype.slice.call($elm, 0)
-}
+  const $elm = document.querySelectorAll(elm);
+  return Array.prototype.slice.call($elm, 0);
+};
 
-export default qsa
+export default qsa;

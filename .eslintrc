@@ -9,23 +9,20 @@
     "node": true
   },
   "globals": {
-    "window": true,
-    "global": true,
-    "$": true,
-    "Waypoint": true,
-    "TweenMax": true,
-    "TimelineMax": true,
-    "Power4": true,
-    "Back": true,
-    "commonModule": true,
-    "JSON_PATH": true
+    "window": "readonly",
+    "global": "readonly",
+    "$": "readonly",
+    "TweenMax": "readonly",
+    "TimelineMax": "readonly",
+    "Power4": "readonly",
+    "Back": "readonly",
+    "commonModule": "readonly",
+    "JSON_PATH": "readonly",
+    "data": "readonly"
   },
-  "plugins": [
-    "vue"
-  ],
+  "plugins": [],
   "extends": [
-    "eslint:recommended",
-    "plugin:vue/recommended"
+    "eslint:recommended"
   ],
   "rules": {
     "no-console": [

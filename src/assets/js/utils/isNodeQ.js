@@ -5,7 +5,7 @@
  */
 
 const isNodeQ = obj => {
-  return obj && obj.nodeType && obj.nodeType === 1
-}
+  return obj && obj.nodeType && obj.nodeType === 1;
+};
 
-export default isNodeQ
+export default isNodeQ;
