@@ -12,6 +12,7 @@
 <%- include( page.relativePath + '/assets/include/_head', {page}); -%>
 <%- include( page.relativePath + '/assets/include/_header', {page}); -%>
 <div class="l-wrapper">
+  <!-- contents start -->
   <div class="p-kv">
     <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
   </div>
@@ -21,7 +22,7 @@
   </div>
   <ul class="p-list">
     <li>「My liage」「My liage」「My liage」「My liage」</li>
-    <li>あいうえお</li>
+    <li>あいうえおかきくけこ</li>
     <li>春夏秋冬</li>
   </ul>
 
@@ -51,26 +52,19 @@
     </div>
   </div>
   <div id="app"></div>
-  <!-- Slider main container -->
+  <!-- swiper -->
   <div class="swiper-container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          ...
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
   </div>
+  <!--/ swiper -->
   <h2>Intersection Observer & position sticky</h2>
   <div class="p-boxWrep">
     <div class="p-boxMain">
@@ -82,6 +76,6 @@
       <div class="p-boxNav is-sticky"></div>
     </div>
   </div>
-
+  <!-- contents end -->
 </div>
 <%- include( page.relativePath + '/assets/include/_footer',{page}); -%>
