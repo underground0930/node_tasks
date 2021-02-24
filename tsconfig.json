@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "es2015",
+    "jsx": "react",
     "lib": ["es2020", "DOM"],
     "strict": true,
     "moduleResolution": "node",
@@ -10,7 +11,8 @@
       "*": ["./src/@types/*"]
     },
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/assets/js/**/*","src/@types/*"],
   "exclude": ["node_modules",]

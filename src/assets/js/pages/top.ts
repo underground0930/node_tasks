@@ -1,10 +1,18 @@
 // import Swiper from 'swiper';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+// components
+import App from '../components/pages/App';
+
+// modules
 import checkImgsLoad from '../utils/checkImgsLoad';
 import debounce from '../utils/debounce';
 import scrollCheck from '../utils/scrollCheck';
 
 // const mySwiper = new Swiper('.swiper-container', {});
+
+ReactDOM.render(React.createElement(App, null, null), document.getElementById('app'));
 
 checkImgsLoad({
   selector: '.img',

@@ -63,7 +63,7 @@ module.exports = Object.assign(conf, {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', 'json'],
     alias: {
       '@': paths.src.js,
     },
