@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "node.js実装環境",
   "main": "index.js",
   "private": true,
@@ -14,6 +14,8 @@
     "optim": "npm run optim:png && npm run optim:jpg",
     "optim:png": "find . -name '*.png' | xargs pngquant --ext .png --force -v",
     "optim:jpg": "find . -name '*.jpg' | xargs jpegoptim --strip-all --max=90",
+    "wp-start": "wp-env start",
+    "wp-stop": "wp-env stop",
     "lint:ejs": "ejslint 'src/**/*.{ejs,html}'",
     "lint": "eslint 'src/assets/js/**/*' --fix --ext .ts,.tsx"
   },
@@ -34,6 +36,7 @@
     "@types/sass": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "@wordpress/env": "^3.0.2",
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.14",
     "chokidar": "^3.5.1",

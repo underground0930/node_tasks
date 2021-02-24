@@ -92,3 +92,6 @@ sw.*
 # build data
 htdocs/
 htdocs_dev/
+
+# acf plugin
+wp-dir/plugins/advanced-custom-fields-pro
