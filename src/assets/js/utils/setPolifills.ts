@@ -7,7 +7,7 @@ import loadScript from '../utils/loadScript';
 const setPolifills = () => {
   const array = [
     {
-      name: 'object-fit-images',
+      name: "object-fit-images",
       url: 'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js', // object-fit
       callback: () => {
         var someImages = document.querySelectorAll('.is-objectFit-cover');

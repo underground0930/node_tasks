@@ -1,5 +1,6 @@
 import 'intersection-observer'; // for IE
 import 'objectFitPolyfill'; // for IE
+import "../libs/object-assign-polifil" // for IE
 import checkIE from '../utils/checkIE'; // for IE
 import setPolifills from '../utils/setPolifills'; // for IE
 
