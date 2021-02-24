@@ -127,3 +127,13 @@ ogp: "/assets/img/ogp.png"
 %>
 
 ```
+
+## ■wordpress について
+
+- wp-env を使用しています
+- 「npm run wp-start」で開発環境を実行
+- 「npm run wp-stop」で開発環境を停止
+- ./wp-dir/my-theme 内にファイルを置き、開発してください。
+- プラグインは、自動でインストールされるものと手動でインストールするものがあります。
+- 手動で格納するものについては、git管理下に置きたくないのでignoreをしています。
+- 「advanced-custom-fields-pro」は有料プラグインのため手動で格納してください。
