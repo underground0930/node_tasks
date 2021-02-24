@@ -2,7 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// components
+// import Swiper from 'swiper';
+// import $ from 'jquery';
+// import axios from 'axios';
+// import gsap from 'gsap';
+// import jump from 'jump.js';
+
+// React components
 import App from '../components/pages/App';
 
 // modules
