@@ -30,27 +30,27 @@
   })
  */
 
-const scrollCheck = (args:any) => {
+const scrollCheck = (args: any): void => {
   const { targets, options, callback } = args;
   const margeOptions = Object.assign(
     {
       root: null,
       rootMargin: '-50% 0%',
-      threshold: [0]
+      threshold: [0],
     },
     options
   );
-  const setCallback = (entries:any, observer:any) => {
-    entries.forEach((entry:any) => {
+  const setCallback = (entries: any, observer: any) => {
+    entries.forEach((entry: any) => {
       callback(entry, observer);
     });
   };
   const setObserver = () => {
-    let sections = document.querySelectorAll(targets);
-    if(sections.length === 0) return;
+    const sections = document.querySelectorAll(targets);
+    if (sections.length === 0) return;
     const sectionsArray = Array.prototype.slice.call(sections, 0);
     const observer = new IntersectionObserver(setCallback, margeOptions);
-    sectionsArray.forEach(section => {
+    sectionsArray.forEach((section) => {
       observer.observe(section);
     });
   };

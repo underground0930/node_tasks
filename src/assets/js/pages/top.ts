@@ -1,4 +1,3 @@
-
 // import Swiper from 'swiper';
 
 import checkImgsLoad from '../utils/checkImgsLoad';
@@ -17,7 +16,6 @@ checkImgsLoad({
   },
 });
 
-
 const d = debounce(() => {
   console.log('resize!');
 });
@@ -26,8 +24,8 @@ window.addEventListener('resize', d);
 
 const navChange = () => {
   const nav = document.querySelector('.p-boxNav');
-  if(nav === null) return false;
-  return (elm:any) => {
+  if (nav === null) return false;
+  return (elm: any) => {
     const index = elm.dataset.id;
     nav.innerHTML = index;
   };
@@ -35,11 +33,11 @@ const navChange = () => {
 
 window.addEventListener('load', () => {
   const check = navChange();
-  if(!check) return;
+  if (!check) return;
   scrollCheck({
     targets: '.p-box',
     options: {},
-    callback: (entry:any, observer:any) => {
+    callback: (entry: any, observer: any) => {
       const {
         boundingClientRect,
         intersectionRatio,
@@ -59,4 +57,3 @@ window.addEventListener('load', () => {
     },
   });
 });
-

@@ -4,7 +4,7 @@
  * @param {Boolean} - dom要素か否か
  */
 
-const isNodeQ = (obj:any) => {
+const isNodeQ = (obj: any): boolean => {
   return obj && obj.nodeType && obj.nodeType === 1;
 };
 

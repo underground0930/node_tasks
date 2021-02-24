@@ -9,12 +9,12 @@
 
 import qsa from './qsa';
 
-const setSns = (props: {
-  tw: string, fb: string, line: string
-}) => {
-  const {tw,fb,line} = props;
-  let description = document.querySelector('meta[name="description"]')?.getAttribute('descrition')
-  if(!description) return;
+const setSns = (props: { tw: string; fb: string; line: string }): void => {
+  const { tw, fb, line } = props;
+  const description = document
+    .querySelector('meta[name="description"]')
+    ?.getAttribute('descrition');
+  if (!description) return;
   const detail = encodeURIComponent(description);
 
   const url = encodeURIComponent(document.URL);

@@ -4,7 +4,7 @@
  * @return {Boolean}
  */
 
-const isNodeList = (val:any) => {
+const isNodeList = (val: any): boolean => {
   if (val instanceof Array || (val.item !== void 0 && val.length !== void 0)) {
     return true;
   }

@@ -6,9 +6,9 @@
  *
  */
 
-const debounce = (callback:()=> void, duration:number = 400) => {
-  let timer:number;
-  return () => {
+const debounce = (callback: () => void, duration = 400): (() => void) => {
+  let timer: number;
+  return (): void => {
     window.clearTimeout(timer);
     timer = window.setTimeout(callback, duration);
   };

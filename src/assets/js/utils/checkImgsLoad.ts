@@ -5,16 +5,15 @@
  * @param {Function} callbackFinish - 全ての画像を読み込み後に呼び出す関数
  */
 
-
 type props = {
-  selector:string,
-  callback:()=> void;
-  callbackFinish:()=> void;
-}
+  selector: string;
+  callback: () => void;
+  callbackFinish: () => void;
+};
 
 import qsa from './qsa';
 
-const checkImgsLoad = ({selector,callback,callbackFinish}:props) => {
+const checkImgsLoad = ({ selector, callback, callbackFinish }: props): void => {
   const $elms = qsa(selector) as HTMLImageElement[];
   const len = $elms.length;
   const isCallbackFunc = typeof callback === 'function';
@@ -22,7 +21,7 @@ const checkImgsLoad = ({selector,callback,callbackFinish}:props) => {
 
   let count = 0;
 
-  $elms.forEach(elm => {
+  $elms.forEach((elm) => {
     let src;
     const $img = document.createElement('img');
 
