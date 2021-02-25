@@ -22,7 +22,7 @@
 #       - name: build task
 #         uses: actions/setup-node@v1
 #         with:
-#           node-version: '12.16.0'
+#           node-version: '14.15.5'
 #       - name: npm ci
 #         run: npm ci
 #       - name: npm run build
