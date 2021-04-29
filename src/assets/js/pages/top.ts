@@ -11,12 +11,12 @@ import gsap from 'gsap';
 import jump from 'jump.js';
 
 // React components
-import App from '../components/pages/App';
+import App from '@/components/pages/App';
 
 // modules
-import checkImgsLoad from '../utils/checkImgsLoad';
-import debounce from '../utils/debounce';
-import scrollCheck from '../utils/scrollCheck';
+import checkImgsLoad from '@/utils/checkImgsLoad';
+import debounce from '@/utils/debounce';
+import scrollCheck from '@/utils/scrollCheck';
 
 const mySwiper = new Swiper('.swiper-container', {});
 
