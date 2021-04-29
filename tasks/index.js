@@ -29,7 +29,14 @@ tasks
 
 // 各タスク を関数化
 const htmlTask = () => {
-  html(paths.src.root, paths.dist.root, data, isDev);
+  const src = paths.src.root;
+  const dist = paths.dist.root;
+  html({
+    src,
+    dist,
+    data,
+    isDev,
+  });
 };
 const cssTask = () => {
   sass(paths.src.css, paths.dist.css, isDev);

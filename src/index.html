@@ -4,13 +4,11 @@
     class: 'top',
     title: 'top title',
     description: 'top description',
-    url: '/',
     ogp: '',
-    relativePath: '.',
   }
 %>
-<%- include( page.relativePath + '/assets/include/_head', {page}); -%>
-<%- include( page.relativePath + '/assets/include/_header', {page}); -%>
+<%- include( relativePath + 'assets/include/_head', {page}); -%>
+<%- include( relativePath + 'assets/include/_header', {page}); -%>
 <div class="l-wrapper">
   <!-- contents start -->
   <div class="p-kv">
@@ -82,4 +80,4 @@
   </div>
   <!-- contents end -->
 </div>
-<%- include( page.relativePath + '/assets/include/_footer',{page}); -%>
+<%- include( relativePath + 'assets/include/_footer',{page}); -%>

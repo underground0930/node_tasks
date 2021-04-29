@@ -2,19 +2,17 @@
   const page = {
     id: 'detail',
     class: 'detail',
-    title: 'top title',
+    title: 'detail title',
     description: 'top description',
-    url: '/detail/',
     ogp: '/assets/img/hoge/ogp.png',
-    relativePath: '..',
   }
 %>
-<%- include( page.relativePath + '/assets/include/_head', {page}); -%>
-<%- include( page.relativePath + '/assets/include/_header', {page}); -%>
+<%- include( relativePath + 'assets/include/_head', {page}); -%>
+<%- include( relativePath + 'assets/include/_header', {page}); -%>
 <div class="l-wrapper">
   <!-- contents start -->
   <h1>detail</h1>
   <p>My page</p>
   <!-- contents end -->
 </div>
-<%- include( page.relativePath + '/assets/include/_footer',{page}); -%>
+<%- include( relativePath + 'assets/include/_footer',{page}); -%>

@@ -17,16 +17,16 @@
   <meta name="twitter:title" content="<%= page.title %>">
   <meta name="twitter:description" content="<%= page.description %>">
   <meta name="twitter:image" content="<%= data.meta.host + data.meta.root + (page.ogp ? page.ogp : data.meta.ogp) %>">
-  <meta name="twitter:url" content="<%= data.meta.host + data.meta.root + page.url %>">
+  <meta name="twitter:url" content="<%= data.meta.host + data.meta.root + absolutePath %>">
   <!-- /meta twitter -->
   <!-- meta facebook -->
   <meta property="og:type" content="<%= page.id === 'top' ? 'website' : 'article' %>">
   <meta property="og:title" content="<%= page.title %>">
   <meta property="og:description" content="<%= page.description %>">
-  <meta property="og:url" content="<%= data.meta.host + data.meta.root + page.url %>">
+  <meta property="og:url" content="<%= data.meta.host + data.meta.root + absolutePath %>">
   <meta property="og:image" content="<%= data.meta.host + data.meta.root + (page.ogp ? page.ogp : data.meta.ogp) %>">
   <meta property="og:site_name" content="<%= data.meta.sitename %>">
   <!-- /meta facebook -->
-  <link rel="stylesheet" href="<%= page.relativePath %>/assets/css/style.css?date=<%= time %>">
+  <link rel="stylesheet" href="<%= relativePath %>assets/css/style.css?date=<%= time %>">
 </head>
 <body class="<%= page.class %>" id="<%= page.id %>">

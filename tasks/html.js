@@ -24,7 +24,7 @@ const beautifyOptions = {
   unformatted: ['b', 'em'],
 };
 
-const html = (src, dist, data, isDev) => {
+const html = ({ src, dist, data, isDev }) => {
   const beautifyFn = isDev
     ? (str) => {
         return str;
@@ -43,9 +43,11 @@ const html = (src, dist, data, isDev) => {
     const { length } = files;
     let count = 0;
     files.forEach((file) => {
+      const absolutePath = file.split(src)[1];
+      const relativePath = '../'.repeat([absolutePath.split('/').length - 2]);
       ejs.renderFile(
         file,
-        { data, time: new Date().getTime() },
+        { data, absolutePath, relativePath, time: new Date().getTime() },
         { outputFunctionName: 'echo', rmWhitespace: false },
         (err, str) => {
           if (err) {
@@ -59,9 +61,7 @@ const html = (src, dist, data, isDev) => {
             // ディレクトリが無かったら
             fs.mkdirsSync(dir); // ディレクトリを再帰的に作成
           }
-
           const result = beautifyFn(str);
-
           fs.writeFile(filename, result, (err) => {
             // ファイルに書き込む処理
             if (err) throw err;

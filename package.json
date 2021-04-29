@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "node.js実装環境",
   "main": "index.js",
   "private": true,
