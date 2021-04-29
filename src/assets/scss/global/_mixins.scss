@@ -1,5 +1,6 @@
 @forward './mixins/clearfix';
-@forward './mixins/font';
+@forward './mixins/font-family';
+@forward './mixins/font-size';
 @forward './mixins/hover';
 @forward './mixins/desktop';
 @forward './mixins/tablet';
@@ -7,8 +8,7 @@
 @forward './mixins/IE';
 @forward './mixins/mq';
 @forward './mixins/pseudo';
-@forward './mixins/lt';
-@forward './mixins/fs';
+@forward './mixins/leading-trim';
 @forward './mixins/absolute';
 @forward './mixins/aspect-ratio';
 

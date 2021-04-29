@@ -16,3 +16,12 @@
   }
 }
 
+.pg-detail__box{
+  position: relative;
+  & > div{
+    @include g.absolute($top:50, $left:50);
+    background: pink;
+    width:100px;
+    height:100px;
+  }
+}

@@ -6,15 +6,15 @@
 @mixin absolute($top:null, $right:null, $bottom:null, $left:null){
   position: absolute;
   @if $top != null{
-    top: $top;
+    top: $top + px;
   }
   @if $right != null{
-    right: $right;
+    right: $right + px;
   }
   @if $bottom != null{
-    bottom: $bottom;
+    bottom: $bottom + px;
   }
   @if $left != null{
-    left: $left;
+    left: $left + px;
   }
 }
