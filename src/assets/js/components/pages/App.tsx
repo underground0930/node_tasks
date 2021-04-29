@@ -5,9 +5,7 @@ import Child from './Child';
 const App: React.FC = () => {
   return (
     <h1>
-      <p>
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </p>
+      <p>React Components</p>
       <Child />
     </h1>
   );
