@@ -4,12 +4,15 @@ interface Window {
   objectFitPolyfill: (elms: NodeListOf) => void;
   Stickyfill: any;
   ga: any;
-  globalVars: any;
   IntersectionObserver: any;
   requestAnimationFrame: any;
   WebGLRenderingContext: any;
-  isDesktop: boolean;
-  isTablet: boolean;
-  isPhone: boolean;
+  globalVars: {
+    data: any;
+    isIE: boolean;
+    isDesktop: boolean;
+    isTablet: boolean;
+    isPhone: boolean;
+  };
 }
 declare const window: Window;
