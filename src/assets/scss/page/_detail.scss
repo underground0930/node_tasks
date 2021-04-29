@@ -20,8 +20,17 @@
   position: relative;
   & > div{
     @include g.absolute($top:50, $left:50);
-    background: pink;
     width:100px;
     height:100px;
+  }
+  @include g.pc{
+    & > div{
+      background: pink;
+    }
+  }
+  @include g.sp{
+    & > div{
+      background: blue;
+    }
   }
 }

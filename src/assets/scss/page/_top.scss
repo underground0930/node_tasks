@@ -10,11 +10,6 @@
 }
 
 .pg-top-section{
-  @include g.IE{
-    color:#f00;
-  }
-}
-
-@include g.max-screen(g.$bp1) {
 
 }
+

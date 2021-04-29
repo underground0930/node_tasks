@@ -3,6 +3,20 @@
 // mq
 //////////////////////////////////////////
 
+@use '../variables' as v;
+
+@mixin pc(){
+	@media screen and ( min-width: v.$breakpoint + 1 + 'px' ) {
+		@content;
+	}
+}
+
+@mixin sp(){
+	@media screen and ( max-width: v.$breakpoint + 'px' ) {
+		@content;
+	}
+}
+
 // more X width
 @mixin min-screen($min-width) {
 	@media screen and ( min-width: $min-width + 'px' ) {
