@@ -11,7 +11,7 @@ import setPolifills from '@/utils/setPolifills'; // for IE
 window.globalVars = {
   data,
   isIE: checkIE(),
-  isPhone: false,
+  isMobile: false,
   isTablet: false,
   isDesktop: false,
 };

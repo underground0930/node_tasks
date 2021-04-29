@@ -1,0 +1,24 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+// leading-trim
+//////////////////////////////////////////
+
+@mixin lt($size, $line){
+  $line-height: $line / $size;
+  &:before,
+  &:after{
+    content:"";
+    display:block;
+    height: 0;
+    width: 0;
+  }
+
+  &:before{
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+
+  &:after{
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+
+}

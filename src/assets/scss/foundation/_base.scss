@@ -139,6 +139,10 @@
 // other
 /////////
 
+:root{
+  --main-color: red;
+}
+
 html {
   height: 100%;
   font-size: 62.5%;
@@ -151,11 +155,10 @@ body {
   font-style: normal;
   font-weight: 400;
   color: #000;
-  line-height: 1.7;
-  font-size:1.4rem;
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  @include g.fs(14, 30);
   @include g.IE{
     display: block;
   }

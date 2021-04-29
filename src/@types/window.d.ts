@@ -12,7 +12,7 @@ interface Window {
     isIE: boolean;
     isDesktop: boolean;
     isTablet: boolean;
-    isPhone: boolean;
+    isMobile: boolean;
   };
 }
 declare const window: Window;

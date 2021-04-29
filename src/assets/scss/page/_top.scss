@@ -1,6 +1,6 @@
 @charset "UTF-8";
 ////////////////////////
-// TOP
+// top
 ////////////////////////
 
 @use '../global' as g;
@@ -8,6 +8,7 @@
 .pg-top{
 
 }
+
 .pg-top-section{
   @include g.IE{
     color:#f00;

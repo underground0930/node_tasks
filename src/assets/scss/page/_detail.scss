@@ -1,0 +1,18 @@
+@charset "UTF-8";
+////////////////////////
+// detail
+////////////////////////
+
+@use '../global' as g;
+
+.pg-detail{
+  h1{
+    @include g.fs(30, 45);
+    @include g.lt(30, 45);
+  }
+  p{
+    @include g.fs(16, 30);
+    @include g.lt(16, 30);
+  }
+}
+

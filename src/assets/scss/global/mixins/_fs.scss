@@ -1,0 +1,14 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+// font-size
+//////////////////////////////////////////
+
+@mixin fs($font-size, $line-height:null, $letter-spacing:null){
+  font-size: $font-size * 0.1rem;
+  @if($line-height!=null){
+    line-height: ($line-height / $font-size);
+  }
+  @if($letter-spacing!=null){
+    letter-spacing: $letter-spacing * 0.1rem;
+  }
+}
