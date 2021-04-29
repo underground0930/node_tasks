@@ -6,26 +6,26 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><%= page.title %></title>
-  <link rel="shortcut icon" href="<%= data.root %>/assets/img/common/favicon.ico">
-  <link rel="icon" type="image/png" href="<%= data.root %>/assets/img/common/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="<%= data.root %>/assets/img/common/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon-precomposed" href="<%= data.root %>/assets/img/common/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<%= data.meta.root %>/assets/img/common/favicon.ico">
+  <link rel="icon" type="image/png" href="<%= data.meta.root %>/assets/img/common/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="<%= data.meta.root %>/assets/img/common/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon-precomposed" href="<%= data.meta.root %>/assets/img/common/apple-touch-icon.png">
   <meta name="description" content="<%= page.description %>">
   <!-- meta twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="<%= data.sitename %>">
+  <meta name="twitter:site" content="<%= data.meta.sitename %>">
   <meta name="twitter:title" content="<%= page.title %>">
   <meta name="twitter:description" content="<%= page.description %>">
-  <meta name="twitter:image" content="<%= data.host + data.root + (page.ogp ? page.ogp : data.ogp) %>">
-  <meta name="twitter:url" content="<%= data.host + data.root + page.url %>">
+  <meta name="twitter:image" content="<%= data.meta.host + data.meta.root + (page.ogp ? page.ogp : data.meta.ogp) %>">
+  <meta name="twitter:url" content="<%= data.meta.host + data.meta.root + page.url %>">
   <!-- /meta twitter -->
   <!-- meta facebook -->
   <meta property="og:type" content="<%= page.id === 'top' ? 'website' : 'article' %>">
   <meta property="og:title" content="<%= page.title %>">
   <meta property="og:description" content="<%= page.description %>">
-  <meta property="og:url" content="<%= data.host + data.root + page.url %>">
-  <meta property="og:image" content="<%= data.host + data.root + (page.ogp ? page.ogp : data.ogp) %>">
-  <meta property="og:site_name" content="<%= data.sitename %>">
+  <meta property="og:url" content="<%= data.meta.host + data.meta.root + page.url %>">
+  <meta property="og:image" content="<%= data.meta.host + data.meta.root + (page.ogp ? page.ogp : data.meta.ogp) %>">
+  <meta property="og:site_name" content="<%= data.meta.sitename %>">
   <!-- /meta facebook -->
   <link rel="stylesheet" href="<%= page.relativePath %>/assets/css/style.css?date=<%= time %>">
 </head>

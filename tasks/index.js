@@ -1,6 +1,5 @@
 const bs = require('browser-sync').create(); // ローカルサーバー、ブラウザのリロード
-const yaml = require('js-yaml'); // yamlをjsに変換
-const fs = require('fs'); // ファイルシステム
+const getFileData = require('./getFileData');
 
 /************************************************v
  my task
@@ -22,7 +21,7 @@ const isDev = paths.node_env === 'dev' ? true : false; // isDev
 data
 ************************************************/
 
-const data = yaml.load(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8')); // ejsで使用するデータ
+const data = getFileData(paths.src.assets + '/data/*.yaml');
 
 /************************************************
 tasks

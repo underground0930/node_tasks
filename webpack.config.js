@@ -1,8 +1,8 @@
 const path = require('path');
 const paths = require('./path.config');
 const webpack = require('webpack');
-const yaml = require('js-yaml'); // yamlをjsに変換
-const fs = require('fs'); // ファイルシステム
+
+const getFileData = require('./tasks/getFileData');
 
 const devConfig = {
   devtool: 'source-map',
@@ -15,6 +15,8 @@ const prodConfig = {
 };
 
 const conf = paths.node_env === 'dev' ? devConfig : prodConfig;
+
+const data = JSON.stringify(getFileData(paths.src.assets + '/data/*.yaml'));
 
 module.exports = Object.assign(conf, {
   entry: {
@@ -57,9 +59,7 @@ module.exports = Object.assign(conf, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      data: JSON.stringify(
-        yaml.load(fs.readFileSync(paths.src.assets + '/data/data.yaml', 'utf8'))
-      ),
+      data,
     }),
   ],
   resolve: {

@@ -26,9 +26,9 @@
     文字!
   </div>
   <ul class="p-list">
-    <li>「My liage」「My liage」「My liage」「My liage」</li>
-    <li>あいうえおかきくけこ</li>
-    <li>春夏秋冬</li>
+    <% data.top.list.forEach(v=>{ %>
+      <li><%- v -%></li>
+    <% }); %>
   </ul>
 
 <h2>picture</h2>
