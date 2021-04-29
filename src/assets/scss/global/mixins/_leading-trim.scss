@@ -12,11 +12,9 @@
     height: 0;
     width: 0;
   }
-
   &:before{
     margin-bottom: calc((1 - #{$line-height}) * 0.5em);
   }
-
   &:after{
     margin-top: calc((1 - #{$line-height}) * 0.5em);
   }

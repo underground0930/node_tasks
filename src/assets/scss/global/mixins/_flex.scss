@@ -1,0 +1,17 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+// flex
+//////////////////////////////////////////
+
+@mixin flex($a:null, $j:null, $w:null ){
+  display:flex;
+  @if $a != null {
+    align-items: $align;
+  }
+  @if $j != null {
+    justify-content: $j;
+  }
+  @if w != null {
+    flex-wrap: $w;
+  }
+}
