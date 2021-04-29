@@ -2,11 +2,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import Swiper from 'swiper';
-// import $ from 'jquery';
-// import axios from 'axios';
-// import gsap from 'gsap';
-// import jump from 'jump.js';
+import SwiperCore, { Pagination, Navigation, Swiper } from 'swiper/core';
+SwiperCore.use([Pagination, Navigation]);
+
+import $ from 'jquery';
+import axios from 'axios';
+import gsap from 'gsap';
+import jump from 'jump.js';
 
 // React components
 import App from '../components/pages/App';
@@ -16,7 +18,7 @@ import checkImgsLoad from '../utils/checkImgsLoad';
 import debounce from '../utils/debounce';
 import scrollCheck from '../utils/scrollCheck';
 
-// const mySwiper = new Swiper('.swiper-container', {});
+const mySwiper = new Swiper('.swiper-container', {});
 
 ReactDOM.render(React.createElement(App, null, null), document.getElementById('app'));
 

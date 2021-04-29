@@ -30,7 +30,7 @@ tasks
 
 // 各タスク を関数化
 const htmlTask = () => {
-  html(paths.src.root, paths.dist.root, data);
+  html(paths.src.root, paths.dist.root, data, isDev);
 };
 const cssTask = () => {
   sass(paths.src.css, paths.dist.css, isDev);
@@ -108,7 +108,9 @@ dele([paths.dist.root + '/**', '!' + paths.dist.root]).then(() => {
   movieTask();
   if (isDev) {
     // 開発中ならwatchとサーバーも走らせる
-    watchTasks();
-    serverTask();
+    setTimeout(() => {
+      watchTasks();
+      serverTask();
+    }, 5000);
   }
 });
