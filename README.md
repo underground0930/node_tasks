@@ -120,9 +120,7 @@ ogp: "/assets/img/ogp.png"
     class: 'about',
     title: 'top title',
     description: 'top description',
-    url: '/',
     ogp: '',
-    relativePath: '.',
   };
 %>
 
