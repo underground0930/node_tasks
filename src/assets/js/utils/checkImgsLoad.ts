@@ -1,3 +1,5 @@
+import qsa from './qsa';
+
 /**
  * 画像の読み込み判定
  * @param {String} selecor - ロード判定をしたい画像のセレクタ
@@ -10,8 +12,6 @@ type props = {
   callback: () => void;
   callbackFinish: () => void;
 };
-
-import qsa from './qsa';
 
 const checkImgsLoad = ({ selector, callback, callbackFinish }: props): void => {
   const $elms = qsa(selector) as HTMLImageElement[];

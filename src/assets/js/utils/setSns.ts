@@ -1,3 +1,5 @@
+import qsa from './qsa';
+
 /**
  * snsのリンクを設定
  * @param {Object} props
@@ -6,8 +8,6 @@
  * @param {String} props.fb - facebookシェアリンクを付加するセレクタ
  * @param {String} props.line - lineシェアリンクを付加するセレクタ
  */
-
-import qsa from './qsa';
 
 const setSns = (props: { tw: string; fb: string; line: string }): void => {
   const { tw, fb, line } = props;

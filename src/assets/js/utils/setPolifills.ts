@@ -1,8 +1,7 @@
+import loadScript from '../utils/loadScript';
 /**
  * レガシーブラウザ用のポリフィル
  */
-
-import loadScript from '../utils/loadScript';
 
 const setPolifills = (): void => {
   const array = [

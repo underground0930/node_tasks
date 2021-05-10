@@ -1,11 +1,10 @@
+import device from 'current-device';
+
 /**
  * デバイスの判定
  * @return {void}
  *
  */
-
-// modules
-import device from 'current-device';
 
 const checkDevice = (): void => {
   if (device.mobile()) {

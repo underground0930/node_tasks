@@ -10,37 +10,12 @@
 type args = {
   targets: string;
   options: {
-    root: string | null;
-    rootMargin: string;
-    threshold: number[];
+    root?: string | null;
+    rootMargin?: string;
+    threshold?: number[];
   };
   callback: (entry: any, observer: any) => void;
 };
-/**
-// usage
-  scrollCheck({
-    targets: '.p-box',
-    options: {},
-    callback: (entry, observer) => {
-      const {
-        boundingClientRect,
-        intersectionRatio,
-        intersectionRect,
-        isIntersecting,
-        rootBounds,
-        target,
-        time
-      } = entry
-      if (entry.isIntersecting) {
-        target.classList.add('is-show')
-        check(entry.target)
-        // observer.unobserve(entry.target)
-        return
-      }
-      target.classList.remove('is-show')
-    }
-  })
- */
 
 const scrollCheck = (args: args): void => {
   const { targets, options, callback } = args;
@@ -71,5 +46,31 @@ const scrollCheck = (args: args): void => {
     setObserver();
   }
 };
+
+/**
+// usage
+  scrollCheck({
+    targets: '.p-box',
+    options: {},
+    callback: (entry, observer) => {
+      const {
+        boundingClientRect,
+        intersectionRatio,
+        intersectionRect,
+        isIntersecting,
+        rootBounds,
+        target,
+        time
+      } = entry
+      if (entry.isIntersecting) {
+        target.classList.add('is-show')
+        check(entry.target)
+        // observer.unobserve(entry.target)
+        return
+      }
+      target.classList.remove('is-show')
+    }
+  })
+ */
 
 export default scrollCheck;
