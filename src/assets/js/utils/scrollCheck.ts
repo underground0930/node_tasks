@@ -1,9 +1,21 @@
 /**
  * @param {Object} options - IntersectionObserverのオプション
+ * @param {String | null} options.root - root要素
+ * @param {String} options.rootMargin - rootマージン
+ * @param {Number[]} options.threshold - 発火ポイント
  * @param {String} targets - スクロールで監視したい要素
  * @param {Function} callback - 発火したときに呼びたい関数
  */
 
+type args = {
+  targets: string;
+  options: {
+    root: string | null;
+    rootMargin: string;
+    threshold: number[];
+  };
+  callback: (entry: any, observer: any) => void;
+};
 /**
 // usage
   scrollCheck({
@@ -30,7 +42,7 @@
   })
  */
 
-const scrollCheck = (args: any): void => {
+const scrollCheck = (args: args): void => {
   const { targets, options, callback } = args;
   const margeOptions = Object.assign(
     {
