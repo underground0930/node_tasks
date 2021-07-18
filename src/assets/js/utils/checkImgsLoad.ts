@@ -1,5 +1,3 @@
-import qsa from './qsa';
-
 /**
  * 画像の読み込み判定
  * @param {String} selecor - ロード判定をしたい画像のセレクタ
@@ -7,47 +5,31 @@ import qsa from './qsa';
  * @param {Function} callbackFinish - 全ての画像を読み込み後に呼び出す関数
  */
 
-type props = {
-  selector: string;
-  callback: () => void;
+type Props = {
+  imgArray: string[];
+  callback: (() => void) | null;
   callbackFinish: () => void;
 };
 
-const checkImgsLoad = ({ selector, callback, callbackFinish }: props): void => {
-  const $elms = qsa(selector) as HTMLImageElement[];
-  const len = $elms.length;
-  const isCallbackFunc = typeof callback === 'function';
-  const isCallbackFinishFunc = typeof callbackFinish === 'function';
+export const checkImgsLoad = ({ imgArray, callback, callbackFinish }: Props): void => {
+  const len = imgArray.length;
 
   let count = 0;
 
-  $elms.forEach((elm) => {
-    let src;
+  imgArray.forEach((imgSrc) => {
     const $img = document.createElement('img');
-
-    if (elm.tagName === 'IMG') {
-      src = elm.src;
-    } else {
-      src = getComputedStyle(elm, '').backgroundImage;
-      src = src.replace(/url\(|\)|"|'/g, '');
-    }
-
     $img.addEventListener('load', () => {
       count++;
 
-      if (isCallbackFunc) {
+      if (callback !== null) {
         callback();
       }
-
-      if (!isCallbackFinishFunc) return;
 
       if (len === count) {
         callbackFinish();
       }
     });
 
-    $img.src = src;
+    $img.src = imgSrc;
   });
 };
-
-export default checkImgsLoad;
