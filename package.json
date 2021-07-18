@@ -1,6 +1,6 @@
 {
   "name": "node_tasks",
-  "version": "2.5.7",
+  "version": "2.5.8",
   "description": "node.js実装環境",
   "main": "index.js",
   "private": true,
@@ -41,7 +41,7 @@
     "@types/swiper": "^5.4.2",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
-    "@wordpress/env": "^3.0.2",
+    "@wordpress/env": "^4.0.5",
     "autoprefixer": "^10.3.1",
     "browser-sync": "^2.26.14",
     "chokidar": "^3.5.1",
