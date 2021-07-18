@@ -1,5 +1,4 @@
 interface Window {
-  IntersectionObserver: any;
   objectFitImages: (elms: NodeListOf) => void;
   objectFitPolyfill: (elms: NodeListOf) => void;
   Stickyfill: any;
