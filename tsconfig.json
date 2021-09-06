@@ -8,13 +8,12 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["./src/@types/*"],
       "@/*": ["src/assets/js/*"]
     },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/assets/js/**/*","src/@types/*"],
-  "exclude": ["node_modules",]
+  "include": ["src/assets/js/**/*"],
+  "exclude": ["node_modules"]
 }

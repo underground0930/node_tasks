@@ -6,12 +6,10 @@
  *
  */
 
-const debounce = (callback: () => void, duration = 400): (() => void) => {
+export const debounce = (callback: () => void, duration = 400): (() => void) => {
   let timer: number;
   return (): void => {
     window.clearTimeout(timer);
     timer = window.setTimeout(callback, duration);
   };
 };
-
-export default debounce;

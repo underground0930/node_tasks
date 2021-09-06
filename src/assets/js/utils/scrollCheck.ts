@@ -17,7 +17,7 @@ type args = {
   callback: (entry: any, observer: any) => void;
 };
 
-const scrollCheck = (args: args): void => {
+export const scrollCheck = (args: args): void => {
   const { targets, options, callback } = args;
   const margeOptions = Object.assign(
     {
@@ -72,5 +72,3 @@ const scrollCheck = (args: args): void => {
     }
   })
  */
-
-export default scrollCheck;
