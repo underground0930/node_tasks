@@ -1,10 +1,11 @@
 @charset "UTF-8";
+@use 'sass:math';
 //////////////////////////////////////////
 // leading-trim
 //////////////////////////////////////////
 
 @mixin lt($size, $line){
-  $line-height: $line / $size;
+  $line-height: math.div($line, $size);
   &:before,
   &:after{
     content:"";

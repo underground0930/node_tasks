@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SwiperCore, { Pagination, Navigation, Swiper } from 'swiper/core';
+import SwiperCore, { Pagination, Navigation, Swiper } from 'swiper';
 SwiperCore.use([Pagination, Navigation]);
 
 import $ from 'jquery';
