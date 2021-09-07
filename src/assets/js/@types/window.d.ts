@@ -14,4 +14,3 @@ interface Window {
     isMobile: boolean;
   };
 }
-declare const window: Window;
