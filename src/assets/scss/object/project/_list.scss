@@ -8,3 +8,30 @@
 .p-list{
   color:#000;
 }
+
+.p-list__child{
+  border-bottom: 1px solid #999;
+  &:first-of-type{
+    border-top: 1px solid #999;
+  }
+}
+
+.p-list__link{
+  display:block;
+  text-decoration:none;
+  padding: 0 0 0;
+}
+.p-list__info{
+  @include g.flex($ai:center);
+  time{
+    display:block;
+    margin-right: 5px;
+  }
+  span{
+    @include g.fs(10,10);
+    display: block;
+    border:1px solid #000;
+    padding:2px;
+    border-radius:5px;
+  }
+}

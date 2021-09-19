@@ -11,23 +11,116 @@
 <%- include( relativePath + 'assets/include/_header', {page}); -%>
 <div class="l-wrapper">
   <!-- contents start -->
-  <div class="p-kv">
+  <!-- kv -->
+  <div class="pg-top-kv">
     <video width="300" class="p-kv__video" src="/assets/movie/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
   </div>
-  <h1>top</h1>
+  <!--/ kv  -->
+  <!-- news -->
+  <section class="pg-top-section">
+    <h2 class="c-title pg-top-section__title">NEWS</h2>
+    <div class="p-list">
+      <article class="p-list__child">
+        <a class="p-list__link" href='/news/detail/'>
+          <div class="p-list__info">
+            <time>2021年4月11日</time>
+            <span>お知らせ</span>
+          </div>
+          <h3 class="p-list__title">
+            ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+          </h3>
+        </a>
+      </article>
+      <article class="p-list__child">
+        <a class="p-list__link" href='/news/detail/'>
+          <div class="p-list__info">
+            <time>2021年4月11日</time>
+            <span>お知らせ</span>
+          </div>
+          <h3 class="p-list__title">
+            ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+          </h3>
+        </a>
+      </article>
+      <article class="p-list__child">
+        <a class="p-list__link" href='/news/detail/'>
+          <div class="p-list__info">
+            <time>2021年4月11日</time>
+            <span>お知らせ</span>
+          </div>
+          <h3 class="p-list__title">
+            ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+          </h3>
+        </a>
+      </article>
+    </div>
+  </section>
+  <!--/ news -->
+
+  <!-- blog -->
+  <section class="pg-top-section">
+    <h2 class="c-title pg-top-section__title">BLOG</h2>
+    <div class="p-card">
+      <article class="p-card__child">
+        <a class="p-card__link" href='/blog/detail/'>
+          <div class="p-card__photo">
+            <img src="/assets/img/_dummy/thumb.png" alt="">
+          </div>
+          <div class="p-card__body">
+            <time class="p-card__time">2021年4月11日</time>
+            <ul class="p-card__tag">
+              <li>#タグ1</li>
+              <li>#タグ2</li>
+            </ul>
+            <h3 class="p-card__title">
+              ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+            </h3>
+          </div>
+        </a>
+      </article>
+      <article class="p-card__child">
+        <a class="p-card__link" href='/blog/detail/'>
+          <div class="p-card__photo">
+            <img src="/assets/img/_dummy/thumb.png" alt="">
+          </div>
+          <div class="p-card__body">
+            <time class="p-card__time">2021年4月11日</time>
+            <ul class="p-card__tag">
+              <li>#タグ1</li>
+              <li>#タグ2</li>
+            </ul>
+            <h3 class="p-card__title">
+              ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+            </h3>
+          </div>
+        </a>
+      </article>
+      <article class="p-card__child">
+        <a class="p-card__link" href='/blog/detail/'>
+          <div class="p-card__photo">
+            <img src="/assets/img/_dummy/thumb.png" alt="">
+          </div>
+          <div class="p-card__body">
+            <time class="p-card__time">2021年4月11日</time>
+            <ul class="p-card__tag">
+              <li>#タグ1</li>
+              <li>#タグ2</li>
+            </ul>
+            <h3 class="p-card__title">
+              ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました ウェブサイトをリニューアルしました
+            </h3>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+  <!--/ blog -->
 
   <!-- react -->
   <div id="app"></div>
   <!--/ react -->
 
-  <div class="pg-top-section">
-    文字!
-  </div>
-  <ul class="p-list">
-    <% data.top.list.forEach(v=>{ %>
-      <li><%- v -%></li>
-    <% }); %>
-  </ul>
+
 
 <h2>picture</h2>
 <picture>

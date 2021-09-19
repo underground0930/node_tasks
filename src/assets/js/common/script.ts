@@ -8,6 +8,9 @@ import checkIE from '@/utils/checkIE'; // for IE
 import checkDevice from '@/utils/checkDevice';
 import setPolifills from '@/utils/setPolifills'; // for IE
 
+// libs
+import { ScrollTop } from '@/libs/ScrollTop';
+
 window.globalVars = {
   data,
   isIE: checkIE(),
@@ -18,6 +21,7 @@ window.globalVars = {
 
 const init = () => {
   checkDevice();
+  new ScrollTop();
   if (window.globalVars.isIE) {
     setPolifills();
     window.objectFitPolyfill(document.querySelectorAll('.is-objectFit-cover'));

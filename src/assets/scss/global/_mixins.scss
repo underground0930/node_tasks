@@ -2,13 +2,10 @@
 @forward './mixins/font-family';
 @forward './mixins/font-size';
 @forward './mixins/hover';
-@forward './mixins/desktop';
-@forward './mixins/tablet';
-@forward './mixins/mobile';
+@forward './mixins/device';
 @forward './mixins/IE';
 @forward './mixins/mq';
 @forward './mixins/pseudo';
-@forward './mixins/leading-trim';
-@forward './mixins/absolute';
+@forward './mixins/position';
 @forward './mixins/aspect-ratio';
 @forward './mixins/flex';

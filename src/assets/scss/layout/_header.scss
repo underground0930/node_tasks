@@ -6,14 +6,42 @@
 @use '../global' as g;
 
 .l-header{
-  height: 50px;
-  background: #f00;
-  text-align: center;
-  p{
-    position: relative;
-    top:50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
+  @include g.flex( $ai:center, $jc:space-between );
+  @include g.fixed($l:0,$t:0);
+  z-index:10;
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  box-shadow: 0 0 8px #000;
+}
+
+.l-header__logo{
+  width: 80px;
+  margin-left: 50px;
+  @include g.fs(0,0);
+  a{
+    display: block;
+  }
+  svg{
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
   }
 }
 
+.l-header__nav{
+  margin-right: 50px;
+  ul{
+    @include g.flex($ai:center, $jc:flex-end);
+    width: 300px;
+  }
+  li:not(:last-of-type){
+    margin-right: 30px;
+  }
+  a{
+    @include g.fs(16,16);
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+}

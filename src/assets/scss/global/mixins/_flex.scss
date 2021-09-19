@@ -3,15 +3,18 @@
 // flex
 //////////////////////////////////////////
 
-@mixin flex($a:null, $j:null, $w:null ){
+@mixin flex($ai:null, $jc:null, $fw:null, $fd:null ){
   display:flex;
-  @if $a != null {
-    align-items: $align;
+  @if $ai != null {
+    align-items: $ai;
   }
-  @if $j != null {
-    justify-content: $j;
+  @if $jc != null {
+    justify-content: $jc;
   }
-  @if w != null {
-    flex-wrap: $w;
+  @if $fw != null {
+    flex-wrap: $fw;
+  }
+  @if $fd != null {
+    flex-direction: $fd;
   }
 }

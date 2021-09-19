@@ -39,7 +39,7 @@
 }
 
 // more X height
-@mixin min-sreen-h($min-height) {
+@mixin min-screen-h($min-height) {
 	@media screen and ( min-height: $min-height + 'px' ) {
 		@content;
 	}
@@ -60,7 +60,7 @@
 }
 
 // more X width and more Y height
-@mixin min-sreen-wh($min-width, $min-height) {
+@mixin min-screen-wh($min-width, $min-height) {
 	@media screen and (min-width: $min-width + 'px') and ( min-height: $min-height + 'px' ) {
 		@content;
 	}

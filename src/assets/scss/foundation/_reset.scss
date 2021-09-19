@@ -109,7 +109,7 @@ section {
   display: block;
 }
 
-nav ul {
+ul,ol {
   list-style: none;
 }
 
@@ -177,4 +177,10 @@ hr {
 input,
 select {
   vertical-align: middle;
+}
+
+button{
+  margin:0;
+  padding:0;
+  border:0;
 }

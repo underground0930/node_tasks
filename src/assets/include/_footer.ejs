@@ -1,9 +1,42 @@
+<!-- footer -->
 <footer class="l-footer">
-  <p>footer</p>
+  <p class="l-footer__logo">
+    <a href='/'>
+      <%- include('./svg/logo_white.svg'); -%>
+    </a>
+  </p>
+  <div class="l-footer__inner">
+    <div class="l-footer__main">
+      <ul class="l-footer__links">
+        <li><a href='/company/'>company</a></li>
+        <li><a href='/news/'>news</a></li>
+        <li><a href='/blog/'>blog</a></li>
+        <li><a href='/recruit/'>recruit</a></li>
+        <li><a href='/contact/'>contact</a></li>
+      </ul>
+    </div>
+    <div class="l-footer__sub">
+      <ul class="l-footer__sns">
+        <li><a class="" href="<%= data.sns.facebook.link; %>" target="_blank" rel="noopener"><%= data.sns.facebook.label; %></a></li>
+        <li><a class="" href="<%= data.sns.facebook.link; %>" target="_blank" rel="noopener"><%= data.sns.twitter.label; %></a></li>
+        <li><a class="" href="<%= data.sns.facebook.link; %>" target="_blank" rel="noopener"><%= data.sns.instagram.label; %></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="l-footer__copyright">
+    <small>Copyright © 2021 htmlgo All rights reserved.</small>
+  </div>
+
 </footer>
+<!--/ footer -->
+<!-- scrollBtn -->
+<button class="c-scrollBtn js-scrollTop"></button>
+<!--/ scrollBtn -->
+<!-- script -->
 <script src="<%= relativePath %>assets/js/vendor.bundle.js?date=<%= time %>"></script>
 <script src="<%= relativePath %>assets/js/utils.bundle.js?date=<%= time %>"></script>
 <script src="<%= relativePath %>assets/js/common.bundle.js?date=<%= time %>"></script>
 <script src="<%= relativePath %>assets/js/<%= page.class %>.bundle.js?date=<%= time %>"></script>
+<!--/ script -->
 </body>
 </html>

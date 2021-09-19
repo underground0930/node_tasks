@@ -8,18 +8,16 @@
 .pg-detail{
   h1{
     @include g.fs(30, 45);
-    @include g.lt(30, 45);
   }
   p{
     @include g.fs(16, 30);
-    @include g.lt(16, 30);
   }
 }
 
 .pg-detail__box{
   position: relative;
   & > div{
-    @include g.absolute($top:50, $left:50);
+
     width:100px;
     height:100px;
   }
