@@ -6,15 +6,28 @@
 @use '../../global' as g;
 
 .p-card{
-  display:flex;
-  @include g.flex($jc:space-between);
+  @include g.pc{
+    margin-bottom: -20px;
+    @include g.flex($jc:space-between, $fw:wrap);
+    @include g.after{
+      width: calc( (100% - 60px) / 3 );
+      height: 0;
+    }
+  }
+  @include g.sp{
+
+  }
 }
 
 .p-card__child{
-  width: calc( (100% - 60px) / 3 );
+
+  margin: 0 0 20px;
   box-shadow: 0 0 12px #bbb;
   border-radius: 10px solid #bbb;
   overflow:hidden;
+  @include g.pc{
+    width: calc( (100% - 60px) / 3 );
+  }
 }
 
 .p-card__photo{
