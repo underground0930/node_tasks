@@ -9,6 +9,7 @@ const fs = require('fs-extra'); // ディレクトリを再帰的に作成
 const glob = require('glob'); // ファイル名のパターンマッチング
 
 const copy = (rootSrcDir, rootDistDir, src) => {
+  console.log('■■■■■ copy task start ■■■■■');
   glob(src, { root: rootSrcDir }, (err, files) => {
     // 対処となるファイルのパターンマッチング
     if (err) {
@@ -18,16 +19,16 @@ const copy = (rootSrcDir, rootDistDir, src) => {
     const resultArr = [];
     const { length } = files;
     let count = 0;
-    files.forEach(file => {
+    files.forEach((file) => {
       const f = file.split(rootSrcDir);
-      fs.copy(file, rootDistDir + f[1], err => {
+      fs.copy(file, rootDistDir + f[1], (err) => {
         if (err) return console.error(err);
         resultArr.push(f[1]);
         count++;
         if (count === length) {
           // ファイル数を数えてタスクが完了
-          console.log('copy: [' + resultArr.join(', ') + ']');
-          console.log('====== copy finished ======');
+          // console.log('copy: [' + resultArr.join(', ') + ']');
+          console.log('■■■■■ copy task end ■■■■■');
         }
       });
     });

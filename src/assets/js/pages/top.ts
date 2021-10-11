@@ -73,3 +73,8 @@ window.addEventListener('load', () => {
     },
   });
 });
+
+console.log('===param===');
+console.log(param1);
+console.log(param2);
+console.log(param3);

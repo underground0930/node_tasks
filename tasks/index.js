@@ -11,11 +11,12 @@ const sass = require('./sass'); // 自作のsassタスク
 const html = require('./html'); // 自作のhtmlタスク
 
 /************************************************
-paths
+config
 ************************************************/
 
 const paths = require('../path.config'); // 使いやすいようにそれぞれのパスを変数に入れ直す
-const isDev = paths.node_env === 'dev' ? true : false; // isDev
+const environment = process.env.NODE_ENV;
+const isDev = environment === 'development' ? true : false; // isDev
 
 /************************************************
 data

@@ -1,13 +1,8 @@
 const path = require('path');
-const NODE_ENV = process.env.NODE_ENV; // 環境変数を取得
-
-// 開発中と納品用でビルドディレクトリを変更する
-const buildRoot = NODE_ENV === 'dev' ? 'htdocs_dev' : 'htdocs';
-
-// ルートからのディレクトリを取得
+const environment = process.env.NODE_ENV;
+const config = require(`./config/${environment}.js`);
+const { buildRoot } = config;
 const rootDir = process.cwd();
-
-// os間のパスの違いを吸収
 const pr = (str) => {
   return path.resolve(str);
 };
@@ -32,7 +27,6 @@ const paths = {
     font: pr(`${rootDir}/${buildRoot}/assets/fonts`),
     movie: pr(`${rootDir}/${buildRoot}/assets/movie`),
   },
-  node_env: NODE_ENV,
 };
 
 module.exports = paths;

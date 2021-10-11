@@ -1,24 +1,17 @@
 const path = require('path');
-const paths = require('./path.config');
 const webpack = require('webpack');
-
 const getFileData = require('./tasks/getFileData');
+const paths = require('./path.config');
+const environment = process.env.NODE_ENV;
+const config = require(`./config/${environment}.js`);
 
-const devConfig = {
-  devtool: 'source-map',
-  watch: true,
-  mode: 'development',
-};
-
-const prodConfig = {
-  mode: 'production',
-};
-
-const conf = paths.node_env === 'dev' ? devConfig : prodConfig;
-
+const { mode, devtool, watch } = config;
 const data = JSON.stringify(getFileData(paths.src.assets + '/data/*.yaml'));
 
-module.exports = Object.assign(conf, {
+module.exports = {
+  mode,
+  devtool,
+  watch,
   entry: {
     common: paths.src.js + '/common/script.ts',
     top: paths.src.js + '/pages/top.ts',
@@ -29,7 +22,6 @@ module.exports = Object.assign(conf, {
     path: paths.dist.js,
   },
   module: {
-    // Loaderの設定
     rules: [
       {
         test: /\.(tsx|ts)?$/,
@@ -60,6 +52,7 @@ module.exports = Object.assign(conf, {
   plugins: [
     new webpack.DefinePlugin({
       data,
+      ...config.pluginParams,
     }),
   ],
   resolve: {
@@ -73,4 +66,4 @@ module.exports = Object.assign(conf, {
     maxAssetSize: 9000000,
     maxEntrypointSize: 9000000,
   },
-});
+};

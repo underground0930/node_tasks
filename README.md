@@ -27,17 +27,23 @@ $ npm install
 
 # 以下でで開発環境のローカルサーバーが立ち上がります
 # 自動更新されます
-# htdocs/dev にデータが生成されます
+# htdocs/htdocs_dev にデータが生成されます
 $ npm run dev
 
 # プロダクションモードのデータを生成
-# htdocs/prod にデータが生成されます
+# dummyファイルがassetsディレクトリに残ったままです
+# htdocs/htdocs にデータが生成されます
 $ npm run build
+
+# プロダクションモードのデータを生成
+# dummyファイルがassetsディレクトリから削除されます
+# htdocs/htdocs にデータが生成されます
+$ npm run prod
 ```
 
 ## ■node version
-
-.node-version を参照ください。
+14.18.0
+.node-version を参照
 
 ## ■ ディレクトリ構成
 
