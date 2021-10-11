@@ -1,0 +1,28 @@
+{
+  "core": "WordPress/Wordpress#5.8.1",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.48.zip",
+    "https://downloads.wordpress.org/plugin/custom-post-type-permalinks.3.4.5.zip",
+    "https://downloads.wordpress.org/plugin/intuitive-custom-post-order.3.1.3.zip",
+    "https://downloads.wordpress.org/plugin/duplicate-post.4.1.2.zip",
+    "https://downloads.wordpress.org/plugin/siteguard.1.6.0.zip",
+    "./wp-content/plugins/advanced-custom-fields-pro",
+    "./wp-content/plugins/all-in-one-wp-migration-unlimited-extension"
+  ],
+  "themes": [
+    "./wp-content/themes/template"
+  ],
+  "config": {
+  	"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+    "WP_VENDOR_PATH": "/../../../vendor/autoload.php",
+    "WP_RECAPTCHA_SITEKEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "WP_RECAPTCHA_SECRETKEY": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "WP_GMAIL_USERNAME": "test@gmail.com",
+    "WP_GMAIL_PASSWORD": "testtesttest"
+  },
+  "mappings": {
+    "./wp-content/ai1wm-backups": "./wp-content/ai1wm-backups",
+    "./assets": "../frontend/htdocs/assets"
+  }
+}

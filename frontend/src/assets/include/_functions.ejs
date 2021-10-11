@@ -1,0 +1,10 @@
+<%
+  utils = {
+    // テキストをタグで囲う
+    textTagWrap : (tag,text)=>{
+      return text.split('').map(t=>{
+        return `<${tag}>${t.trim()}</${tag}>`
+      }).join('')
+    }
+  }
+%>

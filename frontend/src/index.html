@@ -1,0 +1,96 @@
+<%
+  const page = {
+    id: 'top',
+    class: 'top',
+    script: 'top',
+    title: '',
+    description: '',
+    ogp: '',
+  }
+%>
+<%- include( relativePath + 'assets/include/_upperIncludes', {page, relativePath}); -%>
+<div class="l-wrapper">
+  <!-- ///////// contents start ///////// -->
+    <div class="pg-top">
+      <!-- kv -->
+      <div class="pg-top-kv">
+        <video width="300" class="p-kv__video" src="/assets/movie/_dummy/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
+      </div>
+      <!--/ kv  -->
+      <!-- news -->
+      <section class="pg-top-section">
+        <h2 class="c-title pg-top-section__title">NEWS</h2>
+        <%- include( relativePath + 'assets/include/_list', {}); -%>
+      </section>
+      <!--/ news -->
+      <!-- blog -->
+      <section class="pg-top-section">
+        <h2 class="c-title pg-top-section__title">BLOG</h2>
+        <%- include( relativePath + 'assets/include/_card' , {}); -%>
+      </section>
+      <!--/ blog -->
+      <!-- react -->
+      <div id="app"></div>
+      <!--/ react -->
+      <!-- picture -->
+      <h2>picture</h2>
+      <picture>
+        <source media="(min-width:1100px)" srcset="/assets/img/_dummy/x.png">
+        <source media="(max-width:1099px)" srcset="/assets/img/_dummy/y.png">
+        <img src="/assets/img/x.png" alt="">
+      </picture>
+      <!--/ picture -->
+      <!-- object-fit -->
+      <h2>object-fit</h2>
+      <div class="p-photos">
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+        <div class="p-photo">
+          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+        </div>
+      </div>
+      <!--/ object-fit -->
+      <!-- swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+      <!--/ swiper -->
+      <!-- Intersection Observer & position sticky -->
+      <h2>Intersection Observer & position sticky</h2>
+      <div class="p-boxWrep">
+        <div class="p-boxMain">
+          <% [...new Array(5)].forEach((element,i) => { %>
+            <div class="p-box" data-id="<%- i+1 %>"><%- i+1 %></div>
+          <% }); %>
+        </div>
+        <div class="p-boxSub">
+          <div class="p-boxNav is-sticky"></div>
+        </div>
+      </div>
+      <!-- Intersection Observer & position sticky -->
+    </div>
+
+  <!-- ///////// contents end ///////// -->
+</div>
+<%- include( relativePath + 'assets/include/_underIncludes',{page}); -%>

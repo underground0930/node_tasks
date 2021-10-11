@@ -3,5 +3,7 @@ module.exports = {
   buildRoot: 'htdocs',
   mode: environment,
   watch: false,
-  pluginParams: {},
+  pluginParams: {
+    apiPath: 'https://abcde.jp/api/',
+  },
 };

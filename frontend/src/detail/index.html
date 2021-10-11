@@ -1,0 +1,21 @@
+<%
+  const page = {
+    id: 'detail',
+    class: 'detail',
+    script: 'detail',
+    title: '',
+    description: '',
+    ogp: '',
+  }
+%>
+<%- include( relativePath + 'assets/include/_upperIncludes', {page, relativePath}); -%>
+<div class="l-wrapper">
+  <!-- ///////// contents start ///////// -->
+    <div class="pg-detail">
+      <h1>detail</h1>
+      <p>My page</p>
+      <div class="pg-detail__box"></div>
+    </div>
+  <!-- ///////// contents end ///////// -->
+</div>
+<%- include( relativePath + 'assets/include/_underIncludes',{page}); -%>

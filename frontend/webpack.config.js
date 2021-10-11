@@ -1,6 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
+
+// tasks
 const getFileData = require('./tasks/getFileData');
+
+// config
 const paths = require('./path.config');
 const environment = process.env.NODE_ENV;
 const config = require(`./config/${environment}.js`);
