@@ -1,5 +1,5 @@
 const environment = process.env.NODE_ENV;
-const { param1, param2, param3 } = process.env;
+
 module.exports = {
   buildRoot: 'htdocs_dev',
   mode: environment,
@@ -7,8 +7,8 @@ module.exports = {
   devtool: 'source-map',
   pluginParams: {
     apiPath: 'https://dev.abcde.jp/api/',
-    param1,
-    param2,
-    param3,
+    param1: process.env.PARAM1 ?? null,
+    param2: process.env.PARAM2 ?? null,
+    param3: process.env.PARAM3 ?? null,
   },
 };

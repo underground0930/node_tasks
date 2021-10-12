@@ -29,6 +29,12 @@ $ npm install
 # ローカル開発時に使用します
 $ npm run dev
 
+# npm run dev とほぼ同じ
+# ローカル開発時に使用します
+# 追加で独自の環境変数をタスクに渡すことが出来ます
+# 「package.json」と「frontend/config/development.js」に追加したい環境変数を記述する
+$ npm run dev-param
+
 # プロダクションモードのデータを生成
 # htdocs/htdocs にデータが生成されます
 # _dummyディレクトリがassetsディレクトリに残ったままです
