@@ -7,11 +7,11 @@
 const del = require('del'); // データの削除
 
 const dele = async (src) => {
-  console.log('■■■■■ delete task start ■■■■■');
+  console.log('■■ delete task start ■■');
   const deletedPaths = await del(src, { force: false });
 
   // console.log('Deleted files and directories:\n', deletedPaths.join('\n'));
-  console.log('■■■■■ delete task end ■■■■■');
+  console.log('■■ delete task end ■■');
   return;
 };
 

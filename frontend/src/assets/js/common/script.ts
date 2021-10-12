@@ -1,19 +1,12 @@
-// polifil
-import 'intersection-observer'; // for IE
-import 'objectFitPolyfill'; // for IE
-import '@/libs/object-assign-polifil'; // for IE
-
-// utils
-import checkIE from '@/utils/checkIE'; // for IE
-import checkDevice from '@/utils/checkDevice';
-import setPolifills from '@/utils/setPolifills'; // for IE
+import { checkDevice } from '@/utils/checkDevice';
+import { settingLegacyBrowser } from '@/utils/IE/settingLegacyBrowser';
 
 // libs
-import { ScrollTop } from '@/libs/ScrollTop';
+import { ScrollTop } from '@/utils/ScrollTop';
 
 window.globalVars = {
   data,
-  isIE: checkIE(),
+  isIE: false,
   isMobile: false,
   isTablet: false,
   isDesktop: false,
@@ -21,12 +14,8 @@ window.globalVars = {
 
 const init = () => {
   checkDevice();
+  settingLegacyBrowser();
   new ScrollTop();
-  if (window.globalVars.isIE) {
-    setPolifills();
-    window.objectFitPolyfill(document.querySelectorAll('.is-objectFit-cover'));
-    document.documentElement.classList.add('is-IE');
-  }
 };
 
 init();

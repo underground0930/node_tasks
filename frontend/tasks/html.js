@@ -35,6 +35,7 @@ const html = ({ src, dist, data, isDev }) => {
 
   glob('/**/*.html', { root: src }, (err, files) => {
     // 対処となるファイルのパターンマッチング
+    console.log(`■■ ejs task start ■■`);
     if (err) {
       console.log(err);
       return;
@@ -69,8 +70,8 @@ const html = ({ src, dist, data, isDev }) => {
             count++;
             if (count === length) {
               // ファイル数を数えてタスクが完了
-              console.log('ejs: [' + resultArr.join(', ') + ']');
-              console.log('====== ejs finished ======');
+              console.log(`■■ ejs files : [${resultArr.join(', ')}] ■■`);
+              console.log(`■■ ejs task finished ■■`);
             }
           });
         }

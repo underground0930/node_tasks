@@ -43,19 +43,16 @@ const cssTask = () => {
   sass(paths.src.css, paths.dist.css, isDev);
 };
 const imgTask = () => {
-  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg,ico}');
+  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg,ico}', 'img');
 };
 const jsonTask = () => {
-  copy(paths.src.json, paths.dist.json, '/**/*.json');
+  copy(paths.src.json, paths.dist.json, '/**/*.json', 'json');
 };
 const fontTask = () => {
-  copy(paths.src.font, paths.dist.font, '/**/*.{woff,woff2,ttf,svg,eot}');
-};
-const libTask = () => {
-  copy(paths.src.js, paths.dist.js, '/plugins/**/*.js');
+  copy(paths.src.font, paths.dist.font, '/**/*.{woff,woff2,ttf,svg,eot}', 'font');
 };
 const movieTask = () => {
-  copy(paths.src.movie, paths.dist.movie, '/**/*.mp4');
+  copy(paths.src.movie, paths.dist.movie, '/**/*.mp4', 'movie');
 };
 
 // 監視して更新されたファイルに関するタスクを走らせる
@@ -74,9 +71,6 @@ const watchTasks = () => {
   });
   watch(paths.src.font + '/**/*', () => {
     fontTask();
-  });
-  watch(paths.src.js + '/plugins/**/*.js', () => {
-    libTask();
   });
 };
 
@@ -105,13 +99,11 @@ const serverTask = () => {
 // 古いデータを削除後に各タスクを走らせる
 dele([paths.dist.root + '/**', '!' + paths.dist.root]).then(() => {
   // 各タスク
-  console.log('■■■■■ build task start ■■■■■');
   htmlTask();
   cssTask();
   imgTask();
   jsonTask();
   fontTask();
-  libTask();
   movieTask();
   if (isDev) {
     // 開発中ならwatchとサーバーも走らせる

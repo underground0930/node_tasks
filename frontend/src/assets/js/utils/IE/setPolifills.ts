@@ -1,9 +1,9 @@
-import loadScript from '../utils/loadScript';
+import { loadScript } from '@/utils/loadScript';
 /**
  * レガシーブラウザ用のポリフィル
  */
 
-const setPolifills = (): void => {
+export const setPolifills = (): void => {
   const array = [
     {
       name: 'object-fit-images',
@@ -47,5 +47,3 @@ const setPolifills = (): void => {
     });
   });
 };
-
-export default setPolifills;

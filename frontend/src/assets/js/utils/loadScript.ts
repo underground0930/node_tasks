@@ -4,12 +4,10 @@
  * @param {Function} callback - 読み込み後に実行する関数
  */
 
-const loadScript = (src: string, callback: () => void): void => {
+export const loadScript = (src: string, callback: () => void): void => {
   const head = document.head;
   const script = document.createElement('script');
   script.src = src;
   script.addEventListener('load', callback);
   head.appendChild(script);
 };
-
-export default loadScript;

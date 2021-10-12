@@ -14,6 +14,7 @@ const glob = require('glob'); // ファイル名のパターンマッチング
 
 const css = (src, dist, isDev) => {
   glob('/**/!(_)*.scss', { root: src }, (err, files) => {
+    console.log(`■■ sass task start ■■`);
     // 対処となるファイルのパターンマッチング
     if (err) {
       console.log(err);
@@ -52,8 +53,8 @@ const css = (src, dist, isDev) => {
                 count++;
                 if (count === length) {
                   // ファイル数を数えてタスクが完了
-                  console.log('css: [' + resultArr.join(', ') + ']');
-                  console.log('====== css finished ======');
+                  console.log(`■■ css files : [${resultArr.join(', ')}] ■■`);
+                  console.log(`■■ sass task finished ■■`);
                 }
               });
             });

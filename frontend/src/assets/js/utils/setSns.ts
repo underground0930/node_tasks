@@ -1,4 +1,4 @@
-import qsa from './qsa';
+import { qsa } from './qsa';
 
 /**
  * snsのリンクを設定
@@ -9,7 +9,7 @@ import qsa from './qsa';
  * @param {String} props.line - lineシェアリンクを付加するセレクタ
  */
 
-const setSns = (props: { tw: string; fb: string; line: string }): void => {
+export const setSns = (props: { tw: string; fb: string; line: string }): void => {
   const { tw, fb, line } = props;
   const description = document
     .querySelector('meta[name="description"]')
@@ -34,5 +34,3 @@ const setSns = (props: { tw: string; fb: string; line: string }): void => {
     e.setAttribute('href', 'http://line.me/R/msg/text/?' + detail + '%20' + url);
   });
 };
-
-export default setSns;
