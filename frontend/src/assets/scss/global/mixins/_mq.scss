@@ -6,62 +6,62 @@
 @use '../variables' as v;
 
 @mixin pc(){
-	@media screen and ( min-width: v.$breakpoint + 1 + 'px' ) {
+  @media not all and (max-width: v.$breakpoint + 'px') {
 		@content;
-	}
+  }
 }
 
 @mixin sp(){
-	@media screen and ( max-width: v.$breakpoint + 'px' ) {
+	@media all and ( max-width: v.$breakpoint + 'px' ) {
 		@content;
 	}
 }
 
 // more X width
 @mixin min-screen($min-width) {
-	@media screen and ( min-width: $min-width + 'px' ) {
+	@media all and ( min-width: $min-width + 'px' ) {
 		@content;
 	}
 }
 
 // less X width
 @mixin max-screen($max-width) {
-	@media screen and ( max-width: $max-width + 'px' ) {
+	@media all and ( max-width: $max-width + 'px' ) {
 		@content;
 	}
 }
 
 // between X width and Y width
 @mixin screen($min-width, $max-width) {
-	@media screen and ( min-width: $min-width + 'px' ) and ( max-width: $max-width + 'px' ) {
+	@media all and ( min-width: $min-width + 'px' ) and ( max-width: $max-width + 'px' ) {
 		@content;
 	}
 }
 
 // more X height
 @mixin min-screen-h($min-height) {
-	@media screen and ( min-height: $min-height + 'px' ) {
+	@media all and ( min-height: $min-height + 'px' ) {
 		@content;
 	}
 }
 
 // less X height
 @mixin max-screen-h($max-height) {
-	@media screen and ( max-height: $max-height + 'px' ) {
+	@media all and ( max-height: $max-height + 'px' ) {
 		@content;
 	}
 }
 
 // between X height and Y height
 @mixin screen-h($min-height, $max-height) {
-	@media screen and ( min-height: $min-height + 'px' ) and ( max-height: $max-height + 'px' ) {
+	@media all and ( min-height: $min-height + 'px' ) and ( max-height: $max-height + 'px' ) {
 		@content;
 	}
 }
 
 // more X width and more Y height
 @mixin min-screen-wh($min-width, $min-height) {
-	@media screen and (min-width: $min-width + 'px') and ( min-height: $min-height + 'px' ) {
+	@media all and (min-width: $min-width + 'px') and ( min-height: $min-height + 'px' ) {
 		@content;
 	}
 }

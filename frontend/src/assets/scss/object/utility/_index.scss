@@ -19,10 +19,21 @@
 	font-family: 'object-fit: contain;';
 }
 
-.u-pcBr{
-
+.u-pcbr{
+  @include g.pc{
+    display:block;
+  }
+  @include g.sp{
+    display:none;
+  }
 }
 
-.u-spBr{
-
+.u-spbr{
+  @include g.pc{
+    display:none;
+  }
+  @include g.sp{
+    display:block;
+  }
 }
+
