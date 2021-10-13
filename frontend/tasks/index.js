@@ -43,7 +43,7 @@ const cssTask = () => {
   sass(paths.src.css, paths.dist.css, isDev);
 };
 const imgTask = () => {
-  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,svg,ico}', 'img');
+  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,webp,svg,ico}', 'img');
 };
 const jsonTask = () => {
   copy(paths.src.json, paths.dist.json, '/**/*.json', 'json');
@@ -63,7 +63,7 @@ const watchTasks = () => {
   watch(paths.src.css + '/**/*.scss', () => {
     cssTask();
   });
-  watch(paths.src.img + '/**/*.{jpg,png,gif,svg,ico}', () => {
+  watch(paths.src.img + '/**/*.{jpg,png,gif,webp,svg,ico}', () => {
     imgTask();
   });
   watch(paths.src.json + '/**/*.json', () => {
@@ -87,7 +87,7 @@ const serverTask = () => {
 
   bs.watch(paths.dist.root + '/**/*.html').on('change', bs.reload);
   bs.watch(paths.dist.assets + '/**/*.js').on('change', bs.reload);
-  bs.watch(paths.dist.assets + '/**/*.{png,jpg,gif,svg,ico}').on('change', bs.reload);
+  bs.watch(paths.dist.assets + '/**/*.{jpg,png,gif,webp,svg,ico}').on('change', bs.reload);
   bs.watch(paths.dist.assets + '/**/*.json').on('change', bs.reload);
   bs.watch(paths.dist.assets + '/**/*.css', (e, f) => {
     if (e === 'change') {
