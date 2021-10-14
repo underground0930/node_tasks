@@ -33,7 +33,7 @@ jQuery(function ($) {
     }
   }
 
-  ["hoge_category"].forEach((taxonomy) => {
+  ["news_category"].forEach((taxonomy) => {
     limit_post_category_select(taxonomy);
     limit_index_category_select(taxonomy);
   });

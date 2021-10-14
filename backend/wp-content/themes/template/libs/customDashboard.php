@@ -41,13 +41,13 @@ function add_links_welcome_panel()
   <div class="welcome_panel_sections">
     <!-- ● -->
     <div class="welcome_panel_section">
-      <h2>Hoge</h2>
-      <h3>【url】<a target="_blank" rel="noreferrer" href='/hoge/'>/hoge/</a></h3>
+      <h2>News</h2>
+      <h3>【url】<a target="_blank" rel="noreferrer" href='/news/'>/news/</a></h3>
       <ul>
         <li>・記事は日付順に並びます</li>
         <li>・記事の新規追加、削除が可能です</li>
       </ul>
-      <p><a class="button button-primary post-foo" target="_blank" href="edit.php?post_type=hoge">記事一覧</a></p>
+      <p><a class="button button-primary post-foo" target="_blank" href="edit.php?post_type=news">記事一覧</a></p>
     </div>
     <!-- ● -->
     <div class="welcome_panel_section">

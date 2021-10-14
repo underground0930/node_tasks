@@ -22,42 +22,30 @@ add_action('pre_get_posts', function ($query)
 });
 
 /**
- * カスタム投稿を設定
- */
-function create_post_type()
-{
-
-  register_post_type(
-    'hoge',
-    [
-      'labels' => [
-        'name' => __('Hoge'),
-        'singular_name' => __('hoge'),
-      ],
-      'public' => false,
-      'publicly_queryable' => true,
-      'show_ui' => true,
-      'has_archive' => true,
-      'supports' => ['title', 'thumbnail']
-    ]
-  );
-}
-
-add_action('init', 'create_post_type');
-
-/**
- * タクソノミーを設定
+ * カスタム投稿 & タクソノミーを設定
  */
 
 
 add_action(
   'init',
   function () {
+    register_post_type(
+      'news',
+      [
+        'labels' => [
+          'name' => __('News'),
+          'singular_name' => __('news'),
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'supports' => ['title', 'thumbnail'],
+      ]
+    );
     register_taxonomy(
-      'news_tag',
+      'news_category',
       ['news'],
       [
-        'label' => 'news タグ',
+        'label' => 'news カテゴリー',
         'hierarchical' => true,
         'show_ui' => true,
         'query_var' => true,

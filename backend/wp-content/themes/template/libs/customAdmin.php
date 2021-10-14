@@ -59,10 +59,7 @@ function load_admin_js_css()
 
     // postType 別
     $postType = get_post_type();
-    if ($postType === 'hoge') {
-        wp_enqueue_script('hoge', get_template_directory_uri().'/scripts/postType/'. $postType .'/index.js', array('jquery'), '', true);
-    }
-    if ($postType === 'huga') {
-        wp_enqueue_script('huga', get_template_directory_uri().'/scripts/postType/'. $postType .'/index.js', array('jquery'), '', true);
+    if ($postType === 'news') {
+        wp_enqueue_script('news', get_template_directory_uri().'/scripts/postType/'. $postType .'/index.js', array('jquery'), '', true);
     }
 }
