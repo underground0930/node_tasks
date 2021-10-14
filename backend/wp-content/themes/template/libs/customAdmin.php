@@ -53,13 +53,16 @@ add_action('admin_enqueue_scripts', 'load_admin_js_css');
 
 function load_admin_js_css()
 {
-    $post_type = get_post_type();
-    wp_enqueue_style('admin_style', get_template_directory_uri() . '/style/admin.css');
-    wp_enqueue_script('category', get_template_directory_uri().'/scripts/limit_category_select.js', array('jquery'), '', true);
-    if ($post_type === 'hoge') {
-        wp_enqueue_script('hoge', get_template_directory_uri().'/scripts/post_type/'. $post_type .'/add_description.js', array('jquery'), '', true);
+
+    wp_enqueue_style('admin_style', get_template_directory_uri() . '/styles/admin.css');
+    wp_enqueue_script('category', get_template_directory_uri().'/scripts/limitCategorySelect.js', array('jquery'), '', true);
+
+    // postType 別
+    $postType = get_post_type();
+    if ($postType === 'hoge') {
+        wp_enqueue_script('hoge', get_template_directory_uri().'/scripts/postType/'. $postType .'/index.js', array('jquery'), '', true);
     }
-    if ($post_type === 'huga') {
-        wp_enqueue_script('huga', get_template_directory_uri().'/scripts/post_type/'. $post_type .'/add_description.js', array('jquery'), '', true);
+    if ($postType === 'huga') {
+        wp_enqueue_script('huga', get_template_directory_uri().'/scripts/postType/'. $postType .'/index.js', array('jquery'), '', true);
     }
 }

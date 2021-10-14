@@ -1,0 +1,56 @@
+/* ======================================
+投稿画面
+======================================= */
+
+/* エディタ */
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="b-quote"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="ins"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="img"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="ul"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="ol"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="del"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="li"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="code"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="more"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="i"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="b"],
+.wp-admin .acf-editor-wrap .quicktags-toolbar input[value="タグを閉じる"]{
+  display:none;
+}
+.wp-admin .wp-media-buttons{
+  display:none !important;
+}
+
+.wp-admin .postbox-header + .inside > .acf-field > .acf-label > label{
+  font-size: 20px !important;
+}
+.wp-admin .acf-label .description{
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.wp-admin .acf-fc-layout-handle{
+  font-weight: bold;
+}
+.wp-admin .q_and_a .wp-editor-area{
+  height: 160px !important;
+}
+.wp-admin .related_box .acf-checkbox-list li{
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+
+/* よく使うもの */
+.category-tabs{
+  display:none !important;
+}
+
+/* 新しいカテゴリーを追加 */
+.taxonomy-add-new{
+  display:none !important;
+}
+
+/* タイトル下の説明文 */
+#title-under-description{
+  color: #555;
+  padding-top: 5px;
+}

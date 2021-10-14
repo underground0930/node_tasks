@@ -9,6 +9,6 @@
   $gVars['ogtype'] = 'article';
   //////////////////////////////////////////////
  ?>
-<?php require_once(__DIR__ .'/_parts/topIncludes.php'); ?>
+<?php require_once(__DIR__ .'/parts/topIncludes.php'); ?>
 <div>archive</div>
-<?php require_once(__DIR__ .'/_parts/bottomIncludes.php'); ?>
+<?php require_once(__DIR__ .'/parts/bottomIncludes.php'); ?>

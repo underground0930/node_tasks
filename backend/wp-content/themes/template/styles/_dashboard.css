@@ -1,0 +1,44 @@
+/* ======================================
+ウェルカムボード
+======================================= */
+
+/* welcome panel */
+.welcome_panel_sections{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.wp-admin .welcome_panel_section{
+  width: 49%;
+  box-sizing:border-box;
+  border-radius: 5px;
+  border: 1px solid #dedede;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.wp-admin .welcome_panel_section ul{
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+.wp-admin .welcome_panel_section h2{
+  padding-top: 0;
+  font-size: 30px;
+  border-left: 7px solid #2271b1;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+.welcome-panel-close{
+  display: none !important;
+}
+#dashboard-widgets-wrap .postbox-container{
+  width: 100% !important;
+}
+
+#dashboard_widget_description .handle-order-higher,
+#dashboard_widget_description .handle-order-lower,
+#dashboard_widget_description .handlediv{
+  display:none;
+}
+#dashboard_widget_description .inside{
+  display: block !important;
+}
