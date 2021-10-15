@@ -18,7 +18,7 @@ const NEWLINES = ["\r\n", "\r", "\n"];
  */
 const ESCAPED_BR_TAG = ["&lt;br&gt;", "&lt;br /&gt;", "&lt;BR /&gt;"];
 define('BR_TAGS_NEWLINES', (function () {
-  return array_merge(BR_TAGS, NEWLINES);
+    return array_merge(BR_TAGS, NEWLINES);
 })());
 
 /**
@@ -30,9 +30,9 @@ define('BR_TAGS_NEWLINES', (function () {
  **/
 function vd($data)
 {
-  echo '<pre>';
-  var_dump($data);
-  echo '</pre>';
+    echo '<pre>';
+    var_dump($data);
+    echo '</pre>';
 }
 
 /**
@@ -44,10 +44,10 @@ function vd($data)
  */
 function nbr($str)
 {
-  if (empty($str)) {
-    return false;
-  }
-  return nl2br($str);
+    if (empty($str)) {
+        return false;
+    }
+    return nl2br($str);
 }
 
 /**
@@ -59,10 +59,10 @@ function nbr($str)
  */
 function brTxt($str)
 {
-  if (empty($str)) {
-    return false;
-  }
-  return nl2br(esc_html($str));
+    if (empty($str)) {
+        return false;
+    }
+    return nl2br(esc_html($str));
 }
 
 /**
@@ -75,9 +75,9 @@ function brTxt($str)
 
 function sanitizeText($str)
 {
-  $strVal = esc_html($str);
-  $strVal = str_replace(ESCAPED_BR_TAG, "\n", $strVal);
-  return $strVal;
+    $strVal = esc_html($str);
+    $strVal = str_replace(ESCAPED_BR_TAG, "\n", $strVal);
+    return $strVal;
 }
 
 /**
@@ -90,10 +90,10 @@ function sanitizeText($str)
 
 function sanitizeMetaText($str)
 {
-  $strVal = wp_kses($str, ['br' => []]);
-  $strVal = str_replace(BR_TAGS_NEWLINES, ' ', $strVal);
-  $strVal = esc_html($strVal);
-  return $strVal;
+    $strVal = wp_kses($str, ['br' => []]);
+    $strVal = str_replace(BR_TAGS_NEWLINES, ' ', $strVal);
+    $strVal = esc_html($strVal);
+    return $strVal;
 }
 
 
@@ -107,7 +107,7 @@ function sanitizeMetaText($str)
 
 function replaceBrWithSpace($str)
 {
-  return str_replace(BR_TAGS, ' ', $str);
+    return str_replace(BR_TAGS, ' ', $str);
 }
 
 
@@ -122,7 +122,7 @@ function replaceBrWithSpace($str)
 
 function limitCharacter($str, $limit)
 {
-  return (mb_strlen($str) > $limit) ? mb_substr($str, 0, $limit) . "…" : $str;
+    return (mb_strlen($str) > $limit) ? mb_substr($str, 0, $limit) . "…" : $str;
 }
 
 /**
@@ -136,11 +136,11 @@ function limitCharacter($str, $limit)
 
 function getImageFromId($id, $size = 'full')
 {
-  if ($id) {
-    $url = wp_get_attachment_image_src($id, $size);
-    return $url ? $url[0] : false;
-  }
-  return false;
+    if ($id) {
+        $url = wp_get_attachment_image_src($id, $size);
+        return $url ? $url[0] : false;
+    }
+    return false;
 }
 
 /**
@@ -155,8 +155,8 @@ function getImageFromId($id, $size = 'full')
 
 function getImageFromPostId($field, $postId = false, $size = 'full')
 {
-  $id = get_field($field, $postId);
-  return getImageFromId($id, $size);
+    $id = get_field($field, $postId);
+    return getImageFromId($id, $size);
 }
 
 /**
@@ -167,8 +167,8 @@ function getImageFromPostId($field, $postId = false, $size = 'full')
 
 function getNoPhoto()
 {
-  global $gVars;
-  return $gVars['no_photo'];
+    global $gVars;
+    return $gVars['no_photo'];
 }
 
 /**
@@ -181,7 +181,7 @@ function getNoPhoto()
 
 function getEmptyArr($target)
 {
-  return is_array($target) ? $target : [];
+    return is_array($target) ? $target : [];
 }
 
 /**
@@ -194,13 +194,13 @@ function getEmptyArr($target)
 
 function externalLink($url)
 {
-  $p = '/^http(s):\/\//';
-  $check = preg_match($p, $url);
-  $attrs = 'href="' . esc_url($url) . '"';
-  if ($check) {
-    $attrs .= ' rel="noopener" target="_blank"';
-  }
-  return $attrs;
+    $p = '/^http(s):\/\//';
+    $check = preg_match($p, $url);
+    $attrs = 'href="' . esc_url($url) . '"';
+    if ($check) {
+        $attrs .= ' rel="noopener" target="_blank"';
+    }
+    return $attrs;
 }
 
 /**
@@ -214,12 +214,12 @@ function externalLink($url)
 function checkPageNumber($mixed)
 {
   // ページパラメータのチェック
-  $isNum = ctype_digit(strval($mixed));
-  $n = intval($mixed);
-  if ($isNum && $n !== 0) {
-    return $n;
-  }
-  return 1;
+    $isNum = ctype_digit(strval($mixed));
+    $n = intval($mixed);
+    if ($isNum && $n !== 0) {
+        return $n;
+    }
+    return 1;
 }
 
 
@@ -234,15 +234,15 @@ function checkPageNumber($mixed)
 
 function recaptchaCheck($token, $secret)
 {
-  $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
 
-  $verifyResponse = file_get_contents($url . '?secret=' . $secret . '&response=' . $token);
-  $result = json_decode($verifyResponse);
+    $verifyResponse = file_get_contents($url . '?secret=' . $secret . '&response=' . $token);
+    $result = json_decode($verifyResponse);
 
-  return array(
+    return array(
     "success" => $result->success,
     "errcode" => isset($result->{'error-codes'}) ? $result->{'error-codes'}[0] : null
-  );
+    );
 }
 
 /**
@@ -257,15 +257,15 @@ function clearSessionData()
   // https://kappuccino-2.hatenadiary.org/entry/20080726/1217049706
 
   // セッション変数を全て解除する
-  $_SESSION = array();
+    $_SESSION = array();
 
   // セッションを切断するにはセッションクッキーも削除する。
   // Note: セッション情報だけでなくセッションを破壊する。
-  if (isset($_COOKIE[session_name()])) {
-    setcookie(session_name(), '', time() - 42000, '/');
-  }
+    if (isset($_COOKIE[session_name()])) {
+        setcookie(session_name(), '', time() - 42000, '/');
+    }
   // 最終的に、セッションを破壊する
-  session_destroy();
+    session_destroy();
 }
 
 /**
@@ -278,8 +278,8 @@ function clearSessionData()
 
 function redirectPage($url)
 {
-  header('Location: ' . $url);
-  exit;
+    header('Location: ' . $url);
+    exit;
 }
 
 /**
@@ -292,6 +292,6 @@ function redirectPage($url)
 
 function getFullPath($url)
 {
-  global $gVars;
-  return $gVars['home_url'] . $url;
+    global $gVars;
+    return $gVars['home_url'] . $url;
 }

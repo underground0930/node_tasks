@@ -1,7 +1,7 @@
 <?php
   $metaTitle =  sanitizeMetaText($gVars['title']);
   $metaDescription =  sanitizeMetaText($gVars['description']);
- ?>
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="viewport-fit=cover,width=device-width,user-scalable=no,initial-scale=1.0">

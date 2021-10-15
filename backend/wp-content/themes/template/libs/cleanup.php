@@ -85,8 +85,7 @@ add_filter(
 
 add_action(
     'admin_head-edit.php',
-    function ()
-    {
+    function () {
         add_filter(
             'the_title',
             function ($title, $id) {
@@ -98,4 +97,3 @@ add_action(
         );
     }
 );
-

@@ -8,16 +8,16 @@
 
 
 add_action('pre_get_posts', function ($query) {
-  global $gVars;
-  if (is_admin() || !$query->is_main_query()) {
-    return;
-  }
-  foreach ($gVars['posts_per_page'] as $key => $value) {
-    if ($query->is_post_type_archive($key)) {
-      $query->set('posts_per_page', $gVars['posts_per_page'][$key]);
-      return;
+    global $gVars;
+    if (is_admin() || !$query->is_main_query()) {
+        return;
     }
-  }
+    foreach ($gVars['posts_per_page'] as $key => $value) {
+        if ($query->is_post_type_archive($key)) {
+            $query->set('posts_per_page', $gVars['posts_per_page'][$key]);
+            return;
+        }
+    }
 });
 
 /**
@@ -25,10 +25,11 @@ add_action('pre_get_posts', function ($query) {
  */
 
 
-function setRegisterPostType(){
+function setRegisterPostType()
+{
     register_post_type(
-      'news',
-      [
+        'news',
+        [
         'labels' => [
           'name' => __('News'),
           'singular_name' => __('news'),
@@ -36,23 +37,24 @@ function setRegisterPostType(){
         'public' => true,
         'has_archive' => true,
         'supports' => ['title', 'thumbnail'],
-      ]
+        ]
     );
 }
 
-add_action('init','setRegisterPostType');
+add_action('init', 'setRegisterPostType');
 
-function setRegisterTaxonomy(){
+function setRegisterTaxonomy()
+{
     register_taxonomy(
-      'news_category',
-      ['news'],
-      [
+        'news_category',
+        ['news'],
+        [
         'label' => 'news カテゴリー',
         'hierarchical' => true,
         'show_ui' => true,
         'query_var' => true,
-      ]
+        ]
     );
 }
 
-add_action('init','setRegisterTaxonomy');
+add_action('init', 'setRegisterTaxonomy');

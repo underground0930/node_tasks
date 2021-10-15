@@ -5,7 +5,6 @@
  */
 
 if (function_exists('acf_add_options_page')) {
-
     acf_add_options_page(
         [
         'page_title' => 'フォームメールアドレス設定', // ページタイトル
@@ -16,7 +15,6 @@ if (function_exists('acf_add_options_page')) {
         'position' => '32.1'
         ]
     );
-
 }
 
 

@@ -8,7 +8,7 @@
   $gVars['url'] = '/';
   $gVars['ogtype'] = 'article';
   //////////////////////////////////////////////
- ?>
+?>
 <?php require_once(__DIR__ .'/parts/topIncludes.php'); ?>
 <div>page</div>
 <?php require_once(__DIR__ .'/parts/bottomIncludes.php'); ?>
