@@ -63,3 +63,8 @@ $ npm run wp-restore <ファイル名>
 - フルパスのものは自動でインストールされますが相対パスのものは手動で格納していただく必要があります。
 - 「advanced-custom-fields-pro」は有料プラグインのため手動で格納してください。
 - 「all-in-one-wp-migration-unlimited-extension」は有料プラグインのため手動で格納してください。
+
+## PHP 型の書き方の参考
+
+https://docs.phpdoc.org/3.0/guide/references/phpdoc/types.html#definition-of-a-type
+
