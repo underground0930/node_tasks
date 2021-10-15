@@ -68,3 +68,12 @@ $ npm run wp-restore <ファイル名>
 
 https://docs.phpdoc.org/3.0/guide/references/phpdoc/types.html#definition-of-a-type
 
+## phpDocumentor
+
+docsを生成するコマンド(dockerが必要)
+
+```bash
+
+docker run --rm -v $(pwd)/wp-content/themes/template/libs:/data phpdoc/phpdoc:3  -t docs/
+
+```
