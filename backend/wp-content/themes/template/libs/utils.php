@@ -1,8 +1,22 @@
 <?php
 
+/**
+ * 検索用のbrタグの配列
+ * @var array
+ */
 const BR_TAGS = ["<br>", "<br />", "<BR>"];
+
+/**
+ * 検索用の改行コードのの配列
+ * @var array
+ */
 const NEWLINES = ["\r\n", "\r", "\n"];
-const ESCAPED_BR = ["&lt;br&gt;", "&lt;br /&gt;", "&lt;BR /&gt;"];
+
+/**
+ * 検索用のエスケープされたbrタグの配列
+ * @var array
+ */
+const ESCAPED_BR_TAG = ["&lt;br&gt;", "&lt;br /&gt;", "&lt;BR /&gt;"];
 define('BR_TAGS_NEWLINES', (function () {
   return array_merge(BR_TAGS, NEWLINES);
 })());
@@ -14,7 +28,6 @@ define('BR_TAGS_NEWLINES', (function () {
  *
  * @return void
  **/
-
 function vd($data)
 {
   echo '<pre>';
@@ -29,7 +42,6 @@ function vd($data)
  *
  * @return false|string
  */
-
 function nbr($str)
 {
   if (empty($str)) {
@@ -41,7 +53,7 @@ function nbr($str)
 /**
  * 文字をエスケープ+改行コードをbrタグに変換
  *
- * @param string str
+ * @param string $str
  *
  * @return false|string
  */
@@ -52,7 +64,6 @@ function brTxt($str)
   }
   return nl2br(esc_html($str));
 }
-
 
 /**
  * テキストを無害化 + brタグを改行コードに変換
@@ -65,7 +76,7 @@ function brTxt($str)
 function sanitizeText($str)
 {
   $strVal = esc_html($str);
-  $strVal = str_replace(ESCAPED_BR, "\n", $strVal);
+  $strVal = str_replace(ESCAPED_BR_TAG, "\n", $strVal);
   return $strVal;
 }
 
@@ -74,7 +85,7 @@ function sanitizeText($str)
  *
  * @param  string $str 無害化する文字列
  *
- * @return string
+ * @return string 無害化された文字列
  */
 
 function sanitizeMetaText($str)
@@ -91,7 +102,7 @@ function sanitizeMetaText($str)
  *
  * @param  string $str brタグをスペースに変換したい文字列
  *
- * @return string
+ * @return string 置換された文字列
  */
 
 function replaceBrWithSpace($str)
@@ -101,10 +112,10 @@ function replaceBrWithSpace($str)
 
 
 /**
- * 文字数制限を生成
+ * 指定された文字数の文字列を返す、$limitを超えた場合は３点リーダーをつけて返す
  *
  * @param  string $str 制限したい文字列
- * @param  int $num 制限したい文字数
+ * @param  int $limit 制限したい文字数
  *
  * @return string
  */
@@ -136,15 +147,15 @@ function getImageFromId($id, $size = 'full')
  * 記事IDから画像の取得
  *
  * @param  string $field   カスタムフィールド名
- * @param  int $post_id 記事ID
- * @param  string $size    {thumbnail, medium, large, full}
+ * @param  int $postId 記事ID
+ * @param  string $size {thumbnail, medium, large, full}
  *
  * @return string|false
  */
 
-function getImageFromPostId($field, $post_id = false, $size = 'full')
+function getImageFromPostId($field, $postId = false, $size = 'full')
 {
-  $id = get_field($field, $post_id);
+  $id = get_field($field, $postId);
   return getImageFromId($id, $size);
 }
 
@@ -203,9 +214,9 @@ function externalLink($url)
 function checkPageNumber($mixed)
 {
   // ページパラメータのチェック
-  $is_num = ctype_digit(strval($mixed));
+  $isNum = ctype_digit(strval($mixed));
   $n = intval($mixed);
-  if ($is_num && $n !== 0) {
+  if ($isNum && $n !== 0) {
     return $n;
   }
   return 1;
@@ -225,8 +236,8 @@ function recaptchaCheck($token, $secret)
 {
   $url = 'https://www.google.com/recaptcha/api/siteverify';
 
-  $verify_response = file_get_contents($url . '?secret=' . $secret . '&response=' . $token);
-  $result = json_decode($verify_response);
+  $verifyResponse = file_get_contents($url . '?secret=' . $secret . '&response=' . $token);
+  $result = json_decode($verifyResponse);
 
   return array(
     "success" => $result->success,
