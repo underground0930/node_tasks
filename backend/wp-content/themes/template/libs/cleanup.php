@@ -35,8 +35,8 @@ remove_filter('acf_the_content', 'wpautop');
 /**
  * 詳細ページが不要なカスタム投稿は404に飛ばす
  */
-add_filter('hoge_rewrite_rules', '__return_empty_array');
-add_filter('huga_rewrite_rules', '__return_empty_array');
+// add_filter('hoge_rewrite_rules', '__return_empty_array');
+
 
 /**
  * 固定ページから本文を削除

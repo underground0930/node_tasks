@@ -7,8 +7,7 @@
  */
 
 
-add_action('pre_get_posts', function ($query)
-{
+add_action('pre_get_posts', function ($query) {
   global $gVars;
   if (is_admin() || !$query->is_main_query()) {
     return;
@@ -26,9 +25,7 @@ add_action('pre_get_posts', function ($query)
  */
 
 
-add_action(
-  'init',
-  function () {
+function setRegisterPostType(){
     register_post_type(
       'news',
       [
@@ -41,6 +38,11 @@ add_action(
         'supports' => ['title', 'thumbnail'],
       ]
     );
+}
+
+add_action('init','setRegisterPostType');
+
+function setRegisterTaxonomy(){
     register_taxonomy(
       'news_category',
       ['news'],
@@ -51,5 +53,6 @@ add_action(
         'query_var' => true,
       ]
     );
-  }
-);
+}
+
+add_action('init','setRegisterTaxonomy');
