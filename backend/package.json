@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "wp-start": "wp-env start",
-    "wp-update": "wp-env start -- --update　--xdebug",
+    "wp-update": "wp-env start --xdebug -- --update",
     "wp-stop": "wp-env stop",
     "wp-default-theme-delete": "wp-env run cli wp theme delete twentyeleven twentytwelve twentythirteen twentyfourteen twentyfifteen twentysixteen twentyseventeen twentynineteen twentytwentyone twentytwenty twentyten",
     "wp-backup": "wp-env run cli 'wp ai1wm backup --exclude-spam-comments --exclude-post-revisions --exclude-themes --exclude-inactive-themes --exclude-muplugins --exclude-plugins --exclude-inactive-plugins --exclude-cache --exclude-email-replace --exclude-media'",
