@@ -1,5 +1,3 @@
-import { qsa } from './qsa';
-
 /**
  * snsのリンクを設定
  * @param {Object} props
@@ -18,19 +16,19 @@ export const setSns = (props: { tw: string; fb: string; line: string }): void =>
   const detail = encodeURIComponent(description);
 
   const url = encodeURIComponent(document.URL);
-  const twElms = qsa(tw);
-  const fbElms = qsa(fb);
-  const lineElms = qsa(line);
+  const twElms = document.querySelectorAll<HTMLLinkElement>(tw);
+  const fbElms = document.querySelectorAll<HTMLLinkElement>(fb);
+  const lineElms = document.querySelectorAll<HTMLLinkElement>(line);
 
-  twElms.forEach((e: HTMLElement) => {
+  twElms.forEach((e: HTMLLinkElement) => {
     e.setAttribute('href', 'https://twitter.com/share?url=' + url + '&text=' + detail);
   });
 
-  fbElms.forEach((e: HTMLElement) => {
+  fbElms.forEach((e: HTMLLinkElement) => {
     e.setAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=' + url);
   });
 
-  lineElms.forEach((e: HTMLElement) => {
+  lineElms.forEach((e: HTMLLinkElement) => {
     e.setAttribute('href', 'http://line.me/R/msg/text/?' + detail + '%20' + url);
   });
 };

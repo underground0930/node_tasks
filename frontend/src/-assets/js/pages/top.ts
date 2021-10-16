@@ -15,7 +15,7 @@ import App from '@/components/pages/App';
 
 // modules
 import { checkImgsLoad } from '@/utils/checkImgsLoad';
-import { debounce } from '@/utils/debounce';
+import { debounceEvent } from '@/utils/debounceEvent';
 import { scrollCheck } from '@/utils/scrollCheck';
 
 const mySwiper = new Swiper('.swiper-container', {});
@@ -32,7 +32,7 @@ checkImgsLoad({
   },
 });
 
-const d = debounce(() => {
+const d = debounceEvent(() => {
   console.log('resize!');
 });
 
