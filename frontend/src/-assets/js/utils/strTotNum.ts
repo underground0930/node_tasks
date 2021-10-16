@@ -6,7 +6,7 @@
  * @return {number} parseNum - 文字列から変換された数字 または デフォルトの数字
  */
 
-const strTotNum = (defaultVal: number, str: string | undefined): number => {
+export const strTotNum = (defaultVal: number, str: string | undefined): number => {
   if (str === undefined) return defaultVal;
 
   const parseNum = Number(str);
@@ -15,5 +15,3 @@ const strTotNum = (defaultVal: number, str: string | undefined): number => {
 
   return parseNum;
 };
-
-export default strTotNum;

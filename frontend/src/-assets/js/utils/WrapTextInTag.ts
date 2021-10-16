@@ -1,3 +1,7 @@
+/**
+ * テキストを指定のtagで囲う
+ */
+
 export class WrapTextInTag {
   wrap(str: string, tag: string): string {
     if (!str) {

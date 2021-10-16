@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+/**
+ * apiからデータを取得
+ *
+ */
+
 type Props = {
   url: string;
   param: {
@@ -7,7 +12,7 @@ type Props = {
   };
 };
 
-const getApiData = async <T>({
+export const getApiData = async <T>({
   url,
   param,
 }: Props): Promise<{
@@ -37,5 +42,3 @@ const getApiData = async <T>({
     };
   }
 };
-
-export default getApiData;
