@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/<%= page.id === 'top' ? 'website' : 'article' %>#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= page.title %></title>
+  <link rel="icon" type="image/png" href="/-assets/img/common/favicon.png">
+  <link rel="apple-touch-icon" href="<%= data.meta.root %>/-assets/img/common/apple-touch-icon.png">
+  <meta name="description" content="<%= page.description %>">
+  <!-- og -->
+  <meta property="og:type" content="<%= page.id === 'top' ? 'website' : 'article' %>" />
+  <meta property="og:title" content="<%= page.title %>" />
+  <meta property="og:description" content="<%= page.description %>" />
+  <meta property="og:image" content="<%= data.meta.host + data.meta.root + (page.ogp ? page.ogp : data.meta.ogp) %>">
+  <meta property="og:url" content="<%= data.meta.host + data.meta.root + absolutePath %>" />
+  <meta property="og:site_name" content="<%= data.meta.sitename %>" />
+  <!-- twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="<%= data.meta.host + data.meta.root + absolutePath %>" />
+  <meta name="twitter:site" content="<%= data.meta.sitename %>" />
+  <!-- style & scripts -->
+  <link rel="stylesheet" href="<%= relativePath %>-assets/css/style.css?date=<%= time %>">
+</head>
+<body class="<%= page.class %>" id="<%= page.id %>">

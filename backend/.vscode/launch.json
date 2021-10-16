@@ -13,6 +13,5 @@
           "/var/www/html/wp-content/themes/template": "${workspaceFolder}/wp-content/themes/template"
       }
     }
-
   ]
 }

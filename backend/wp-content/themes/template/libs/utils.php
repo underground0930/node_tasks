@@ -38,7 +38,7 @@ function vd($data)
 /**
  * 文字の改行コードをbrタグに変換
  *
- * @param  string $str カスタムフィールドの名前
+ * @param string $str カスタムフィールドの名前
  *
  * @return false|string
  */

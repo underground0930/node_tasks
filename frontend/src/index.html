@@ -3,30 +3,30 @@
     id: 'top',
     class: 'top',
     script: 'top',
-    title: '',
-    description: '',
+    title: 'top title',
+    description: 'top description',
     ogp: '',
   }
 %>
-<%- include( relativePath + 'assets/include/_topIncludes', {page, relativePath}); -%>
+<%- include( relativePath + '-assets/include/_topIncludes', {page, relativePath}); -%>
 <div class="l-wrapper">
   <!-- ///////// contents start ///////// -->
     <div class="pg-top">
       <!-- kv -->
       <div class="pg-top-kv">
-        <video width="300" class="p-kv__video" src="/assets/movie/_dummy/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
+        <video width="300" class="p-kv__video" src="/-assets/movie/_dummy/sample.mp4" poster="" playsinline="" muted="" loop="" autoplay="" preload="auto"></video>
       </div>
       <!--/ kv  -->
       <!-- news -->
       <section class="pg-top-section">
         <h2 class="c-title pg-top-section__title">NEWS</h2>
-        <%- include( relativePath + 'assets/include/_list', {}); -%>
+        <%- include( relativePath + '-assets/include/_list', {}); -%>
       </section>
       <!--/ news -->
       <!-- blog -->
       <section class="pg-top-section">
         <h2 class="c-title pg-top-section__title">BLOG</h2>
-        <%- include( relativePath + 'assets/include/_card' , {}); -%>
+        <%- include( relativePath + '-assets/include/_card' , {}); -%>
       </section>
       <!--/ blog -->
       <!-- react -->
@@ -35,31 +35,31 @@
       <!-- picture -->
       <h2>picture</h2>
       <picture>
-        <source media="(min-width:1100px)" srcset="/assets/img/_dummy/x.png">
-        <source media="(max-width:1099px)" srcset="/assets/img/_dummy/y.png">
-        <img src="/assets/img/x.png" alt="">
+        <source media="(min-width:1100px)" srcset="/-assets/img/_dummy/x.png">
+        <source media="(max-width:1099px)" srcset="/-assets/img/_dummy/y.png">
+        <img src="/-assets/img/x.png" alt="">
       </picture>
       <!--/ picture -->
       <!-- object-fit -->
       <h2>object-fit</h2>
       <div class="p-photos">
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
         <div class="p-photo">
-          <img class="is-objectFit-cover" src='/assets/img/_dummy/x.png' alt=''>
+          <img class="is-objectFit-cover" src='/-assets/img/_dummy/x.png' alt=''>
         </div>
       </div>
       <!--/ object-fit -->
@@ -93,4 +93,4 @@
 
   <!-- ///////// contents end ///////// -->
 </div>
-<%- include( relativePath + 'assets/include/_bottomIncludes',{page}); -%>
+<%- include( relativePath + '-assets/include/_bottomIncludes',{page}); -%>

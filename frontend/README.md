@@ -37,13 +37,13 @@ $ npm run dev-param
 
 # プロダクションモードのデータを生成
 # htdocs/htdocs にデータが生成されます
-# _dummyディレクトリがassetsディレクトリに残ったままです
+# _dummyディレクトリが-assetsディレクトリに残ったままです
 # テストアップやプレの時に使用します
 $ npm run build
 
 # プロダクションモードのデータを生成
 # htdocs/htdocs にデータが生成されます
-# _dummyディレクトリがassetsディレクトリから削除されます
+# _dummyディレクトリが-assetsディレクトリから削除されます
 # 本番公開用に使用します
 $ npm run prod
 
@@ -73,7 +73,7 @@ $ npm run prod
 
 ### ダミーファイルについて
 
-- dummyファイルはそれぞれのassetsディレクトリの下に「_dummy」ディレクトリを作り、ファイルを格納
+- dummyファイルはそれぞれの-assetsディレクトリの下に「_dummy」ディレクトリを作り、ファイルを格納
 - 例) 「img/_dummy/test.jpg」「json/_dummy/test.json」「movie/_dummy/test.mp4」
 
 ### ./js/ 以下
@@ -126,7 +126,7 @@ $ npm run prod
     script: 'top',
     title: 'top title',
     description: 'top description',
-    ogp: '/assets/img/top/ogp.png',
+    ogp: '/-assets/img/top/ogp.png',
   }
 %>
 
