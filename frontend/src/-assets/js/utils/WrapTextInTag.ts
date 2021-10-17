@@ -3,7 +3,7 @@
  */
 
 export class WrapTextInTag {
-  wrap(str: string, tag: string): string {
+  static wrap(str: string, tag: string): string {
     if (!str) {
       return '';
     }
@@ -29,7 +29,7 @@ export class WrapTextInTag {
 
     return result;
   }
-  wrapAll(target: string, tag: string): void {
+  static wrapAll(target: string, tag: string): void {
     const elms: NodeListOf<HTMLElement> = document.querySelectorAll(target);
     elms.forEach((e: HTMLElement): void => {
       const wrapText = this.wrap(e.textContent ?? '', tag);
