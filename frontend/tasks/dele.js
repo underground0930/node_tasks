@@ -7,12 +7,17 @@
 const del = require('del'); // データの削除
 
 const dele = async (src) => {
-  console.log('■■ delete task start ■■');
-  const deletedPaths = await del(src, { force: false }).catch((err) => {
-    console.log(err);
-  });
-
+  // const deletedPaths = await del(src, { force: false }).catch((err) => {
+  //   console.log(err);
+  // });
   // console.log('Deleted files and directories:\n', deletedPaths.join('\n'));
+
+  // MEMO: 非同期だとglobの配列で競合が起きてエラーになるので
+  // 同期処理に変更
+
+  console.log('■■ delete task start ■■');
+
+  del.sync(src, { force: false });
   console.log('■■ delete task end ■■');
   return;
 };
