@@ -27,13 +27,13 @@ export function fetchApi<T>({
       }
       return response.json();
     })
-    .then((data) => {
+    .then((data: T) => {
       return {
         data: data,
         fetchError: null,
       };
     })
-    .catch((e) => {
+    .catch((e: { message: string }) => {
       return {
         data: null,
         fetchError: e.message,
