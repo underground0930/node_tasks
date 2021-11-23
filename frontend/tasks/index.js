@@ -1,5 +1,7 @@
 const bs = require('browser-sync').create(); // ローカルサーバー、ブラウザのリロード
 const getFileData = require('./getFileData');
+const apiServer = require('./middleware/apiServer');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 /************************************************v
  my task
@@ -23,7 +25,6 @@ data
 ************************************************/
 
 const data = getFileData(paths.src.assets + '/data/*.yaml');
-
 /************************************************
 tasks
 ************************************************/
@@ -83,6 +84,14 @@ const serverTask = () => {
     ghostMode: false,
     server: [paths.dist.root],
     https: false, // or true
+    startPath: './list.html',
+    // middleware: [...apiServer()],
+    middleware: [
+      createProxyMiddleware('/contact_api', {
+        target: 'http://localhost:8888/',
+        changeOrigin: false,
+      }),
+    ],
   });
 
   bs.watch(paths.dist.root + '/**/*.html').on('change', bs.reload);

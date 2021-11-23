@@ -1,10 +1,11 @@
 {
   "name": "frontend_tasks",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "node.js frontend_tasks",
   "main": "index.js",
   "private": true,
   "scripts": {
+    "apiServer": "docker run -p 4000:80 -v ${PWD}/htdocs_api:/var/www/html -d php:apache",
     "prod": "run-s build del-dummy",
     "build": "run-p webpack:prod tasks:prod",
     "dev": "run-p webpack:dev tasks:dev",
@@ -66,7 +67,8 @@
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.3",
     "webpack": "^5.58.1",
-    "webpack-cli": "^4.9.0"
+    "webpack-cli": "^4.9.0",
+    "http-proxy-middleware": "^2.0.1"
   },
   "dependencies": {
     "axios": "^0.22.0",
