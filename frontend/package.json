@@ -1,6 +1,6 @@
 {
   "name": "frontend_tasks",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "node.js frontend_tasks",
   "main": "index.js",
   "private": true,
@@ -55,8 +55,10 @@
     "ejs-lint": "^1.2.1",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "express": "^4.17.1",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
+    "http-proxy-middleware": "^2.0.1",
     "js-beautify": "^1.14.0",
     "js-yaml": "^4.1.0",
     "npm-run-all": "^4.1.5",
@@ -67,8 +69,7 @@
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.3",
     "webpack": "^5.58.1",
-    "webpack-cli": "^4.9.0",
-    "http-proxy-middleware": "^2.0.1"
+    "webpack-cli": "^4.9.0"
   },
   "dependencies": {
     "axios": "^0.22.0",
