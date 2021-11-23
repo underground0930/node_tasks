@@ -2,7 +2,7 @@ import { checkDevice } from '@/utils/checkDevice';
 import { settingLegacyBrowser } from '@/utils/IE/settingLegacyBrowser';
 
 // libs
-import { setScrollTop } from '@/utils/setScrollTop';
+import { PageScroll } from '@/utils/PageScroll';
 
 window.globalVars = {
   data,
@@ -15,7 +15,10 @@ window.globalVars = {
 const init = () => {
   checkDevice();
   settingLegacyBrowser();
-  setScrollTop({ target: '.js-scrollTop' });
+  const scrollTop = document.querySelectorAll<HTMLElement>('.js-scrollTop');
+  if (scrollTop) {
+    new PageScroll(scrollTop, 900);
+  }
 };
 
 init();
