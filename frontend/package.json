@@ -1,6 +1,6 @@
 {
   "name": "frontend_tasks",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "node.js frontend_tasks",
   "main": "index.js",
   "private": true,
@@ -72,7 +72,7 @@
     "webpack-cli": "^4.9.0"
   },
   "dependencies": {
-    "axios": "^0.22.0",
+    "axios": "^0.25.0",
     "current-device": "^0.10.2",
     "gsap": "^3.8.0",
     "intersection-observer": "^0.12.0",
