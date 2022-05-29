@@ -8,7 +8,4 @@
 .l-wrapper{
   padding-top: 100px;
   flex-grow: 1;
-  @include g.IE{
-    flex-grow: initial;
-  }
 }

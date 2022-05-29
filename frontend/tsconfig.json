@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "es2015",
+    "target": "ES2015",
+    "module": "ES2015",
     "jsx": "react",
-    "lib": ["es2020", "DOM"],
+    "lib": ["ES2021", "DOM"],
     "strict": true,
     "moduleResolution": "node",
     "baseUrl": "./",

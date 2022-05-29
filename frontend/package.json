@@ -1,6 +1,6 @@
 {
   "name": "frontend_tasks",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "node.js frontend_tasks",
   "main": "index.js",
   "private": true,
@@ -22,8 +22,7 @@
     "lint": "eslint 'src/assets/js/**/*' --fix --ext .ts,.tsx"
   },
   "browserslist": [
-    "last 2 version",
-    "IE 11"
+    "last 2 version"
   ],
   "eslintIgnore": [
     "/.eslintrc.js"
@@ -75,10 +74,8 @@
     "axios": "^0.25.0",
     "current-device": "^0.10.2",
     "gsap": "^3.8.0",
-    "intersection-observer": "^0.12.0",
     "jquery": "^3.6.0",
     "jump.js": "^1.0.2",
-    "objectFitPolyfill": "^2.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "swiper": "^7.0.8"
