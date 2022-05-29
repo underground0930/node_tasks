@@ -4,8 +4,7 @@ import { checkDevice } from '@/utils/checkDevice';
 import { PageScroll } from '@/utils/PageScroll';
 
 window.globalVars = {
-  data,
-  isIE: false,
+  data: data,
   isMobile: false,
   isTablet: false,
   isDesktop: false,

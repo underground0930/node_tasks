@@ -12,7 +12,6 @@
 
 ## node version
 
-- 14.18.0
 - .node-version で管理
 
 ## gitignore

@@ -1,14 +1,7 @@
-// import Swiper from 'swiper';
 import React from 'react';
-import ReactDOM from 'react-dom';
-
+import ReactDOM from 'react-dom/client';
 import SwiperCore, { Pagination, Navigation, Swiper } from 'swiper';
 SwiperCore.use([Pagination, Navigation]);
-
-import $ from 'jquery';
-import axios from 'axios';
-import gsap from 'gsap';
-import jump from 'jump.js';
 
 // React components
 import App from '@/components/pages/App';
@@ -20,7 +13,11 @@ import { scrollCheck } from '@/utils/scrollCheck';
 
 const mySwiper = new Swiper('.swiper-container', {});
 
-ReactDOM.render(React.createElement(App, null, null), document.getElementById('app'));
+const app = document.getElementById('app');
+if (app) {
+  const root = ReactDOM.createRoot(app);
+  root.render(App());
+}
 
 checkImgsLoad({
   imgArray: [],

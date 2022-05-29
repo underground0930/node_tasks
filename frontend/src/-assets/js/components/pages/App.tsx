@@ -2,7 +2,7 @@ import React from 'react';
 
 import Child from './Child';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <>
       <p>React Components</p>

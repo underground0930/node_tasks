@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Child: React.FC = () => {
+const Child = () => {
   return <div>{new Date().getTime()}</div>;
 };
 
