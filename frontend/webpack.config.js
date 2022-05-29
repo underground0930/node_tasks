@@ -30,7 +30,6 @@ module.exports = {
       {
         test: /\.(tsx|ts)?$/,
         loader: 'ts-loader',
-        exclude: /node_modules[\\\/](?!(dom7|ssr-window|swiper)[\\\/]).*/,
       },
       { test: /\.js$/, loader: 'source-map-loader' },
     ],
