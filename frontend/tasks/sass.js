@@ -15,14 +15,12 @@ const glob = require('glob'); // ファイル名のパターンマッチング
 const css = (src, dist, isDev) => {
   glob('/**/!(_)*.scss', { root: src }, (err, files) => {
     console.log(`■■ sass task start ■■`);
-    // 対処となるファイルのパターンマッチング
-    if (err) {
-      console.log(err);
-      return;
-    }
     const resultArr = [];
     const { length } = files;
     let count = 0;
+
+    if (err) return console.log(err);
+
     files.forEach((file) => {
       sass.render(
         {

@@ -11,14 +11,12 @@ const glob = require('glob'); // ファイル名のパターンマッチング
 const copy = (rootSrcDir, rootDistDir, src, taskName) => {
   console.log(`■■ ${taskName} copy task start ■■`);
   glob(src, { root: rootSrcDir }, (err, files) => {
-    // 対処となるファイルのパターンマッチング
-    if (err) {
-      console.log(err);
-      return;
-    }
     const resultArr = [];
     const { length } = files;
     let count = 0;
+
+    if (err) return console.log(err);
+
     files.forEach((file) => {
       const f = file.split(rootSrcDir);
       fs.copy(file, rootDistDir + f[1], (err) => {

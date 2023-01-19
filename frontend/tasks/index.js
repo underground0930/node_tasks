@@ -18,7 +18,7 @@ config
 
 const paths = require('../path.config'); // 使いやすいようにそれぞれのパスを変数に入れ直す
 const environment = process.env.NODE_ENV;
-const isDev = environment === 'development' ? true : false; // isDev
+const isDev = environment === 'development'; // isDev
 
 /************************************************
 data

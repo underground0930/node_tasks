@@ -32,7 +32,6 @@ const html = ({ src, dist, data, isDev }) => {
     const { length } = files;
     let count = 0;
 
-    // 対処となるファイルのパターンマッチング
     console.log(`■■ ejs task start ■■`);
     if (err) {
       console.log(err);
@@ -47,16 +46,12 @@ const html = ({ src, dist, data, isDev }) => {
         { data, absolutePath, relativePath, time: new Date().getTime() },
         { outputFunctionName: 'echo', rmWhitespace: false },
         (err, str) => {
-          if (err) {
-            console.log(err);
-            return;
-          }
+          if (err) return console.log(err);
           const f = file.split(src);
           const filename = dist + f[1];
           const dir = path.dirname(filename);
           if (!fs.existsSync(dir)) {
-            // ディレクトリが無かったら
-            fs.mkdirsSync(dir); // ディレクトリを再帰的に作成
+            fs.mkdirsSync(dir); // ディレクトリが無かったらディレクトリを再帰的に作成
           }
           const result = beautifyFn(str);
           fs.writeFile(filename, result, (err) => {
