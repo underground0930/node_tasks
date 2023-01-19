@@ -59,21 +59,11 @@ const movieTask = () => {
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch(paths.src.root + '/**/*.{html,ejs}', () => {
-    htmlTask();
-  });
-  watch(paths.src.css + '/**/*.scss', () => {
-    cssTask();
-  });
-  watch(paths.src.img + '/**/*.{jpg,png,gif,webp,svg,ico}', () => {
-    imgTask();
-  });
-  watch(paths.src.json + '/**/*.json', () => {
-    jsonTask();
-  });
-  watch(paths.src.font + '/**/*', () => {
-    fontTask();
-  });
+  watch(paths.src.root + '/**/*.{html,ejs}', htmlTask);
+  watch(paths.src.css + '/**/*.scss', cssTask);
+  watch(paths.src.img + '/**/*.{jpg,png,gif,webp,svg,ico}', imgTask);
+  watch(paths.src.json + '/**/*.json', jsonTask);
+  watch(paths.src.font + '/**/*', fontTask);
 };
 
 // ローカルサーバーを立ち上げる、該当ファイルが更新されたらブラウザをリロード

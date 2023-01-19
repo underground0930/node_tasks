@@ -25,24 +25,20 @@ const beautifyOptions = {
 };
 
 const html = ({ src, dist, data, isDev }) => {
-  const beautifyFn = isDev
-    ? (str) => {
-        return str;
-      }
-    : (str) => {
-        return beautify.html(str, beautifyOptions);
-      };
+  const beautifyFn = isDev ? (str) => str : (str) => beautify.html(str, beautifyOptions);
 
   glob('/**/*.html', { root: src }, (err, files) => {
+    const resultArr = [];
+    const { length } = files;
+    let count = 0;
+
     // 対処となるファイルのパターンマッチング
     console.log(`■■ ejs task start ■■`);
     if (err) {
       console.log(err);
       return;
     }
-    const resultArr = [];
-    const { length } = files;
-    let count = 0;
+
     files.forEach((file) => {
       const absolutePath = file.split(src)[1];
       const relativePath = '../'.repeat([absolutePath.split('/').length - 2]);

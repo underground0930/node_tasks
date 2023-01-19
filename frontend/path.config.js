@@ -3,9 +3,7 @@ const environment = process.env.NODE_ENV;
 const config = require(`./config/${environment}.js`);
 const { buildRoot } = config;
 const rootDir = process.cwd();
-const pr = (str) => {
-  return path.resolve(str);
-};
+const pr = (str) => path.resolve(str);
 const paths = {
   src: {
     root: pr(`${rootDir}/src`),

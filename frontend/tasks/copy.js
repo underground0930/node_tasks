@@ -27,7 +27,6 @@ const copy = (rootSrcDir, rootDistDir, src, taskName) => {
         count++;
         if (count === length) {
           // ファイル数を数えてタスクが完了
-          // console.log('copy: [' + resultArr.join(', ') + ']');
           console.log(`■■ ${taskName} copy task finished ■■`);
         }
       });

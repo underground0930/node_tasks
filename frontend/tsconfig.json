@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ESNext",
     "module": "ESNext",
     "jsx": "react",
-    "lib": ["ES2021", "DOM"],
+    "lib": ["ESNext", "DOM"],
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/-assets/js/*"]
