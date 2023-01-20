@@ -1,35 +1,32 @@
 /**
  * コピータスク
- * @param {string} rootSrcDir - コピーするファイル群が入っているディレクトリのルート
- * @param {string} rootDistDir - コピー先のディレクトリのルート
- * @param {glob} src - コピーするデータのルート以下からのワイルドカード
+ * @param {string} root - コピーするファイル群が入っているディレクトリのルート
+ * @param {glob} pattern - ワイルドカード
+ * @param {string} dist - コピー先のディレクトリのルート
+ * @param {string} taskName - タスクネーム
  */
 
-const fs = require('fs-extra'); // ディレクトリを再帰的に作成
-const glob = require('glob'); // ファイル名のパターンマッチング
+const fs = require('fs-extra') // ディレクトリを再帰的に作成
+const _glob = require('./glob') // globのラッパー
 
-const copy = (rootSrcDir, rootDistDir, src, taskName) => {
-  console.log(`■■ ${taskName} copy task start ■■`);
-  glob(src, { root: rootSrcDir }, (err, files) => {
-    const resultArr = [];
-    const { length } = files;
-    let count = 0;
-
-    if (err) return console.log(err);
-
-    files.forEach((file) => {
-      const f = file.split(rootSrcDir);
-      fs.copy(file, rootDistDir + f[1], (err) => {
-        if (err) return console.error(err);
-        resultArr.push(f[1]);
-        count++;
+const copy = ({ root, dist, pattern, taskName }) => {
+  console.log(`■■ ${taskName} copy task start ■■`)
+  _glob({
+    pattern,
+    root,
+    cb: ({ file, results, length, count }) => {
+      const f = file.split(root)
+      fs.copy(file, dist + f[1], (err) => {
+        if (err) return console.error(err)
+        results.push(f[1])
+        count++
         if (count === length) {
           // ファイル数を数えてタスクが完了
-          console.log(`■■ ${taskName} copy task finished ■■`);
+          console.log(`■■ ${taskName} copy task finished ■■`)
         }
-      });
-    });
-  });
-};
+      })
+    },
+  })
+}
 
-module.exports = copy;
+module.exports = copy

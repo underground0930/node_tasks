@@ -1,16 +1,16 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
 // tasks
-const getFileData = require('./tasks/getFileData');
+const getYamlData = require('./tasks/getYamlData')
 
 // config
-const paths = require('./path.config');
-const environment = process.env.NODE_ENV;
-const config = require(`./config/${environment}.js`);
+const paths = require('./path.config')
+const environment = process.env.NODE_ENV
+const config = require(`./config/${environment}.js`)
 
-const { mode, devtool, watch } = config;
-const data = JSON.stringify(getFileData(paths.src.assets + '/data/*.yaml'));
+const { mode, devtool, watch } = config
+const data = JSON.stringify(getYamlData(paths.src.assets + '/data/*.yaml'))
 
 module.exports = {
   mode,
@@ -69,4 +69,4 @@ module.exports = {
     maxAssetSize: 9000000,
     maxEntrypointSize: 9000000,
   },
-};
+}

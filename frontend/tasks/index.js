@@ -1,70 +1,80 @@
-const bs = require('browser-sync').create(); // ローカルサーバー、ブラウザのリロード
-const getFileData = require('./getFileData');
-const apiServer = require('./middleware/apiServer');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+const bs = require('browser-sync').create() // ローカルサーバー、ブラウザのリロード
+const getYamlData = require('./getYamlData')
+const apiServer = require('./middleware/apiServer')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 /************************************************v
  my task
 ************************************************/
-const dele = require('./dele'); // 自作の削除タスク
-const copy = require('./copy'); // 自作のコピータスク
-const watch = require('./watch'); // 自作のwatchタスク
-const sass = require('./sass'); // 自作のsassタスク
-const html = require('./html'); // 自作のhtmlタスク
+const dele = require('./dele') // 自作の削除タスク
+const copy = require('./copy') // 自作のコピータスク
+const watch = require('./watch') // 自作のwatchタスク
+const sass = require('./sass') // 自作のsassタスク
+const html = require('./html') // 自作のhtmlタスク
 
 /************************************************
 config
 ************************************************/
 
-const paths = require('../path.config'); // 使いやすいようにそれぞれのパスを変数に入れ直す
-const environment = process.env.NODE_ENV;
-const isDev = environment === 'development'; // isDev
+const paths = require('../path.config') // 使いやすいようにそれぞれのパスを変数に入れ直す
+const environment = process.env.NODE_ENV
+const isDev = environment === 'development' // isDev
 
 /************************************************
 data
 ************************************************/
 
-const data = getFileData(paths.src.assets + '/data/*.yaml');
+const data = getYamlData(paths.src.assets + '/data/*.yaml')
 
 /************************************************
 tasks
 ************************************************/
 
+const pattern = {
+  html: '/**/*.{html,ejs}',
+  js: '/**/*.js',
+  scss: '/**/!(_)*.scss',
+  css: '/**/*.css',
+  img: '/**/*.{jpg,png,gif,webp,svg,ico}',
+  font: '/**/*.{woff,woff2,ttf,svg,eot}',
+  json: '/**/*.json',
+  movie: '/**/*.mp4',
+}
+
 // 各タスク を関数化
-const htmlTask = () => {
-  const src = paths.src.root;
-  const dist = paths.dist.root;
-  html({
-    src,
-    dist,
-    data,
-    isDev,
-  });
-};
-const cssTask = () => {
-  sass(paths.src.css, paths.dist.css, isDev);
-};
-const imgTask = () => {
-  copy(paths.src.img, paths.dist.img, '/**/*.{jpg,png,gif,webp,svg,ico}', 'img');
-};
-const jsonTask = () => {
-  copy(paths.src.json, paths.dist.json, '/**/*.json', 'json');
-};
-const fontTask = () => {
-  copy(paths.src.font, paths.dist.font, '/**/*.{woff,woff2,ttf,svg,eot}', 'font');
-};
-const movieTask = () => {
-  copy(paths.src.movie, paths.dist.movie, '/**/*.mp4', 'movie');
-};
+const htmlTask = () => html({ root: paths.src.root, pattern: pattern.html, dist: paths.dist.root, data, isDev })
+const cssTask = () => sass({ root: paths.src.css, pattern: pattern.scss, dist: paths.dist.css, isDev })
+const imgTask = () =>
+  copy({
+    root: paths.src.img,
+    dist: paths.dist.img,
+    pattern: pattern.img,
+    taskName: 'img',
+  })
+const jsonTask = () => copy({ root: paths.src.json, dist: paths.dist.json, pattern: '/**/*.json', taskName: 'json' })
+const fontTask = () =>
+  copy({
+    root: paths.src.font,
+    dist: paths.dist.font,
+    pattern: pattern.font,
+    taskName: 'font',
+  })
+const movieTask = () =>
+  copy({
+    root: paths.src.movie,
+    dist: paths.dist.movie,
+    pattern: pattern.movie,
+    taskName: 'movie',
+  })
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch(paths.src.root + '/**/*.{html,ejs}', htmlTask);
-  watch(paths.src.css + '/**/*.scss', cssTask);
-  watch(paths.src.img + '/**/*.{jpg,png,gif,webp,svg,ico}', imgTask);
-  watch(paths.src.json + '/**/*.json', jsonTask);
-  watch(paths.src.font + '/**/*', fontTask);
-};
+  watch({ src: paths.src.root + pattern.html, cb: htmlTask })
+  watch({ src: paths.src.css + pattern.css, cb: cssTask })
+  watch({ src: paths.src.img + pattern.img, cb: imgTask })
+  watch({ src: paths.src.json + pattern.json, cb: jsonTask })
+  watch({ src: paths.src.font + paths.font, cb: fontTask })
+}
 
 // ローカルサーバーを立ち上げる、該当ファイルが更新されたらブラウザをリロード
 const serverTask = () => {
@@ -76,40 +86,37 @@ const serverTask = () => {
     server: [paths.dist.root],
     https: false, // or true
     startPath: './list.html',
-    // middleware: [...apiServer()],
     middleware: [
       createProxyMiddleware('/contact_api', {
         target: 'http://localhost:8888/',
         changeOrigin: false,
       }),
     ],
-  });
+  })
 
-  bs.watch(paths.dist.root + '/**/*.html').on('change', bs.reload);
-  bs.watch(paths.dist.assets + '/**/*.js').on('change', bs.reload);
-  bs.watch(paths.dist.assets + '/**/*.{jpg,png,gif,webp,svg,ico}').on('change', bs.reload);
-  bs.watch(paths.dist.assets + '/**/*.json').on('change', bs.reload);
-  bs.watch(paths.dist.assets + '/**/*.css', (e, f) => {
-    if (e === 'change') {
-      bs.reload('*.css');
-    }
-  });
-};
+  bs.watch(paths.dist.root + pattern.html).on('change', bs.reload)
+  bs.watch(paths.dist.assets + pattern.js).on('change', bs.reload)
+  bs.watch(paths.dist.assets + pattern.img).on('change', bs.reload)
+  bs.watch(paths.dist.assets + pattern.json).on('change', bs.reload)
+  bs.watch(paths.dist.assets + pattern.css, (e, f) => {
+    if (e !== 'change') return
+    bs.reload('*.css')
+  })
+}
 
 // 古いデータを削除後に各タスクを走らせる
 dele([paths.dist.root + '/**', '!' + paths.dist.root]).then(() => {
   // 各タスク
-  htmlTask();
-  cssTask();
-  imgTask();
-  jsonTask();
-  fontTask();
-  movieTask();
-  if (isDev) {
-    // 開発中ならwatchとサーバーも走らせる
-    setTimeout(() => {
-      watchTasks();
-      serverTask();
-    }, 5000);
-  }
-});
+  htmlTask()
+  cssTask()
+  imgTask()
+  jsonTask()
+  fontTask()
+  movieTask()
+  if (!isDev) return
+  // 開発中ならwatchとサーバーも走らせる
+  setTimeout(() => {
+    watchTasks()
+    serverTask()
+  }, 5000)
+})
