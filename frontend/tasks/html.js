@@ -32,7 +32,7 @@ const html = ({ root, pattern, dist, data, isDev }) => {
     pattern,
     root,
     cb: ({ file, results, length, count }) => {
-      const absolutePath = file.split(src)[1]
+      const absolutePath = file.split(root)[1]
       const relativePath = '../'.repeat([absolutePath.split('/').length - 2])
       ejs.renderFile(
         file,
@@ -40,8 +40,8 @@ const html = ({ root, pattern, dist, data, isDev }) => {
         { outputFunctionName: 'echo', rmWhitespace: false },
         (err, str) => {
           if (err) return console.log(err)
-          const f = file.split(src)
-          const filename = dist + f[1]
+          const fileSplit = file.split(root)
+          const filename = dist + fileSplit[1]
           const dir = path.dirname(filename)
           if (!fs.existsSync(dir)) {
             fs.mkdirsSync(dir) // ディレクトリが無かったらディレクトリを再帰的に作成
@@ -50,7 +50,7 @@ const html = ({ root, pattern, dist, data, isDev }) => {
           fs.writeFile(filename, result, (err) => {
             // ファイルに書き込む処理
             if (err) throw err
-            results.push(f[1])
+            results.push(fileSplit[1])
             count++
             if (count === length) {
               // ファイル数を数えてタスクが完了

@@ -9,7 +9,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 const dele = require('./dele') // 自作の削除タスク
 const copy = require('./copy') // 自作のコピータスク
 const watch = require('./watch') // 自作のwatchタスク
-const sass = require('./sass') // 自作のsassタスク
+const _sass = require('./sass') // 自作のsassタスク
 const html = require('./html') // 自作のhtmlタスク
 
 /************************************************
@@ -31,9 +31,10 @@ tasks
 ************************************************/
 
 const pattern = {
-  html: '/**/*.{html,ejs}',
+  html: '/**/*.html',
+  ejs: '/**/*.{html,ejs}',
   js: '/**/*.js',
-  scss: '/**/!(_)*.scss',
+  sass: '/**/!(_)*.scss',
   css: '/**/*.css',
   img: '/**/*.{jpg,png,gif,webp,svg,ico}',
   font: '/**/*.{woff,woff2,ttf,svg,eot}',
@@ -42,8 +43,12 @@ const pattern = {
 }
 
 // 各タスク を関数化
-const htmlTask = () => html({ root: paths.src.root, pattern: pattern.html, dist: paths.dist.root, data, isDev })
-const cssTask = () => sass({ root: paths.src.css, pattern: pattern.scss, dist: paths.dist.css, isDev })
+const htmlTask = () => {
+  html({ root: paths.src.root, pattern: pattern.html, dist: paths.dist.root, data, isDev })
+}
+const cssTask = () => {
+  _sass({ root: paths.src.css, pattern: pattern.sass, dist: paths.dist.css, isDev })
+}
 const imgTask = () =>
   copy({
     root: paths.src.img,
@@ -69,7 +74,7 @@ const movieTask = () =>
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch({ src: paths.src.root + pattern.html, cb: htmlTask })
+  watch({ src: paths.src.root + pattern.ejs, cb: htmlTask })
   watch({ src: paths.src.css + pattern.css, cb: cssTask })
   watch({ src: paths.src.img + pattern.img, cb: imgTask })
   watch({ src: paths.src.json + pattern.json, cb: jsonTask })

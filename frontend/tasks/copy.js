@@ -15,10 +15,10 @@ const copy = ({ root, dist, pattern, taskName }) => {
     pattern,
     root,
     cb: ({ file, results, length, count }) => {
-      const f = file.split(root)
-      fs.copy(file, dist + f[1], (err) => {
+      const fileSplit = file.split(root)
+      fs.copy(file, dist + fileSplit[1], (err) => {
         if (err) return console.error(err)
-        results.push(f[1])
+        results.push(fileSplit[1])
         count++
         if (count === length) {
           // ファイル数を数えてタスクが完了
