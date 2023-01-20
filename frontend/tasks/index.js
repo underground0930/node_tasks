@@ -9,7 +9,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 const dele = require('./dele') // 自作の削除タスク
 const copy = require('./copy') // 自作のコピータスク
 const watch = require('./watch') // 自作のwatchタスク
-const _sass = require('./sass') // 自作のsassタスク
+const sass = require('./sass') // 自作のsassタスク
 const html = require('./html') // 自作のhtmlタスク
 
 /************************************************
@@ -44,10 +44,21 @@ const pattern = {
 
 // 各タスク を関数化
 const htmlTask = () => {
-  html({ root: paths.src.root, pattern: pattern.html, dist: paths.dist.root, data, isDev })
+  html({
+    root: paths.src.root,
+    pattern: pattern.html,
+    dist: paths.dist.root,
+    data,
+    isDev,
+  })
 }
-const cssTask = () => {
-  _sass({ root: paths.src.css, pattern: pattern.sass, dist: paths.dist.css, isDev })
+const sassTask = () => {
+  sass({
+    root: paths.src.css,
+    pattern: pattern.sass,
+    dist: paths.dist.css,
+    isDev,
+  })
 }
 const imgTask = () =>
   copy({
@@ -56,7 +67,13 @@ const imgTask = () =>
     pattern: pattern.img,
     taskName: 'img',
   })
-const jsonTask = () => copy({ root: paths.src.json, dist: paths.dist.json, pattern: '/**/*.json', taskName: 'json' })
+const jsonTask = () =>
+  copy({
+    root: paths.src.json,
+    dist: paths.dist.json,
+    pattern: pattern.json,
+    taskName: 'json',
+  })
 const fontTask = () =>
   copy({
     root: paths.src.font,
@@ -75,7 +92,7 @@ const movieTask = () =>
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
   watch({ src: paths.src.root + pattern.ejs, cb: htmlTask })
-  watch({ src: paths.src.css + pattern.css, cb: cssTask })
+  watch({ src: paths.src.css + pattern.css, cb: sassTask })
   watch({ src: paths.src.img + pattern.img, cb: imgTask })
   watch({ src: paths.src.json + pattern.json, cb: jsonTask })
   watch({ src: paths.src.font + paths.font, cb: fontTask })
@@ -113,7 +130,7 @@ const serverTask = () => {
 dele([paths.dist.root + '/**', '!' + paths.dist.root]).then(() => {
   // 各タスク
   htmlTask()
-  cssTask()
+  sassTask()
   imgTask()
   jsonTask()
   fontTask()
