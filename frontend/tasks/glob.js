@@ -11,9 +11,7 @@ const _glob = ({ root, pattern, cb }) => {
     const { length } = files
     let count = 0
     if (err) return console.log(err)
-    files.forEach((file) => {
-      cb({ file, results, length, count })
-    })
+    files.forEach((file) => cb({ file, results, length, count }))
   })
 }
 

@@ -18,9 +18,9 @@ const watch = ({ src, cb }) => {
     },
   })
   watcher
-    .on('add', (path) => cb()) // ファイルが追加された時のイベント
-    .on('change', (path) => cb()) // ファイルが変更された時のイベント
-    .on('unlink', (path) => cb()) // ファイルが削除された時のイベント
+    .on('add', cb) // ファイルが追加された時のイベント
+    .on('change', cb) // ファイルが変更された時のイベント
+    .on('unlink', cb) // ファイルが削除された時のイベント
 }
 
 module.exports = watch
