@@ -3,12 +3,12 @@
  */
 
 type Props = {
-  url: string;
-  init: RequestInit;
-  debug?: boolean;
-};
+  url: string
+  init: RequestInit
+  debug?: boolean
+}
 
-type ErrorStatus = 'SERVER_ERROR' | 'CLIENT_ERROR' | null;
+type ErrorStatus = 'SERVER_ERROR' | 'CLIENT_ERROR' | null
 
 export function fetchApi<T>({
   url,
@@ -18,28 +18,24 @@ export function fetchApi<T>({
   return fetch(url, init)
     .then((response) => {
       if (debug) {
-        console.log(
-          '[ok]: ' + response.ok,
-          '[status]: ' + response.status,
-          '[text]: ' + response.statusText
-        );
+        console.log('[ok]: ' + response.ok, '[status]: ' + response.status, '[text]: ' + response.statusText)
       }
-      const isSuccess = [200, 204, 304].some((n) => n === response.status);
+      const isSuccess = [200, 204, 304].some((n) => n === response.status)
       if (!response.ok || !isSuccess) {
-        throw new Error(String(response.status)); // 0, 400, 500 errors
+        throw new Error(String(response.status)) // 0, 400, 500 errors
       }
-      return response.json();
+      return response.json()
     })
     .then((data: T) => {
       return {
         data,
         errorStatus: null,
-      };
+      }
     })
-    .catch((e) => {
+    .catch((e: unknown) => {
       return {
         data: null,
         errorStatus: e[0] === '5' ? 'SERVER_ERROR' : 'CLIENT_ERROR',
-      };
-    });
+      }
+    })
 }

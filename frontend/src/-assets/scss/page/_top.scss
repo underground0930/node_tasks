@@ -6,6 +6,7 @@
 @use '../global' as *;
 
 .pg-top {
+  aspect-ratio: 1/2;
 }
 
 .pg-top-kv {
@@ -13,7 +14,9 @@
   height: 300px;
   margin-bottom: 100px;
   video {
-    @include absolute($t: 0, $l: 0);
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;

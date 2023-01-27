@@ -8,7 +8,6 @@
 .p-card {
   @include pc {
     margin-bottom: -20px;
-    @include flex($jc: space-between, $fw: wrap);
     @include after {
       width: calc((100% - 60px) / 3);
       height: 0;
@@ -54,7 +53,6 @@
 }
 
 .p-card__tag {
-  @include flex();
   margin-bottom: 5px;
   li {
     @include fs(10, 10);

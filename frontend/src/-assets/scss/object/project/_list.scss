@@ -23,7 +23,6 @@
   padding: 0 0 0;
 }
 .p-list__info {
-  @include flex($ai: center);
   time {
     display: block;
     margin-right: 5px;

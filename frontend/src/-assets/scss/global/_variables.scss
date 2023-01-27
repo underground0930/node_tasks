@@ -4,9 +4,10 @@
 // 変数
 ////////////////////////////
 
-// ブレイクポイント
-$breakpoint: 900;
-
-// font
-$commonFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
-  sans-serif;
+// 変数を設定する
+:root {
+  --main-color: red;
+  --breakpoint: 900px;
+  --commonFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+    sans-serif;
+}

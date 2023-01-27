@@ -1,3 +1,6 @@
 # build data
 htdocs/
 htdocs_dev/
+
+# modules
+node_modules/

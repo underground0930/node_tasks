@@ -6,14 +6,16 @@
 @use '../global' as *;
 
 .l-footer {
-  @include relative;
+  position: relative;
   background: #000;
   padding: 50px 0 0;
   flex: none;
 }
 
 .l-footer__inner {
-  @include flex($ai: center, $jc: space-between);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 0 30px;
 }
 
@@ -41,7 +43,8 @@
 }
 
 .l-footer__links {
-  @include flex($ai: center);
+  display: flex;
+  align-items: center;
   li:not(:last-of-type) {
     margin-right: 20px;
   }
@@ -54,7 +57,8 @@
 }
 
 .l-footer__sns {
-  @include flex($ai: center);
+  display: flex;
+  align-items: center;
   li:not(:last-of-type) {
     margin-right: 20px;
   }

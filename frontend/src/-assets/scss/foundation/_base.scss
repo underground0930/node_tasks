@@ -5,12 +5,12 @@
 
 @use '../global' as *;
 
-/////////
-// other
-/////////
-
+// 変数を設定する
 :root {
   --main-color: red;
+  --breakpoint: 900px;
+  --commonFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+    sans-serif;
 }
 
 html {
@@ -22,7 +22,7 @@ body {
   @include fs(14, 30);
   text-size-adjust: 100%;
   height: 100%;
-  font-family: g.$commonFont;
+  font-family: var(--commonFont);
   font-style: normal;
   font-weight: 400;
   color: #000;
@@ -32,7 +32,6 @@ body {
   font-feature-settings: 'palt';
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
-  @include fs(14, 30);
 }
 
 a {
