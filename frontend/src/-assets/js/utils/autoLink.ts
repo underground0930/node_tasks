@@ -7,12 +7,7 @@
 
 const autoLink = (str: string): string => {
   const regexpUrl = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g // ']))/;
-  const regexpMakeLink = (
-    all: string,
-    url: string,
-    h: string,
-    href: string
-  ): string => {
+  const regexpMakeLink = (all: string, url: string, h: string, href: string): string => {
     return `<a target="_blank" rel="noopener" href="h${href}">${url}</a>`
   }
 

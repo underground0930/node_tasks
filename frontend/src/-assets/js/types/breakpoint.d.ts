@@ -1,1 +1,1 @@
-declare const breakpoint: string;
+declare const breakpoint: string

@@ -1,4 +1,4 @@
 declare module '*.json' {
-  const hoge;
-  export default hoge;
+  const hoge
+  export default hoge
 }

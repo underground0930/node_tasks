@@ -1,1 +1,1 @@
-declare const data: any;
+declare const data: any

@@ -1,21 +1,15 @@
-import { checkDevice } from '@/utils/checkDevice';
-
 // libs
-import { PageScroll } from '@/utils/PageScroll';
+import { PageScroll } from '@/utils/PageScroll'
 
 window.globalVars = {
   data: data,
-  isMobile: false,
-  isTablet: false,
-  isDesktop: false,
-};
+}
 
 const init = () => {
-  checkDevice();
-  const scrollTop = document.querySelectorAll<HTMLElement>('.js-scrollTop');
+  const scrollTop = document.querySelectorAll<HTMLElement>('.js-scrollTop')
   if (scrollTop) {
-    new PageScroll(scrollTop, 900);
+    new PageScroll(scrollTop, 900)
   }
-};
+}
 
-init();
+init()
