@@ -3,7 +3,7 @@
 // base
 ////////////////////////
 
-@use '../global' as g;
+@use '../global' as *;
 
 /////////
 // other
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  @include g.fs(14, 30);
+  @include fs(14, 30);
   text-size-adjust: 100%;
   height: 100%;
   font-family: g.$commonFont;
@@ -32,7 +32,7 @@ body {
   font-feature-settings: 'palt';
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
-  @include g.fs(14, 30);
+  @include fs(14, 30);
 }
 
 a {

@@ -3,7 +3,7 @@
 // kv
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .p-kv {
   height: 200px;

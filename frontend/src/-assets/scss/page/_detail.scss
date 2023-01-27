@@ -3,14 +3,14 @@
 // detail
 ////////////////////////
 
-@use '../global' as g;
+@use '../global' as *;
 
 .pg-detail {
   h1 {
-    @include g.fs(30, 45);
+    @include fs(30, 45);
   }
   p {
-    @include g.fs(16, 30);
+    @include fs(16, 30);
   }
 }
 
@@ -20,12 +20,12 @@
     width: 100px;
     height: 100px;
   }
-  @include g.pc {
+  @include pc {
     & > div {
       background: pink;
     }
   }
-  @include g.sp {
+  @include sp {
     & > div {
       background: blue;
     }

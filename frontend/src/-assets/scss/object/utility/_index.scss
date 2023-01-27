@@ -3,7 +3,7 @@
 // utility
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .is-objectFit-cover {
   width: 100%;
@@ -20,19 +20,19 @@
 }
 
 .u-pcbr {
-  @include g.pc {
+  @include pc {
     display: block;
   }
-  @include g.sp {
+  @include sp {
     display: none;
   }
 }
 
 .u-spbr {
-  @include g.pc {
+  @include pc {
     display: none;
   }
-  @include g.sp {
+  @include sp {
     display: block;
   }
 }

@@ -3,11 +3,11 @@
 // header
 ////////////////////////
 
-@use '../global' as g;
+@use '../global' as *;
 
 .l-header {
-  @include g.flex($ai: center, $jc: space-between);
-  @include g.fixed($l: 0, $t: 0);
+  @include flex($ai: center, $jc: space-between);
+  @include fixed($l: 0, $t: 0);
   z-index: 10;
   width: 100%;
   height: 100px;
@@ -18,7 +18,7 @@
 .l-header__logo {
   width: 80px;
   margin-left: 50px;
-  @include g.fs(0, 0);
+  @include fs(0, 0);
   a {
     display: block;
   }
@@ -32,14 +32,14 @@
 .l-header__nav {
   margin-right: 50px;
   ul {
-    @include g.flex($ai: center, $jc: flex-end);
+    @include flex($ai: center, $jc: flex-end);
     width: 300px;
   }
   li:not(:last-of-type) {
     margin-right: 30px;
   }
   a {
-    @include g.fs(16, 16);
+    @include fs(16, 16);
     font-weight: bold;
     color: #000;
     text-decoration: none;

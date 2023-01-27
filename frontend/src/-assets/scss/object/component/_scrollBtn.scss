@@ -3,17 +3,17 @@
 // footer
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .c-scrollBtn {
-  @include g.fixed($r: 0, $b: 0);
+  @include fixed($r: 0, $b: 0);
   z-index: 2;
   width: 70px;
   height: 70px;
   background: #000;
   cursor: pointer;
-  @include g.after {
-    @include g.absolute(0, 0, 0, 0);
+  @include after {
+    @include absolute(0, 0, 0, 0);
     margin: auto;
     border-top: 3px solid #fff;
     border-right: 3px solid #fff;

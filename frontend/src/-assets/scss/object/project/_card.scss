@@ -3,18 +3,18 @@
 // list
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .p-card {
-  @include g.pc {
+  @include pc {
     margin-bottom: -20px;
-    @include g.flex($jc: space-between, $fw: wrap);
-    @include g.after {
+    @include flex($jc: space-between, $fw: wrap);
+    @include after {
       width: calc((100% - 60px) / 3);
       height: 0;
     }
   }
-  @include g.sp {
+  @include sp {
   }
 }
 
@@ -23,7 +23,7 @@
   box-shadow: 0 0 12px #bbb;
   border-radius: 10px solid #bbb;
   overflow: hidden;
-  @include g.pc {
+  @include pc {
     width: calc((100% - 60px) / 3);
   }
 }
@@ -54,10 +54,10 @@
 }
 
 .p-card__tag {
-  @include g.flex();
+  @include flex();
   margin-bottom: 5px;
   li {
-    @include g.fs(10, 10);
+    @include fs(10, 10);
     display: block;
     border: 1px solid #000;
     padding: 2px;

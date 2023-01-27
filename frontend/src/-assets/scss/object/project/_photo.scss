@@ -3,7 +3,7 @@
 // photo
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .p-photos {
   display: flex;

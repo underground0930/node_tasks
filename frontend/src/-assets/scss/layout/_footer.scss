@@ -3,17 +3,17 @@
 // footer
 ////////////////////////
 
-@use '../global' as g;
+@use '../global' as *;
 
 .l-footer {
-  @include g.relative;
+  @include relative;
   background: #000;
   padding: 50px 0 0;
   flex: none;
 }
 
 .l-footer__inner {
-  @include g.flex($ai: center, $jc: space-between);
+  @include flex($ai: center, $jc: space-between);
   padding: 0 0 30px;
 }
 
@@ -31,7 +31,7 @@
   margin: 0 0 30px 50px;
   width: 150px;
   a {
-    @include g.fs(0, 0);
+    @include fs(0, 0);
     display: block;
   }
   svg {
@@ -41,12 +41,12 @@
 }
 
 .l-footer__links {
-  @include g.flex($ai: center);
+  @include flex($ai: center);
   li:not(:last-of-type) {
     margin-right: 20px;
   }
   a {
-    @include g.fs(14, 14);
+    @include fs(14, 14);
     display: block;
     color: #fff;
     text-decoration: none;
@@ -54,12 +54,12 @@
 }
 
 .l-footer__sns {
-  @include g.flex($ai: center);
+  @include flex($ai: center);
   li:not(:last-of-type) {
     margin-right: 20px;
   }
   a {
-    @include g.fs(14, 14);
+    @include fs(14, 14);
     display: block;
     color: #fff;
     text-decoration: none;
@@ -67,7 +67,7 @@
 }
 
 .l-footer__copyright {
-  @include g.fs(10, 10);
+  @include fs(10, 10);
   padding: 20px 0 30px;
   margin: 0 30px 0;
   color: #fff;

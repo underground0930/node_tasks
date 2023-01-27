@@ -3,7 +3,7 @@
 // btn
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .c-btn {
   color: #f00;

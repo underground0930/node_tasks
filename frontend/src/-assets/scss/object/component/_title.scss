@@ -3,10 +3,10 @@
 // title
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .c-title {
-  @include g.fs(30, 30);
+  @include fs(30, 30);
   text-align: center;
   margin: 0 0 50px;
 }

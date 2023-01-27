@@ -3,7 +3,7 @@
 // wrapper
 ////////////////////////
 
-@use '../global' as g;
+@use '../global' as *;
 
 .l-wrapper {
   padding-top: 100px;

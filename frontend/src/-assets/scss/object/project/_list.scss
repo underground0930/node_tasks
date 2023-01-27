@@ -3,7 +3,7 @@
 // list
 ////////////////////////
 
-@use '../../global' as g;
+@use '../../global' as *;
 
 .p-list {
   color: #000;
@@ -23,13 +23,13 @@
   padding: 0 0 0;
 }
 .p-list__info {
-  @include g.flex($ai: center);
+  @include flex($ai: center);
   time {
     display: block;
     margin-right: 5px;
   }
   span {
-    @include g.fs(10, 10);
+    @include fs(10, 10);
     display: block;
     border: 1px solid #000;
     padding: 2px;
