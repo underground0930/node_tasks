@@ -10,7 +10,7 @@
 }
 
 .pg-top-kv {
-  @include relative;
+  position: relative;
   height: 300px;
   margin-bottom: 100px;
   video {

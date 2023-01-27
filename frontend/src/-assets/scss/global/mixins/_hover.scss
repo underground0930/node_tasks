@@ -3,17 +3,12 @@
 // hover
 //////////////////////////////////////////
 
-@mixin hover($ie: false) {
+@mixin hover() {
   &:focus {
     @content;
   }
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      @content;
-    }
-  }
-  @if $ie {
-    @at-root .is-IE &:hover {
       @content;
     }
   }

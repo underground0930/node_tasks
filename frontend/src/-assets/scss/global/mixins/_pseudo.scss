@@ -3,17 +3,17 @@
 // Pseudo-elements
 //////////////////////////////////////////
 
-@mixin before{
-  &:before{
-    content: "";
+@mixin before {
+  &:before {
+    content: '';
     display: block;
     @content;
   }
 }
 
-@mixin after{
-  &:after{
-    content: "";
+@mixin after {
+  &:after {
+    content: '';
     display: block;
     @content;
   }

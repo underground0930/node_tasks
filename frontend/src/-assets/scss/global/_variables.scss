@@ -1,13 +1,13 @@
 @charset "UTF-8";
+@use './breakpoint' as *;
 
 ////////////////////////////
 // 変数
 ////////////////////////////
 
-// 変数を設定する
 :root {
   --main-color: red;
-  --breakpoint: 900px;
+  --breakpoint: #{map-get($breakpoints, sp_pc)};
   --commonFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
     sans-serif;
 }
