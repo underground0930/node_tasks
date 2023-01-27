@@ -5,65 +5,63 @@
 
 @use '../../global' as g;
 
-.p-card{
-  @include g.pc{
+.p-card {
+  @include g.pc {
     margin-bottom: -20px;
-    @include g.flex($jc:space-between, $fw:wrap);
-    @include g.after{
-      width: calc( (100% - 60px) / 3 );
+    @include g.flex($jc: space-between, $fw: wrap);
+    @include g.after {
+      width: calc((100% - 60px) / 3);
       height: 0;
     }
   }
-  @include g.sp{
-
+  @include g.sp {
   }
 }
 
-.p-card__child{
-
+.p-card__child {
   margin: 0 0 20px;
   box-shadow: 0 0 12px #bbb;
   border-radius: 10px solid #bbb;
-  overflow:hidden;
-  @include g.pc{
-    width: calc( (100% - 60px) / 3 );
+  overflow: hidden;
+  @include g.pc {
+    width: calc((100% - 60px) / 3);
   }
 }
 
-.p-card__photo{
-  overflow:hidden;
+.p-card__photo {
+  overflow: hidden;
   height: 200px;
-  img{
+  img {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
 }
 
-.p-card__link{
-  display:block;
-  text-decoration:none;
+.p-card__link {
+  display: block;
+  text-decoration: none;
   padding: 0 0 10px;
 }
 
-.p-card__body{
+.p-card__body {
   padding: 15px 10px;
 }
 
-.p-card__time{
-  display:block;
+.p-card__time {
+  display: block;
   margin-bottom: 5px;
 }
 
-.p-card__tag{
+.p-card__tag {
   @include g.flex();
   margin-bottom: 5px;
-  li{
-    @include g.fs(10,10);
+  li {
+    @include g.fs(10, 10);
     display: block;
-    border:1px solid #000;
-    padding:2px;
-    border-radius:5px;
+    border: 1px solid #000;
+    padding: 2px;
+    border-radius: 5px;
     margin-right: 5px;
   }
 }

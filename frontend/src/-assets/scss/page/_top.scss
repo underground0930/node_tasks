@@ -5,28 +5,26 @@
 
 @use '../global' as g;
 
-.pg-top{
-
+.pg-top {
 }
 
-.pg-top-kv{
+.pg-top-kv {
   @include g.relative;
   height: 300px;
   margin-bottom: 100px;
-  video{
-    @include g.absolute($t:0,$l:0);
-    width:100%;
+  video {
+    @include g.absolute($t: 0, $l: 0);
+    width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
   }
 }
 
-.pg-top-section{
-  @include g.pc{
+.pg-top-section {
+  @include g.pc {
     margin: 0 80px 100px;
   }
-  @include g.sp{
+  @include g.sp {
     margin: 0 20px 50px;
   }
 }
-

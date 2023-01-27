@@ -5,29 +5,28 @@
 
 @use '../global' as g;
 
-.pg-detail{
-  h1{
+.pg-detail {
+  h1 {
     @include g.fs(30, 45);
   }
-  p{
+  p {
     @include g.fs(16, 30);
   }
 }
 
-.pg-detail__box{
+.pg-detail__box {
   position: relative;
-  & > div{
-
-    width:100px;
-    height:100px;
+  & > div {
+    width: 100px;
+    height: 100px;
   }
-  @include g.pc{
-    & > div{
+  @include g.pc {
+    & > div {
       background: pink;
     }
   }
-  @include g.sp{
-    & > div{
+  @include g.sp {
+    & > div {
       background: blue;
     }
   }

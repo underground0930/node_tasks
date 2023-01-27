@@ -16,7 +16,7 @@ const html = require('./html') // 自作のhtmlタスク
 config
 ************************************************/
 
-const paths = require('../path.config') // 使いやすいようにそれぞれのパスを変数に入れ直す
+const paths = require('../paths') // 使いやすいようにそれぞれのパスを変数に入れ直す
 const environment = process.env.NODE_ENV
 const isDev = environment === 'development' // isDev
 

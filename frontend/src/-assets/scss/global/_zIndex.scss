@@ -7,10 +7,10 @@
 
 // z-indexが10以上の場合 設定
 $zIndex: (
-  headerNav:102,
+  headerNav: 102,
   headerOpen: 101,
   headerLogo: 100,
-  localNav: 10
+  localNav: 10,
 );
 
 @function zIndex($key) {

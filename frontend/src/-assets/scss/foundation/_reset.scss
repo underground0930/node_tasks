@@ -3,7 +3,6 @@
 // reset
 ////////////////////////
 
-
 * {
   box-sizing: border-box;
 }
@@ -109,7 +108,8 @@ section {
   display: block;
 }
 
-ul,ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -179,8 +179,8 @@ select {
   vertical-align: middle;
 }
 
-button{
-  margin:0;
-  padding:0;
-  border:0;
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }

@@ -5,73 +5,71 @@
 
 @use '../global' as g;
 
-.l-footer{
+.l-footer {
   @include g.relative;
   background: #000;
   padding: 50px 0 0;
-  flex:none;
+  flex: none;
 }
 
-.l-footer__inner{
-  @include g.flex($ai:center,$jc:space-between);
+.l-footer__inner {
+  @include g.flex($ai: center, $jc: space-between);
   padding: 0 0 30px;
 }
 
-.l-footer__main{
+.l-footer__main {
   margin: 0 0 0 50px;
-  width:70%;
+  width: 70%;
 }
 
-.l-footer__sub{
+.l-footer__sub {
   margin: 0 50px 0 0;
-  flex:1;
+  flex: 1;
 }
 
-.l-footer__logo{
+.l-footer__logo {
   margin: 0 0 30px 50px;
   width: 150px;
-  a{
-    @include g.fs(0,0);
-    display:block;
+  a {
+    @include g.fs(0, 0);
+    display: block;
   }
-  svg{
+  svg {
     width: 80px;
-    height :auto;
+    height: auto;
   }
 }
 
-
-.l-footer__links{
-  @include g.flex($ai:center);
-  li:not(:last-of-type){
+.l-footer__links {
+  @include g.flex($ai: center);
+  li:not(:last-of-type) {
     margin-right: 20px;
   }
-  a{
-    @include g.fs(14,14);
-    display:block;
-    color:#fff;
+  a {
+    @include g.fs(14, 14);
+    display: block;
+    color: #fff;
     text-decoration: none;
   }
 }
 
-.l-footer__sns{
-  @include g.flex($ai:center);
-  li:not(:last-of-type){
+.l-footer__sns {
+  @include g.flex($ai: center);
+  li:not(:last-of-type) {
     margin-right: 20px;
   }
-  a{
-    @include g.fs(14,14);
-    display:block;
-    color:#fff;
+  a {
+    @include g.fs(14, 14);
+    display: block;
+    color: #fff;
     text-decoration: none;
   }
 }
 
-.l-footer__copyright{
-  @include g.fs(10,10);
+.l-footer__copyright {
+  @include g.fs(10, 10);
   padding: 20px 0 30px;
   margin: 0 30px 0;
   color: #fff;
-  text-align:center;
+  text-align: center;
 }
-

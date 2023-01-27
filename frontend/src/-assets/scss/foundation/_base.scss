@@ -9,7 +9,7 @@
 // other
 /////////
 
-:root{
+:root {
   --main-color: red;
 }
 
@@ -35,15 +35,15 @@ body {
   @include g.fs(14, 30);
 }
 
-a{
-  color:#000;
+a {
+  color: #000;
 }
 
-img{
+img {
   width: 100%;
   vertical-align: bottom;
 }
 
-a[href^="tel:"]{
+a[href^='tel:'] {
   pointer-events: none;
 }

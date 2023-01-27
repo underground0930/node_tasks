@@ -5,14 +5,14 @@
 
 @use '../../global' as g;
 
-.p-photos{
+.p-photos {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   background: #ddd;
   margin-bottom: 100px;
 }
-.p-photo{
+.p-photo {
   width: 33.332%;
   height: 150px;
 }

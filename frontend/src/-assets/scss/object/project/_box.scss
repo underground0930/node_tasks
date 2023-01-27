@@ -5,33 +5,33 @@
 
 @use '../../global' as g;
 
-.p-boxWrep{
+.p-boxWrep {
   display: flex;
 }
 
-.p-boxMain{
-  width:70%;
+.p-boxMain {
+  width: 70%;
 }
 
-.p-boxSub{
+.p-boxSub {
   position: relative;
-  flex:1;
+  flex: 1;
 }
 
-.p-boxNav{
-  width:100px;
+.p-boxNav {
+  width: 100px;
   height: 100px;
   background: #000;
   position: sticky;
   top: 100px;
   margin: 0 auto;
-  color:#fff;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.p-box{
+.p-box {
   height: 400px;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@
   font-size: 50px;
   border-top: 1px solid #f00;
   transition: all 0.3s;
-  &.is-show{
+  &.is-show {
     background: pink;
   }
 }

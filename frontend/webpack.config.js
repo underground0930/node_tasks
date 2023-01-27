@@ -4,12 +4,35 @@ const webpack = require('webpack')
 // tasks
 const getJsonData = require('./tasks/getJsonData')
 
+const environment = process.env.NODE_ENV
+
 // config
-const paths = require('./path.config')
-const config = require(paths.config)
-const { mode, devtool, watch } = config
+const paths = require('./paths')
+const config = ((env) => {
+  if (env === 'development') {
+    return {
+      buildRoot: 'htdocs_dev',
+      mode: environment,
+      watch: true,
+      devtool: 'source-map',
+      pluginParams: {
+        apiPath: 'https://dev.jp/api/',
+      },
+    }
+  }
+  return {
+    buildRoot: 'htdocs',
+    mode: environment,
+    watch: false,
+    pluginParams: {
+      apiPath: 'https://prod.jp/api/',
+    },
+  }
+})(environment)
+
+const { mode, devtool, watch, pluginParams } = config
 const data = getJsonData(paths.src.assets + '/data/*.json')
-console.log(data)
+
 module.exports = {
   mode,
   devtool,
@@ -53,7 +76,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       data,
-      ...config.pluginParams,
+      ...pluginParams,
     }),
   ],
   resolve: {

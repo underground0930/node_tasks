@@ -9,7 +9,6 @@
     "prod": "run-s build del-dummy",
     "build": "run-p webpack:prod tasks:prod",
     "dev": "run-p webpack:dev tasks:dev",
-    "dev-param": "cross-env PARAM1=\"100\" PARAM2=\"200\" PARAM3=\"300\" run-p webpack:dev tasks:dev",
     "tasks:prod": "cross-env NODE_ENV=\"production\" node ./tasks/index.js",
     "tasks:dev": "cross-env NODE_ENV=\"development\" node ./tasks/index.js",
     "webpack:prod": "cross-env NODE_ENV=\"production\" webpack",
