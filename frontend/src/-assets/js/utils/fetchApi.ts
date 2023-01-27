@@ -2,19 +2,19 @@
  * fetch APIの ラッパー
  */
 
+import { ResponseError } from './ResponseError'
+
 type Props = {
   url: string
-  init: RequestInit
+  init?: RequestInit
   debug?: boolean
 }
 
-type ErrorStatus = 'SERVER_ERROR' | 'CLIENT_ERROR' | null
-
 export function fetchApi<T>({
   url,
-  init,
+  init = {},
   debug = false,
-}: Props): Promise<{ data: T | null; errorStatus: ErrorStatus }> {
+}: Props): Promise<{ data: T | null; errorStatus: number | null; isNetWorkErr: boolean }> {
   return fetch(url, init)
     .then((response) => {
       if (debug) {
@@ -22,20 +22,29 @@ export function fetchApi<T>({
       }
       const isSuccess = [200, 204, 304].some((n) => n === response.status)
       if (!response.ok || !isSuccess) {
-        throw new Error(String(response.status)) // 0, 400, 500 errors
+        throw new ResponseError('Bad fetch Error', response)
       }
       return response.json()
     })
     .then((data: T) => {
       return {
         data,
+        isNetWorkErr: false,
         errorStatus: null,
       }
     })
     .catch((e: unknown) => {
+      if (e instanceof ResponseError) {
+        return {
+          data: null,
+          isNetWorkErr: false,
+          errorStatus: e.response.status,
+        }
+      }
       return {
         data: null,
-        errorStatus: e[0] === '5' ? 'SERVER_ERROR' : 'CLIENT_ERROR',
+        isNetWorkErr: true,
+        errorStatus: null,
       }
     })
 }

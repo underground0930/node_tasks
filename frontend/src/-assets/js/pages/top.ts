@@ -7,9 +7,17 @@ SwiperCore.use([Pagination, Navigation])
 import App from '@/components/pages/App'
 
 // modules
+import { fetchApi } from '@/utils/fetchApi'
 import { checkImgsLoad } from '@/utils/checkImgsLoad'
 import { debounceEvent } from '@/utils/debounceEvent'
 import { scrollCheck } from '@/utils/scrollCheck'
+;(async () => {
+  const result = await fetchApi<any>({
+    url: 'https://jsonplaceholder.typicode.com/todos/1',
+    debug: true,
+  })
+  console.log(result)
+})()
 
 const mySwiper = new Swiper('.swiper-container', {})
 
