@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/env": "^4.7.0"
+    "@wordpress/env": "^5.10.0"
   },
   "dependencies": {}
 }
