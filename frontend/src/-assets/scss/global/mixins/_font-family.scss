@@ -3,12 +3,12 @@
 // font-family
 //////////////////////////////////////////
 
-@mixin noto1 {
+@mixin fontBold {
   font-family: var(--commonFont);
   font-weight: 700;
 }
 
-@mixin noto2 {
+@mixin fontBlack {
   font-family: var(--commonFont);
   font-weight: 900;
 }

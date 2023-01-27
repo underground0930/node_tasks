@@ -6,7 +6,7 @@
 ////////////////////////////
 
 :root {
-  --main-color: red;
+  --mainColor: red;
   --breakpoint: #{map-get($breakpoints, sp_pc)};
   --commonFont: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
     sans-serif;

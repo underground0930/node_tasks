@@ -4,26 +4,24 @@
 // font-size
 //////////////////////////////////////////
 
-@mixin fs($font-size, $line-height:null, $lineHeightCrop:true){
+@mixin fs($font-size, $line-height: null, $lineHeightCrop: true) {
   font-size: $font-size * 0.1rem;
-  @if($line-height!=null){
+  @if ($line-height!=null) {
     line-height: math.div($line-height, $font-size);
   }
-
-  @if($lineHeightCrop == true){
+  @if ($lineHeightCrop == true) {
     &:before,
-    &:after{
-      content:"";
-      display:block;
+    &:after {
+      content: '';
+      display: block;
       height: 0;
       width: 0;
     }
-    &:before{
+    &:before {
       margin-bottom: calc((1 - math.div($line-height, $font-size)) * 0.5em);
     }
-    &:after{
+    &:after {
       margin-top: calc((1 - math.div($line-height, $font-size)) * 0.5em);
     }
   }
-
 }
