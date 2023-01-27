@@ -5,7 +5,6 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "apiServer": "docker run -p 4000:80 -v ${PWD}/htdocs_api:/var/www/html -d php:apache",
     "prod": "run-s build del-dummy",
     "build": "run-p webpack:prod tasks:prod",
     "dev": "run-p webpack:dev tasks:dev",
@@ -14,9 +13,6 @@
     "webpack:prod": "cross-env NODE_ENV=\"production\" webpack",
     "webpack:dev": "cross-env NODE_ENV=\"development\" webpack",
     "del-dummy": "rm -R htdocs/assets/json/_dummy htdocs/assets/img/_dummy htdocs/assets/movie/_dummy",
-    "optim": "npm run optim:png && npm run optim:jpg",
-    "optim:png": "find . -name '*.png' | xargs pngquant --ext .png --force -v",
-    "optim:jpg": "find . -name '*.jpg' | xargs jpegoptim --strip-all --max=90",
     "lint:ejs": "ejslint 'src/**/*.{ejs,html}'",
     "lint": "eslint 'src/assets/js/**/*' --fix --ext .ts,.tsx"
   },

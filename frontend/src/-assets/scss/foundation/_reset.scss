@@ -184,3 +184,12 @@ button {
   padding: 0;
   border: 0;
 }
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+a[href^='tel:'] {
+  pointer-events: none;
+}

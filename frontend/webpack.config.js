@@ -87,7 +87,7 @@ module.exports = {
   },
   target: ['web', 'es5'],
   performance: {
-    maxAssetSize: 9000000,
-    maxEntrypointSize: 9000000,
+    maxAssetSize: 9999999,
+    maxEntrypointSize: 9999999,
   },
 }

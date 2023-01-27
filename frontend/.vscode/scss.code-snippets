@@ -1,0 +1,47 @@
+{
+  "flex": {
+    "prefix": "flex",
+    "body": ["display: flex;", "align-items: ${1:center};", "justify-content: ${2:space-between};"],
+    "description": "flex"
+  },
+  "fixed": {
+    "prefix": "fixed",
+    "body": ["position: fixed;", "left: ${1:0};", "top: ${2:0};", "right: ${3:0};", "bottom: ${4:0};"],
+    "description": "fixed"
+  },
+  "absolute": {
+    "prefix": "absolute",
+    "body": ["position: absolute;", "left: ${1:0};", "top: ${2:0};", "right: ${3:0};", "bottom: ${4:0};"],
+    "description": "absolute"
+  },
+  "sticky": {
+    "prefix": "sticky",
+    "body": ["position: sticky;", "top: ${1:0};"],
+    "description": "sticky"
+  },
+  "relative": {
+    "prefix": "relative",
+    "body": ["position: relative;"],
+    "description": "relative"
+  },
+  "ratio": {
+    "prefix": "ratio",
+    "body": ["aspect-ratio: $1/$2;"],
+    "description": "ratio"
+  },
+  "pc": {
+    "prefix": "pc",
+    "body": ["@include pc {", "  $1", "}"],
+    "description": "pc"
+  },
+  "sp": {
+    "prefix": "sp",
+    "body": ["@include sp {", "  $1", "}"],
+    "description": "sp"
+  },
+  "fs": {
+    "prefix": "fs",
+    "body": ["@include fs($1, $2, $3);"],
+    "description": "fs"
+  }
+}

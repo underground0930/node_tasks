@@ -1,7 +1,7 @@
 # frontend tasks
 
-- 「gulp」を使用していないnode task。
-- 「webpack」はjsのバンドルのみに使用してます。
+- 「gulp」を使用していない node
+- 「webpack」は js のバンドルのみに使用してます。
 
 ## 開発環境
 
@@ -29,12 +29,6 @@ $ npm install
 # ローカル開発時に使用します
 $ npm run dev
 
-# npm run dev とほぼ同じ
-# ローカル開発時に使用します
-# 追加で独自の環境変数をタスクに渡すことが出来ます
-# 「package.json」と「frontend/config/development.js」に追加したい環境変数を記述する
-$ npm run dev-param
-
 # プロダクションモードのデータを生成
 # htdocs/htdocs にデータが生成されます
 # _dummyディレクトリが-assetsディレクトリに残ったままです
@@ -61,24 +55,23 @@ $ npm run prod
 ## html について
 
 - ejs を使用しています。共通部分などをパーツ化することが目的です。
-- 「id」はページ固有の値です。bodyのid属性に使用します。ページごとにユニークにしてください。
-- 「class」bodyのclass属性に使用します。
-- 「script」ページで読み込むscriptファイル名に使用します。
+- 「id」はページ固有の値です。body の id 属性に使用します。ページごとにユニークにしてください。
+- 「class」body の class 属性に使用します。
+- 「script」ページで読み込む script ファイル名に使用します。
 - 「title」ページタイトルに使用します。
-- 「description」ページdescriptionに使用します。
-- 「url」og:urlに使用します。相対パスで記述してください。
+- 「description」ページ description に使用します。
+- 「url」og:url に使用します。相対パスで記述してください。
 - 「relativePath」は相対パス対応の値です。ディレクトリごとに変更してください。
-- 「ogp」ページで独自のog:imageを使用したい時に指定してください。空だと、共通のogpが読み込まれます。
-
+- 「ogp」ページで独自の og:image を使用したい時に指定してください。空だと、共通の ogp が読み込まれます。
 
 ### ダミーファイルについて
 
-- dummyファイルはそれぞれの-assetsディレクトリの下に「_dummy」ディレクトリを作り、ファイルを格納
-- 例) 「img/_dummy/test.jpg」「json/_dummy/test.json」「movie/_dummy/test.mp4」
+- dummy ファイルはそれぞれの-assets ディレクトリの下に「\_dummy」ディレクトリを作り、ファイルを格納
+- 例) 「img/\_dummy/test.jpg」「json/\_dummy/test.json」「movie/\_dummy/test.mp4」
 
 ### ./js/ 以下
 
-- 「components」は react / vue のコンポーネントを格納。
+- 「components」は react のコンポーネントを格納。
 - 「components/common」は、サイト全体で使用するコンポーネントを格納されています。
 - 「components/pages」は、 各ページで使用するコンポーネントを格納されています。
 - 「utils/」は、サイト全体で使用する共通のデータ、操作等を格納します。
@@ -92,13 +85,13 @@ $ npm run prod
 
 ### ./data/ 以下
 
-- サイトで使用するデータをyamlファイルに記述します。
+- サイトで使用するデータを json ファイルに記述します。
 
 ### ./scss/ 以下
 
 - 「foundation」はサイト全体の reset や base となる css を格納
 - 「layout」は header,footer,wrapper などの css を格納
-- 「global」に全体で使用する変数やmixinを格納
+- 「global」に全体で使用する変数や mixin を格納
 - 「object」は、component, project, utility の３レイヤーに別れる
 - 「page」はページ固有の style を記述
 - **scss**を使用します。
