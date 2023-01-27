@@ -2,16 +2,14 @@ const path = require('path')
 const webpack = require('webpack')
 
 // tasks
-const getYamlData = require('./tasks/getYamlData')
+const getJsonData = require('./tasks/getJsonData')
 
 // config
 const paths = require('./path.config')
-const environment = process.env.NODE_ENV
-const config = require(`./config/${environment}.js`)
-
+const config = require(paths.config)
 const { mode, devtool, watch } = config
-const data = JSON.stringify(getYamlData(paths.src.assets + '/data/*.yaml'))
-
+const data = getJsonData(paths.src.assets + '/data/*.json')
+console.log(data)
 module.exports = {
   mode,
   devtool,
@@ -59,7 +57,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', 'json'],
     alias: {
       '@': paths.src.js,
     },

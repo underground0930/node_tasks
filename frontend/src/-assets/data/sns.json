@@ -1,0 +1,16 @@
+{
+  "sns": {
+    "facebook": {
+      "label": "Facebook",
+      "link": "#dummy"
+    },
+    "twitter": {
+      "label": "Twitter",
+      "link": "#dummy"
+    },
+    "instagram": {
+      "label": "Instagram",
+      "link": "#dummy"
+    }
+  }
+}

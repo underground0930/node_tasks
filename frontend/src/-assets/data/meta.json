@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "sitename": "example site",
+    "host": "http://example.co.jp",
+    "root": "",
+    "ogp": "/-assets/img/ogp.png"
+  }
+}

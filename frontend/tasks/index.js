@@ -1,5 +1,5 @@
 const bs = require('browser-sync').create() // ローカルサーバー、ブラウザのリロード
-const getYamlData = require('./getYamlData')
+const getJsonData = require('./getJsonData')
 const apiServer = require('./middleware/apiServer')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
@@ -24,7 +24,7 @@ const isDev = environment === 'development' // isDev
 data
 ************************************************/
 
-const data = getYamlData(paths.src.assets + '/data/*.yaml')
+const data = getJsonData(paths.src.assets + '/data/*.json')
 
 /************************************************
 tasks

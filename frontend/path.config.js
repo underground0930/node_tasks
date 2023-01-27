@@ -1,10 +1,12 @@
-const path = require('path');
-const environment = process.env.NODE_ENV;
-const config = require(`./config/${environment}.js`);
-const { buildRoot } = config;
-const rootDir = process.cwd();
-const pr = (str) => path.resolve(str);
+const path = require('path')
+const pr = (str) => path.resolve(str)
+const rootDir = process.cwd()
+const environment = process.env.NODE_ENV
+const configPath = pr(`${rootDir}/webpack.config.${environment}.js`)
+const config = require(configPath)
+const { buildRoot } = config
 const paths = {
+  config: configPath,
   src: {
     root: pr(`${rootDir}/src`),
     assets: pr(`${rootDir}/src/-assets`),
@@ -25,6 +27,6 @@ const paths = {
     font: pr(`${rootDir}/${buildRoot}/-assets/fonts`),
     movie: pr(`${rootDir}/${buildRoot}/-assets/movie`),
   },
-};
+}
 
-module.exports = paths;
+module.exports = paths
