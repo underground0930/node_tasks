@@ -10,8 +10,11 @@ const _glob = ({ root, pattern, cb }) => {
     const results = []
     const { length } = files
     let count = 0
-    if (err) return console.log(err)
-    files.forEach((file) => cb({ file, results, length, count }))
+    if (err) console.error(err)
+    files.forEach((file) => {
+      const fileRelative = file.split(root)[1]
+      cb({ file, fileRelative, results, length, count })
+    })
   })
 }
 

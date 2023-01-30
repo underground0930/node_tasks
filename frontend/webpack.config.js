@@ -75,7 +75,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      data,
+      data: JSON.stringify(data),
       ...pluginParams,
     }),
   ],

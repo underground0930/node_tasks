@@ -3,7 +3,7 @@
  * @param {array} src - 削除対象のファイルパス
  */
 
-const del = require('del') // データの削除
+const del = require('del')
 
 const dele = async (src) => {
   console.log('■■ delete task start ■■')

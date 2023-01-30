@@ -7,11 +7,10 @@
  * @param {boolean} isDev - 開発フラグの有無
  */
 
-const ejs = require('ejs') // htmlテンプレートエンジン ejs
-const fs = require('fs-extra') // ディレクトリを再帰的に作成
-const path = require('path') // 標準モジュール パスの文字列操作
+const ejs = require('ejs')
+const fs = require('fs-extra')
+const path = require('path')
 const beautify = require('js-beautify')
-
 const _glob = require('./glob') // globのラッパー
 
 // 整形オプション
@@ -31,17 +30,15 @@ const html = ({ root, pattern, dist, data, isDev }) => {
   _glob({
     pattern,
     root,
-    cb: ({ file, results, length, count }) => {
-      const absolutePath = file.split(root)[1]
-      const relativePath = '../'.repeat([absolutePath.split('/').length - 2])
+    cb: ({ file, fileRelative, results, length, count }) => {
+      const relativePath = '../'.repeat([fileRelative.split('/').length - 2])
       ejs.renderFile(
         file,
-        { data, absolutePath, relativePath, time: new Date().getTime() },
+        { data, absolutePath: fileRelative, relativePath, time: new Date().getTime() },
         { outputFunctionName: 'echo', rmWhitespace: false },
         (err, str) => {
-          if (err) return console.log(err)
-          const fileSplit = file.split(root)
-          const filename = dist + fileSplit[1]
+          if (err) console.error(err)
+          const filename = dist + fileRelative
           const dir = path.dirname(filename)
           // ディレクトリが無かったらディレクトリを再帰的に作成
           if (!fs.existsSync(dir)) fs.mkdirsSync(dir)
@@ -49,7 +46,7 @@ const html = ({ root, pattern, dist, data, isDev }) => {
           fs.writeFile(filename, result, (err) => {
             // ファイルに書き込む処理
             if (err) throw err
-            results.push(fileSplit[1])
+            results.push(fileRelative)
             if (++count === length) {
               console.log(`■■ ejs files : [${results.join(', ')}] ■■`)
               console.log(`■■ ejs task finished ■■`)

@@ -14,11 +14,10 @@ const copy = ({ root, dist, pattern, taskName }) => {
   _glob({
     pattern,
     root,
-    cb: ({ file, results, length, count }) => {
-      const fileSplit = file.split(root)
-      fs.copy(file, dist + fileSplit[1], (err) => {
-        if (err) return console.error(err)
-        results.push(fileSplit[1])
+    cb: ({ file, fileRelative, results, length, count }) => {
+      fs.copy(file, dist + fileRelative, (err) => {
+        if (err) console.error(err)
+        results.push(fileRelative)
         if (++count === length) console.log(`■■ ${taskName} copy task finished ■■`)
       })
     },

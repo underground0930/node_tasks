@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const Child = () => {
-  return <div>{new Date().getTime()}</div>;
-};
+  return <div>{new Date().getTime()}</div>
+}
 
-export default Child;
+export default Child
