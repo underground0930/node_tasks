@@ -13,7 +13,7 @@ const watch = ({ src, cb }) => {
     ignoreInitial: true, // 監視開始時のイベントを無視するかどうか
     awaitWriteFinish: {
       // イベントの発生を遅らせる
-      stabilityThreshold: 1500,
+      stabilityThreshold: 1000,
       pollInterval: 100,
     },
   })

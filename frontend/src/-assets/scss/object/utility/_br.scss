@@ -1,0 +1,24 @@
+@charset "UTF-8";
+////////////////////////
+// br
+////////////////////////
+
+@use '../../global' as *;
+
+.u-pcbr {
+  @include pc {
+    display: block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.u-spbr {
+  @include pc {
+    display: none;
+  }
+  @include sp {
+    display: block;
+  }
+}

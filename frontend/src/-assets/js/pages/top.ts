@@ -24,7 +24,7 @@ const mySwiper = new Swiper('.swiper-container', {})
 const app = document.getElementById('app')
 if (app) {
   const root = ReactDOM.createRoot(app)
-  root.render(App())
+  root.render(App({}))
 }
 
 checkImgsLoad({

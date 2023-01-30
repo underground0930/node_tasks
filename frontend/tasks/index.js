@@ -16,9 +16,9 @@ const html = require('./html') // 自作のhtmlタスク
 config
 ************************************************/
 
-const paths = require('../paths') // 使いやすいようにそれぞれのパスを変数に入れ直す
+const paths = require('../paths')
 const environment = process.env.NODE_ENV
-const isDev = environment === 'development' // isDev
+const isDev = environment === 'development'
 
 /************************************************
 data
@@ -92,7 +92,7 @@ const movieTask = () =>
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
   watch({ src: paths.src.root + pattern.ejs, cb: htmlTask })
-  watch({ src: paths.src.css + pattern.css, cb: sassTask })
+  watch({ src: paths.src.css + pattern.sass, cb: sassTask })
   watch({ src: paths.src.img + pattern.img, cb: imgTask })
   watch({ src: paths.src.json + pattern.json, cb: jsonTask })
   watch({ src: paths.src.font + paths.font, cb: fontTask })
@@ -106,7 +106,7 @@ const serverTask = () => {
     host: 'localhost',
     ghostMode: false,
     server: [paths.dist.root],
-    https: false, // or true
+    https: false,
     startPath: './list.html',
     middleware: [
       createProxyMiddleware('/contact_api', {

@@ -27,7 +27,7 @@ const _sass = ({ root, pattern, dist, isDev }) => {
         .process(result.css, { from: undefined })
         .then((resultPost) => {
           fs.writeFile(filename, resultPost.css, (err) => {
-            if (err) throw err
+            if (err) console.error(err)
             results.push(fileRelative)
             if (++count === length) {
               console.log(`■■ css files : [${results.join(', ')}] ■■`)

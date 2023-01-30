@@ -40,7 +40,6 @@ module.exports = {
   entry: {
     common: paths.src.js + '/common/script.ts',
     top: paths.src.js + '/pages/top.ts',
-    detail: paths.src.js + '/pages/detail.ts',
   },
   output: {
     filename: '[name].bundle.js',

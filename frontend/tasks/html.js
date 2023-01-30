@@ -40,12 +40,10 @@ const html = ({ root, pattern, dist, data, isDev }) => {
           if (err) console.error(err)
           const filename = dist + fileRelative
           const dir = path.dirname(filename)
-          // ディレクトリが無かったらディレクトリを再帰的に作成
           if (!fs.existsSync(dir)) fs.mkdirsSync(dir)
           const result = beautifyFn(str)
           fs.writeFile(filename, result, (err) => {
-            // ファイルに書き込む処理
-            if (err) throw err
+            if (err) console.error(err)
             results.push(fileRelative)
             if (++count === length) {
               console.log(`■■ ejs files : [${results.join(', ')}] ■■`)
