@@ -31,22 +31,15 @@ tasks
 ************************************************/
 
 const pattern = {
-  html: '/**/*.html',
-  ejs: '/**/*.{html,ejs}',
-  js: '/**/*.js',
-  sass: '/**/!(_)*.scss',
-  css: '/**/*.css',
   img: '/**/*.{jpg,png,gif,webp,svg,ico}',
   font: '/**/*.{woff,woff2,ttf,svg,eot}',
-  json: '/**/*.json',
-  movie: '/**/*.mp4',
 }
 
 // 各タスク を関数化
 const htmlTask = () => {
   html({
     root: paths.src.root,
-    pattern: pattern.html,
+    pattern: '/**/*.html',
     dist: paths.dist.root,
     data,
     isDev,
@@ -55,7 +48,7 @@ const htmlTask = () => {
 const sassTask = () => {
   sass({
     root: paths.src.css,
-    pattern: pattern.sass,
+    pattern: '/**/!(_)*.scss',
     dist: paths.dist.css,
     isDev,
   })
@@ -71,7 +64,7 @@ const jsonTask = () =>
   copy({
     root: paths.src.json,
     dist: paths.dist.json,
-    pattern: pattern.json,
+    pattern: '/**/*.json',
     taskName: 'json',
   })
 const fontTask = () =>
@@ -85,16 +78,16 @@ const movieTask = () =>
   copy({
     root: paths.src.movie,
     dist: paths.dist.movie,
-    pattern: pattern.movie,
+    pattern: '/**/*.mp4',
     taskName: 'movie',
   })
 
 // 監視して更新されたファイルに関するタスクを走らせる
 const watchTasks = () => {
-  watch({ src: paths.src.root + pattern.ejs, cb: htmlTask })
-  watch({ src: paths.src.css + pattern.sass, cb: sassTask })
+  watch({ src: paths.src.root + '/**/*.{html,ejs}', cb: htmlTask })
+  watch({ src: paths.src.css + '/**/*.scss', cb: sassTask })
+  watch({ src: paths.src.json + '/**/*.json', cb: jsonTask })
   watch({ src: paths.src.img + pattern.img, cb: imgTask })
-  watch({ src: paths.src.json + pattern.json, cb: jsonTask })
   watch({ src: paths.src.font + paths.font, cb: fontTask })
 }
 
@@ -114,13 +107,15 @@ const serverTask = () => {
         changeOrigin: false,
       }),
     ],
+    reloadDebounce: 100,
   })
 
-  bs.watch(paths.dist.root + pattern.html).on('change', bs.reload)
-  bs.watch(paths.dist.assets + pattern.js).on('change', bs.reload)
+  bs.watch(paths.dist.root + '/**/*.html').on('change', bs.reload)
+  bs.watch(paths.dist.assets + '/**/*.js').on('change', bs.reload)
   bs.watch(paths.dist.assets + pattern.img).on('change', bs.reload)
-  bs.watch(paths.dist.assets + pattern.json).on('change', bs.reload)
-  bs.watch(paths.dist.assets + pattern.css, (e, f) => {
+  bs.watch(paths.dist.assets + '/**/*.json').on('change', bs.reload)
+  bs.watch(paths.dist.assets + '/**/*.css', (e, f) => {
+    console.log(e)
     if (e !== 'change') return
     bs.reload('*.css')
   })
