@@ -6,7 +6,7 @@
  * @param {string} taskName - タスクネーム
  */
 
-const fs = require('fs-extra') // ディレクトリを再帰的に作成
+const fs = require('fs-extra')
 const _glob = require('./glob') // globのラッパー
 
 const copy = ({ root, dist, pattern, taskName }) => {
@@ -19,11 +19,7 @@ const copy = ({ root, dist, pattern, taskName }) => {
       fs.copy(file, dist + fileSplit[1], (err) => {
         if (err) return console.error(err)
         results.push(fileSplit[1])
-        count++
-        if (count === length) {
-          // ファイル数を数えてタスクが完了
-          console.log(`■■ ${taskName} copy task finished ■■`)
-        }
+        if (++count === length) console.log(`■■ ${taskName} copy task finished ■■`)
       })
     },
   })

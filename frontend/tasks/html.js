@@ -43,17 +43,14 @@ const html = ({ root, pattern, dist, data, isDev }) => {
           const fileSplit = file.split(root)
           const filename = dist + fileSplit[1]
           const dir = path.dirname(filename)
-          if (!fs.existsSync(dir)) {
-            fs.mkdirsSync(dir) // ディレクトリが無かったらディレクトリを再帰的に作成
-          }
+          // ディレクトリが無かったらディレクトリを再帰的に作成
+          if (!fs.existsSync(dir)) fs.mkdirsSync(dir)
           const result = beautifyFn(str)
           fs.writeFile(filename, result, (err) => {
             // ファイルに書き込む処理
             if (err) throw err
             results.push(fileSplit[1])
-            count++
-            if (count === length) {
-              // ファイル数を数えてタスクが完了
+            if (++count === length) {
               console.log(`■■ ejs files : [${results.join(', ')}] ■■`)
               console.log(`■■ ejs task finished ■■`)
             }

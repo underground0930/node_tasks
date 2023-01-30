@@ -24,18 +24,17 @@ const _sass = ({ root, pattern, dist, isDev }) => {
       let filename = dist + fileSplit[1]
       filename = filename.replace('.scss', '.css')
       const dir = path.dirname(filename)
-      if (!fs.existsSync(dir)) {
-        fs.mkdirsSync(dir) // ディレクトリを再帰的に作成
-      }
-      postcss([autoprefixer]) // postcssのプラグインのautoprefixerを設定
+      // ディレクトリを再帰的に作成
+      if (!fs.existsSync(dir)) fs.mkdirsSync(dir)
+      // postcssのプラグインのautoprefixerを設定
+      postcss([autoprefixer])
         .process(result.css, { from: undefined })
         .then((resultPost) => {
           fs.writeFile(filename, resultPost.css, (err) => {
             // ファイルに書き込む処理
             if (err) throw err
             results.push(fileSplit[1])
-            count++
-            if (count === length) {
+            if (++count === length) {
               // ファイル数を数えてタスクが完了
               console.log(`■■ css files : [${results.join(', ')}] ■■`)
               console.log(`■■ sass task finished ■■`)

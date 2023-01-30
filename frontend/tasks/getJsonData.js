@@ -3,7 +3,7 @@
  * @param {glob} src - コピーするデータのルート以下からのワイルドカード
  */
 
-const glob = require('glob') // ファイル名のパターンマッチング
+const glob = require('glob')
 const fs = require('fs')
 
 const getJsonData = (src) => {
