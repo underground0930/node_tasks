@@ -5,19 +5,15 @@
 - フロントエンドの開発環境は「frontend」ディレクトリ内に移動してください
 - 詳細は「frontend/README.md」を確認してください
 
+```
+cd frontend/
+```
+
 ## backend 開発環境
 
 - バックエンドの開発環境は「backend」ディレクトリ内に移動してください
 - 詳細は「backend/README.md」を確認してください
 
-## node version
-
-- .node-version で管理
-
-## gitignore
-
-ルートでは全体の設定、各ディレクトリにも個別の「.gitignore」があります
-
-- 「.gitignore」
-- 「frontend/.gitignore」
-- 「backend/.gitignore」
+```
+cd backend/
+```
