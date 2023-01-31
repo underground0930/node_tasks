@@ -38,8 +38,7 @@ module.exports = {
   devtool,
   watch,
   entry: {
-    common: paths.src.js + '/common/script.ts',
-    top: paths.src.js + '/pages/top.ts',
+    script: paths.src.js + '/script.ts',
   },
   output: {
     filename: '[name].bundle.js',
@@ -60,12 +59,6 @@ module.exports = {
         vendor: {
           test: /node_modules/,
           name: 'vendor',
-          chunks: 'initial',
-          enforce: true,
-        },
-        utils: {
-          test: path.resolve(paths.src.js + '/utils/'),
-          name: 'utils',
           chunks: 'initial',
           enforce: true,
         },

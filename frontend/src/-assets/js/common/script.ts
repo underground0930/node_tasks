@@ -5,11 +5,15 @@ window.globalVars = {
   data: data,
 }
 
-const init = () => {
-  const scrollTop = document.querySelectorAll<HTMLElement>('.js-scrollTop')
-  if (scrollTop) {
-    new PageScroll(scrollTop, 900)
+export class Common {
+  constructor() {
+    this.#setScrollTop()
+  }
+
+  #setScrollTop() {
+    const scrollTop = document.querySelectorAll<HTMLElement>('.js-scrollTop')
+    if (scrollTop) {
+      new PageScroll(scrollTop, 900)
+    }
   }
 }
-
-init()
