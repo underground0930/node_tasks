@@ -8,7 +8,7 @@
 
 export const debounceEvent = (callback: () => void, duration = 400): (() => void) => {
   let timer: number
-  return (): void => {
+  return () => {
     window.clearTimeout(timer)
     timer = window.setTimeout(callback, duration)
   }
