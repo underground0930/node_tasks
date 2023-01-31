@@ -1,6 +1,6 @@
 {
   "name": "frontend_tasks",
-  "version": "3.6.1",
+  "version": "1.0.0",
   "description": "node.js frontend_tasks",
   "main": "index.js",
   "private": true,
@@ -14,7 +14,7 @@
     "webpack:dev": "cross-env NODE_ENV=\"development\" webpack",
     "del-dummy": "rm -R htdocs/assets/json/_dummy htdocs/assets/img/_dummy htdocs/assets/movie/_dummy",
     "lint:ejs": "ejslint 'src/**/*.{ejs,html}'",
-    "lint": "eslint 'src/assets/js/**/*' --fix --ext .ts,.tsx"
+    "lint": "eslint 'src/-assets/js/**/*' --fix --ext .ts,.tsx"
   },
   "browserslist": [],
   "eslintIgnore": [
