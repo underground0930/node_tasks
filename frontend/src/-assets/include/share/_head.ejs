@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/<%= page.id === 'top' ? 'website' : 'article' %>#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
@@ -22,4 +22,4 @@
   <!-- style & scripts -->
   <link rel="stylesheet" href="<%= relativePath %>-assets/css/style.css?date=<%= time %>">
 </head>
-<body class="<%= page.class %>" id="<%= page.id %>">
+<body class="<%= page.class %>" id="<%= page.id %>" data-script="<%= page.script %>">

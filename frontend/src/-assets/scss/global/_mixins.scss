@@ -1,5 +1,115 @@
-@forward './mixins/font-family';
-@forward './mixins/font-size';
-@forward './mixins/hover';
-@forward './mixins/mq';
-@forward './mixins/pseudo';
+@charset "UTF-8";
+@use 'sass:math';
+@use './breakpoint' as *;
+
+//////////////////////////////////////////
+// font-size
+//////////////////////////////////////////
+
+@mixin fs($font-size, $line-height: null, $lineHeightCrop: true) {
+  font-size: $font-size + px;
+  @if ($line-height!=null) {
+    line-height: math.div($line-height, $font-size);
+  }
+  @if ($lineHeightCrop == true) {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+    }
+    &:before {
+      margin-bottom: calc((1 - math.div($line-height, $font-size)) * math.div($font-size, 2) * 1px);
+    }
+    &:after {
+      margin-top: calc((1 - math.div($line-height, $font-size)) * math.div($font-size, 2) * 1px);
+    }
+  }
+}
+
+//////////////////////////////////////////
+// font-family
+//////////////////////////////////////////
+
+@mixin fontBold {
+  font-family: var(--commonFont);
+  font-weight: 700;
+}
+
+@mixin fontBlack {
+  font-family: var(--commonFont);
+  font-weight: 900;
+}
+
+//////////////////////////////////////////
+// hover
+//////////////////////////////////////////
+
+@mixin hover() {
+  &:focus {
+    @content;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+//////////////////////////////////////////
+// 擬似要素
+//////////////////////////////////////////
+
+@mixin before {
+  &:before {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+@mixin after {
+  &:after {
+    content: '';
+    display: block;
+    @content;
+  }
+}
+
+//////////////////////////////////////////
+// mq
+//////////////////////////////////////////
+
+@mixin pc() {
+  @media not all and (max-width: map-get($breakpoints, sp_pc) + 'px') {
+    @content;
+  }
+}
+
+@mixin sp() {
+  @media all and (max-width: map-get($breakpoints, sp_pc) + 'px') {
+    @content;
+  }
+}
+
+// more X width
+@mixin min-screen($min-width) {
+  @media all and (min-width: $min-width + 'px') {
+    @content;
+  }
+}
+
+// less X width
+@mixin max-screen($max-width) {
+  @media all and (max-width: $max-width + 'px') {
+    @content;
+  }
+}
+
+// between X width and Y width
+@mixin screen($min-width, $max-width) {
+  @media all and (min-width: $min-width + 'px') and (max-width: $max-width + 'px') {
+    @content;
+  }
+}

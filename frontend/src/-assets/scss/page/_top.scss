@@ -23,6 +23,10 @@
   }
 }
 
+.pg-top-lead {
+  @include fs(24, 36);
+}
+
 .pg-top-section {
   @include pc {
     margin: 0 80px 100px;

@@ -1,17 +1,19 @@
-import { Common } from '@/common/script'
+import { Common } from '@/pages/common'
 import { Top } from '@/pages/top'
 
 // 実行
 ;(async () => {
-  const bodyClasses = document.body.classList
+  const pageScript = document.body.dataset.script
 
   new Common()
 
-  if (bodyClasses.contains('top')) {
-    new Top()
-  } else if (bodyClasses.contains('hoge')) {
-    console.log('hoge')
-  } else {
-    console.log('nothing')
+  switch (pageScript) {
+    case 'top':
+      new Top()
+      break
+    case 'hoge':
+      console.log('hoge')
+      break
+    default:
   }
 })()

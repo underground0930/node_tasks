@@ -8,57 +8,36 @@
     ogp: '',
   }
 %>
-<%- include( relativePath + '-assets/include/_topIncludes', {page, relativePath}); -%>
+<%- include( relativePath + '-assets/include/share/_layoutUpper',{page}); -%>
 <div class="l-wrapper">
   <!-- ///////// contents start ///////// -->
     <div class="pg-top">
+      <!-- lead -->
+      <div class="pg-top-lead">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+        abcdefghijklmnopqrstuvwxyz<br>
+        あいうえおかきくけこさしすせそ
+      </div>
+      <!--/ lead -->
       <!-- kv -->
       <div class="pg-top-kv">
         <video 
           class="p-kv__video"
           src="/-assets/movie/_dummy/sample.mp4"
           width="300"
-          poster="" 
-          playsinline=""
-          muted=""
-          loop=""
-          autoplay=""
           preload="auto"
+          poster="" 
+          playsinline
+          muted
+          loop
+          autoplay
         >
         </video>
       </div>
       <!--/ kv  -->
-      <!-- news -->
-      <section class="pg-top-section">
-        <h2 class="c-title pg-top-section__title">NEWS</h2>
-        <%- include( relativePath + '-assets/include/_list', {}); -%>
-      </section>
-      <!--/ news -->
-      <!-- blog -->
-      <section class="pg-top-section">
-        <h2 class="c-title pg-top-section__title">BLOG</h2>
-        <%- include( relativePath + '-assets/include/_card' , {}); -%>
-      </section>
-      <!--/ blog -->
       <!-- react -->
       <div id="app"></div>
       <!--/ react -->
-      <!-- picture -->
-      <h2>picture</h2>
-      <picture>
-        <source media="(min-width:1100px)" srcset="/-assets/img/_dummy/x.png">
-        <source media="(max-width:1099px)" srcset="/-assets/img/_dummy/y.png">
-        <img src="/-assets/img/x.png" alt="">
-      </picture>
-      <!--/ picture -->
-      <!-- object-fit -->
-      <h2>object-fit</h2>
-      <div class="p-photos">
-        <div class="p-photo">
-          <img src='/-assets/img/_dummy/x.png' alt=''>
-        </div>
-      </div>
-      <!--/ object-fit -->
       <!-- swiper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -72,21 +51,7 @@
         <div class="swiper-scrollbar"></div>
       </div>
       <!--/ swiper -->
-      <!-- Intersection Observer & position sticky -->
-      <h2>Intersection Observer & position sticky</h2>
-      <div class="p-boxWrep">
-        <div class="p-boxMain">
-          <% [...new Array(5)].forEach((element,i) => { %>
-            <div class="p-box" data-id="<%- i+1 %>"><%- i+1 %></div>
-          <% }); %>
-        </div>
-        <div class="p-boxSub">
-          <div class="p-boxNav is-sticky"></div>
-        </div>
-      </div>
-      <!-- Intersection Observer & position sticky -->
     </div>
-
   <!-- ///////// contents end ///////// -->
 </div>
-<%- include( relativePath + '-assets/include/_bottomIncludes',{page}); -%>
+<%- include( relativePath + '-assets/include/share/_layoutUnder',{page}); -%>
